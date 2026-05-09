@@ -1,0 +1,232 @@
+name: Mirror releases and update source
+
+on:
+  workflow_call:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: mirror-releases
+  cancel-in-progress: false
+
+env:
+  PYTHON_VERSION: "3.13"
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.matrix.outputs.matrix }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Validate config and create app matrix
+        id: matrix
+        run: |
+          jq -e '
+            .apps
+            | to_entries
+            | length > 0 and all(
+                .[];
+                (.value.repo_url | type == "string")
+                and (.value.runner | type == "string")
+                and (.value.upstream_asset_regex | type == "string")
+                and (.value.version_regex | type == "string")
+                and (.value.mirror_tag_prefix | type == "string")
+                and (.value.output_name | type == "string")
+                and (.value.transformation | type == "string")
+              )
+          ' config.json
+          echo "matrix=$(jq -c '[.apps | to_entries[] | .value + {key: .key}]' config.json)" >> "$GITHUB_OUTPUT"
+
+  mirror:
+    needs: prepare
+    strategy:
+      fail-fast: false
+      matrix:
+        app: ${{ fromJSON(needs.prepare.outputs.matrix) }}
+    runs-on: ${{ matrix.app.runner }}
+    defaults:
+      run:
+        shell: bash
+    env:
+      GH_TOKEN: ${{ github.token }}
+      APP_KEY: ${{ matrix.app.key }}
+      APP_NAME: ${{ matrix.app.app_name }}
+      UPSTREAM_REPOSITORY: ${{ matrix.app.repo_url }}
+      UPSTREAM_ASSET_REGEX: ${{ matrix.app.upstream_asset_regex }}
+      VERSION_REGEX: ${{ matrix.app.version_regex }}
+      MIRROR_TAG_PREFIX: ${{ matrix.app.mirror_tag_prefix }}
+      OUTPUT_TEMPLATE: ${{ matrix.app.output_name }}
+      TRANSFORMATION: ${{ matrix.app.transformation }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Find latest stable upstream release
+        id: release
+        run: |
+          response=$(gh api "repos/${UPSTREAM_REPOSITORY}/releases/latest")
+
+          tag=$(jq -r '.tag_name // empty' <<< "$response")
+          notes=$(jq -r '.body // ""' <<< "$response")
+          asset_url=$(jq -r --arg regex "$UPSTREAM_ASSET_REGEX" '
+            first((.assets // [])[] | select(.name | test($regex)) | .browser_download_url) // empty
+          ' <<< "$response")
+          asset_name=$(jq -r --arg regex "$UPSTREAM_ASSET_REGEX" '
+            first((.assets // [])[] | select(.name | test($regex)) | .name) // empty
+          ' <<< "$response")
+          version=$(jq -nr --arg tag "$tag" --arg regex "$VERSION_REGEX" '
+            try ($tag | capture($regex).version) catch ""
+          ')
+
+          if [[ -z "$tag" || -z "$version" || -z "$asset_url" ]]; then
+            echo "Could not find a matching stable IPA for ${APP_KEY}."
+            echo "Latest tag: ${tag:-missing}"
+            echo "Available assets:"
+            jq -r '(.assets // [])[]?.name' <<< "$response"
+            exit 1
+          fi
+
+          mirror_tag="${MIRROR_TAG_PREFIX}${version}"
+          output_name="${OUTPUT_TEMPLATE//\{version\}/$version}"
+
+          delimiter="NOTES_$(uuidgen)"
+          {
+            echo "tag=$tag"
+            echo "version=$version"
+            echo "asset_url=$asset_url"
+            echo "asset_name=$asset_name"
+            echo "mirror_tag=$mirror_tag"
+            echo "output_name=$output_name"
+            echo "notes<<$delimiter"
+            echo "$notes"
+            echo "$delimiter"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Check whether release is already mirrored
+        id: check
+        env:
+          MIRROR_TAG: ${{ steps.release.outputs.mirror_tag }}
+        run: |
+          if gh release view "$MIRROR_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
+            echo "Release $MIRROR_TAG is already mirrored."
+            echo "should_mirror=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "should_mirror=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Download upstream IPA
+        if: steps.check.outputs.should_mirror == 'true'
+        env:
+          ASSET_URL: ${{ steps.release.outputs.asset_url }}
+        run: curl -fL "$ASSET_URL" -o upstream.ipa
+
+      - name: Build mirrored IPA
+        if: steps.check.outputs.should_mirror == 'true'
+        env:
+          VERSION: ${{ steps.release.outputs.version }}
+          OUTPUT_NAME: ${{ steps.release.outputs.output_name }}
+        run: |
+          if [[ "$TRANSFORMATION" == "none" ]]; then
+            cp upstream.ipa "$OUTPUT_NAME"
+            exit 0
+          fi
+
+          if [[ "$TRANSFORMATION" != "apollo_bundle_versions" ]]; then
+            echo "Unknown transformation: $TRANSFORMATION"
+            exit 1
+          fi
+
+          mkdir build
+          cd build
+          unzip -q ../upstream.ipa
+          app_path=$(find Payload -maxdepth 1 -type d -name "*.app" -print -quit)
+          if [[ -z "$app_path" ]]; then
+            echo "No .app bundle found in upstream IPA."
+            exit 1
+          fi
+
+          plist="${app_path}/Info.plist"
+          plist_set_or_add() {
+            local key="$1"
+            local value="$2"
+            if /usr/libexec/PlistBuddy -c "Print :${key}" "$plist" >/dev/null 2>&1; then
+              /usr/libexec/PlistBuddy -c "Set :${key} ${value}" "$plist"
+            else
+              /usr/libexec/PlistBuddy -c "Add :${key} string ${value}" "$plist"
+            fi
+          }
+          plist_set_or_add CFBundleVersion "$VERSION"
+          plist_set_or_add CFBundleShortVersionString "$VERSION"
+          zip -6 -rq "../$OUTPUT_NAME" Payload -x "*/.*"
+
+      - name: Create mirrored release
+        if: steps.check.outputs.should_mirror == 'true'
+        env:
+          MIRROR_TAG: ${{ steps.release.outputs.mirror_tag }}
+          OUTPUT_NAME: ${{ steps.release.outputs.output_name }}
+          UPSTREAM_TAG: ${{ steps.release.outputs.tag }}
+          UPSTREAM_ASSET: ${{ steps.release.outputs.asset_name }}
+          UPSTREAM_NOTES: ${{ steps.release.outputs.notes }}
+          VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          {
+            echo "Mirrored from https://github.com/${UPSTREAM_REPOSITORY}/releases/tag/${UPSTREAM_TAG}"
+            echo
+            echo "Upstream asset: \`${UPSTREAM_ASSET}\`"
+            echo
+            echo "## Upstream Release Notes"
+            echo "$UPSTREAM_NOTES"
+          } > RELEASE_NOTES.md
+
+          gh release create "$MIRROR_TAG" "$OUTPUT_NAME" \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "${APP_NAME} v${VERSION}" \
+            --notes-file RELEASE_NOTES.md
+
+  update-source:
+    needs: [prepare, mirror]
+    if: always() && needs.prepare.result == 'success'
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install dependencies
+        run: python -m pip install requests
+
+      - name: Update and validate source
+        run: |
+          git pull --rebase origin main
+          python update.py
+          python update.py --validate-only
+          jq empty app.json
+
+      - name: Commit source changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app.json
+
+          if git diff --cached --quiet; then
+            echo "No source changes detected."
+            exit 0
+          fi
+
+          git commit -m "Update mirrored app source"
+          git push origin HEAD:main

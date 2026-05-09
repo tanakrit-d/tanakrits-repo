@@ -1,0 +1,109 @@
+{
+    "source": {
+        "name": "Tanakrit's Source",
+        "subtitle": "App Releases",
+        "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/icons/repo/logo.webp",
+        "json_file": "app.json"
+    },
+    "retention": {
+        "versions_per_app": 3,
+        "news_per_app": 3
+    },
+    "apps": {
+        "apollo-reborn": {
+            "repo_url": "Apollo-Reborn/Apollo-Reborn",
+            "app_id": "com.christianselig.Apollo",
+            "app_name": "Apollo for Reddit",
+            "developer_name": "Christian Selig (& Apollo-Reborn contributors)",
+            "subtitle": "Apollo-Reborn",
+            "localized_description": "Apollo-Reborn is the community-maintained Apollo sideload build powered by the Apollo-Reborn tweak.\n\nIt restores custom API support, media fixes, uploads, inline media, translation, saved categories, Liquid Glass support on iOS 26+, and the rest of the project's ongoing fixes and enhancements.\n\nThis source mirrors the GLASS Icons variant, which bundles the Liquid Glass alternate icon catalog without the iOS 26 UI runtime opt-in, so legacy UIKit behaviors such as the bottom tab bar swipe gesture are preserved.\n\nThis source is intended for AltStore Classic, SideStore, and Feather. Apollo-Reborn is not compatible with AltStore PAL.\n\nThis project is not affiliated with Apollo or Christian Selig.",
+            "caption": "Apollo-Reborn update available",
+            "tint_colour": "#F0542D",
+            "image_url": "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/lg-icons.jpg",
+            "icon_url": "https://apolloreborn.app/assets/icon.png",
+            "category": "social",
+            "screenshots": [
+                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/settings.jpg",
+                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/custom.jpg",
+                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/recents.jpg",
+                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/inline.jpg",
+                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/lg-icons.jpg",
+                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/avatar-profile.jpg",
+                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/avatar-comments.jpg",
+                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/translation.jpg"
+            ],
+            "app_permissions": {
+                "entitlements": [
+                    "com.apple.security.application-groups",
+                    "com.apple.developer.associated-domains",
+                    "com.apple.developer.group-session",
+                    "com.apple.developer.icloud-container-identifiers",
+                    "com.apple.developer.ubiquity-kvstore-identifier",
+                    "keychain-access-groups",
+                    "aps-environment",
+                    "com.apple.developer.weatherkit"
+                ],
+                "privacy": {
+                    "NSCameraUsageDescription": "Used to take photos to upload for sharing.",
+                    "NSPhotoLibraryUsageDescription": "Used to save media or to select images to upload for sharing.",
+                    "NSPhotoLibraryAddUsageDescription": "Save media to photo library.",
+                    "NSMotionUsageDescription": "Detect rotations in Media Viewer and offer corresponding options.",
+                    "NSLocationWhenInUseUsageDescription": "Checked once to calculate sunset/sunrise times for the location.",
+                    "NSFaceIDUsageDescription": "Unlock Apollo when re-opening in order to prevent unauthorized access."
+                }
+            },
+            "upstream_asset_regex": "^Apollo-Reborn-[0-9]+\\.[0-9]+\\.[0-9]+-GLASSICONS\\.ipa$",
+            "version_regex": "(?:^|_)[vV]?(?<version>[0-9]+(?:\\.[0-9]+)+)$",
+            "mirror_tag_prefix": "apollo-reborn-glassicons-v",
+            "mirror_asset_regex": "^Apollo_with_Apollo-Reborn-[0-9]+(?:\\.[0-9]+)+-GLASSICONS\\.ipa$",
+            "output_name": "Apollo_with_Apollo-Reborn-{version}-GLASSICONS.ipa",
+            "transformation": "apollo_bundle_versions",
+            "runner": "macos-latest"
+        },
+        "plezy": {
+            "repo_url": "edde746/plezy",
+            "app_id": "com.edde746.plezy",
+            "app_name": "Plezy",
+            "developer_name": "edde746",
+            "subtitle": "A Plex and Jellyfin client",
+            "localized_description": "A modern cross-platform Plex and Jellyfin client.",
+            "caption": "Update for Plezy now available!",
+            "tint_colour": "#da7b5b",
+            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/news/plezy/update.png",
+            "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/icons/plezy/icon.webp",
+            "screenshots": [
+                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/screenshots/plezy/phone-home.png",
+                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/screenshots/plezy/phone-library.png",
+                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/screenshots/plezy/phone-md.png",
+                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/screenshots/plezy/phone-search.png"
+            ],
+            "app_permissions": {
+                "entitlements": [
+                    "keychain-access-groups",
+                    "com.apple.developer.networking.multicast",
+                    "com.apple.smoot.subscriptionservice",
+                    "com.apple.developer.applesignin",
+                    "aps-environment",
+                    "com.apple.developer.associated-domains",
+                    "com.apple.security.application-groups"
+                ],
+                "privacy": {
+                    "NSBluetoothAlwaysUsageDescription": "This app uses the local network to control to media servers and players.",
+                    "NSCameraUsageDescription": "Camera is used to scan QR codes for Companion Remote pairing.",
+                    "NSLocalNetworkUsageDescription": "This app needs to connect to your media servers on your local network.",
+                    "NSLocationWhenInUseUsageDescription": "Plezy uses location access when iOS requires it to detect your local network and connect to your media servers.",
+                    "NSPhotoLibraryUsageDescription": "Plezy needs photo library access so you can choose images to upload as media artwork.",
+                    "NSUserNotificationsUsageDescription": "Allow notifications from friends, recommendations, your media server and more.",
+                    "NSUserTrackingUsageDescription": "Your data will be used to deliver the most relevant ads when watching free movies and shows."
+                }
+            },
+            "upstream_asset_regex": "(?i)^.*\\.ipa$",
+            "version_regex": "^[vV]?(?<version>[0-9]+(?:\\.[0-9]+)+)$",
+            "mirror_tag_prefix": "plezy-v",
+            "mirror_asset_regex": "^Plezy-[0-9]+(?:\\.[0-9]+)+\\.ipa$",
+            "output_name": "Plezy-{version}.ipa",
+            "transformation": "none",
+            "runner": "ubuntu-latest"
+        }
+    }
+}
