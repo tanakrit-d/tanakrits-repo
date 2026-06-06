@@ -177,8 +177,6 @@ jobs:
           VERSION: ${{ steps.release.outputs.version }}
         run: |
           {
-            echo "Mirrored from https://github.com/${UPSTREAM_REPOSITORY}/releases/tag/${UPSTREAM_TAG}"
-            echo
             echo "Upstream asset: \`${UPSTREAM_ASSET}\`"
             echo
             echo "## Upstream Release Notes"
