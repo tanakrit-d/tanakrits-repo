@@ -2,7 +2,7 @@
     "source": {
         "name": "Tanakrit's Source",
         "subtitle": "App Releases",
-        "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/icons/repo/logo.webp",
+        "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/icons/repo/logo.webp",
         "json_file": "app.json"
     },
     "retention": {
@@ -69,13 +69,13 @@
             "localized_description": "A modern cross-platform Plex and Jellyfin client.",
             "caption": "Update for Plezy now available!",
             "tint_colour": "#da7b5b",
-            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/news/plezy/update.png",
-            "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/icons/plezy/icon.webp",
+            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
+            "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/icons/plezy/icon.webp",
             "screenshots": [
-                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/screenshots/plezy/phone-home.png",
-                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/screenshots/plezy/phone-library.png",
-                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/screenshots/plezy/phone-md.png",
-                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/screenshots/plezy/phone-search.png"
+                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-home.png",
+                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-library.png",
+                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-md.png",
+                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-search.png"
             ],
             "app_permissions": {
                 "entitlements": [

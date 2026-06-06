@@ -1,7 +1,7 @@
 {
   "name": "Tanakrit's Source",
   "subtitle": "App Releases",
-  "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/icons/repo/logo.webp",
+  "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/icons/repo/logo.webp",
   "apps": [
     {
       "name": "Apollo for Reddit",
@@ -65,7 +65,7 @@
       "developerName": "edde746",
       "subtitle": "A Plex and Jellyfin client",
       "localizedDescription": "A modern cross-platform Plex and Jellyfin client.",
-      "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/icons/plezy/icon.webp",
+      "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/icons/plezy/icon.webp",
       "tintColor": "#da7b5b",
       "versions": [
         {
@@ -98,10 +98,10 @@
         }
       },
       "screenshots": [
-        "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/screenshots/plezy/phone-home.png",
-        "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/screenshots/plezy/phone-library.png",
-        "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/screenshots/plezy/phone-md.png",
-        "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/screenshots/plezy/phone-search.png"
+        "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-home.png",
+        "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-library.png",
+        "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-md.png",
+        "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-search.png"
       ],
       "version": "2.4.1",
       "buildVersion": "2.4.1",
@@ -130,7 +130,7 @@
       "caption": "Update for Plezy now available!",
       "date": "2026-06-06T13:04:53Z",
       "tintColor": "#da7b5b",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-source/refs/heads/main/images/news/plezy/update.png",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.4.1"
     }
