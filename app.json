@@ -117,6 +117,45 @@
       "versionDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nAdded\r\n\r\n- Jellyfin extras support\r\n- Jellyfin metadata editing\r\n- Video and audio quality labels\r\n- tvOS Top Shelf support\r\n- New app menus\r\n- Mobile settings shortcut in the home menu\r\n- Mobile library browse options sheet\r\n- A startup section setting\r\n- Faster loading for large show detail pages\r\n\r\nImproved\r\n\r\n- More consistent back navigation\r\n- Better TV and dpad focus behavior\r\n- Better access to app bar actions on TV\r\n- More UI text is localized\r\n\r\nFixed\r\n\r\n- Jellyfin artwork uploads\r\n- Jellyfin default track selection\r\n- Subtitle search when no subtitle tracks exist (#1219)\r\n- ExoPlayer transcode seek positions\r\n- Player chrome overlay stability\r\n- Play-next looping at end of file\r\n- iOS video zoom and stretch fit\r\n- iOS anamorphic video aspect ratio\r\n- iOS frozen video after Control Center\r\n- Profile 8 Dolby Vision decoding\r\n- tvOS remote playback controls\r\n- tvOS HDR toggle behavior\r\n- Live TV time-shift skip overshoot\r\n- Watch Together recent room actions on dpad",
       "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.5.0/Plezy-2.5.0.ipa",
       "size": 42197116
+    },
+    {
+      "name": "Twitch",
+      "bundleIdentifier": "tv.twitch",
+      "developerName": "Twitch Interactive, Inc. (& TwitchAdBlock contributors)",
+      "subtitle": "Twitch with TwitchAdBlock",
+      "localizedDescription": "Twitch with the unofficial TwitchAdBlock tweak for sideloading.\n\nIt blocks live-stream and VOD ads, removes feed promotions and ad-network requests, supports authenticated and fallback proxies, renders 7TV, BetterTTV, and FrankerFaceZ emotes in chat, and adds app customization options.\n\nThis source mirrors the patched Twitch IPA published by gunnerkidBT's TwitchAdBlock fork. The fork maintains compatibility with newer Twitch and iOS versions and is not affiliated with Twitch Interactive.",
+      "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/icons/twitch/icon.jpg",
+      "tintColor": "#9146FF",
+      "category": "entertainment",
+      "screenshots": [
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/48/80/234880cc-db04-7d86-a3d5-70a0b46d6896/37b30cee-8c44-4162-944b-4def125308cf_01-1242x2208.jpg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/60/aa/4e/60aa4eec-76de-e4dd-77b6-390b4bd323f7/121623e7-1287-49f0-9ea7-068ffc760e1f_02-1242x2208.jpg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/22/58/1b/22581b48-e7bb-f8e4-d4bd-347ea0c89a58/77c505ba-b565-443b-83da-642a3bbc96f8_03-1242x2208.jpg/392x696bb.jpg",
+        "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/05/c7/2c05c7b6-d986-1dc2-a55b-f25286b12cce/f1b8408a-d231-4e9a-aeff-9bcc55be2d34_04-1242x2208.jpg/392x696bb.jpg"
+      ],
+      "versions": [],
+      "appPermissions": {
+        "entitlements": [
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.declared-age-range",
+          "com.apple.developer.group-session",
+          "aps-environment",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "com.apple.developer.associated-domains",
+          "com.apple.developer.networking.wifi-info",
+          "keychain-access-groups",
+          "com.apple.developer.applesignin",
+          "com.apple.developer.storekit.request-data",
+          "com.apple.security.application-groups"
+        ],
+        "privacy": {
+          "NSCameraUsageDescription": "Twitch needs permission to access the camera on this device to stream live video and change your profile image.",
+          "NSLocalNetworkUsageDescription": "Twitch uses the local network to discover Cast-enabled devices on your WiFi network.",
+          "NSMicrophoneUsageDescription": "Twitch needs permission to access the microphone on this device to stream live video.",
+          "NSPhotoLibraryAddUsageDescription": "Twitch needs permission to write to your photo library in order to save images.",
+          "NSUserTrackingUsageDescription": "Your iOS advertising ID and device data will be used to support creators and provide a personal ad experience."
+        }
+      }
     }
   ],
   "news": [

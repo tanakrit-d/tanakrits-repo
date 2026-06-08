@@ -104,6 +104,54 @@
             "output_name": "Plezy-{version}.ipa",
             "transformation": "none",
             "runner": "ubuntu-latest"
+        },
+        "twitch-adblock": {
+            "repo_url": "gunnerkidBT/TwitchAdBlock",
+            "app_id": "tv.twitch",
+            "app_name": "Twitch",
+            "developer_name": "Twitch Interactive, Inc. (& TwitchAdBlock contributors)",
+            "subtitle": "Twitch with TwitchAdBlock",
+            "localized_description": "Twitch with the unofficial TwitchAdBlock tweak for sideloading.\n\nIt blocks live-stream and VOD ads, removes feed promotions and ad-network requests, supports authenticated and fallback proxies, renders 7TV, BetterTTV, and FrankerFaceZ emotes in chat, and adds app customization options.\n\nThis source mirrors the patched Twitch IPA published by gunnerkidBT's TwitchAdBlock fork. The fork maintains compatibility with newer Twitch and iOS versions and is not affiliated with Twitch Interactive.",
+            "caption": "Update for TwitchAdBlock available!",
+            "tint_colour": "#9146FF",
+            "image_url": "hhttps://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/twitch/update.png",
+            "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/icons/twitch/icon.jpg",
+            "category": "entertainment",
+            "screenshots": [
+                "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/48/80/234880cc-db04-7d86-a3d5-70a0b46d6896/37b30cee-8c44-4162-944b-4def125308cf_01-1242x2208.jpg/392x696bb.jpg",
+                "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/60/aa/4e/60aa4eec-76de-e4dd-77b6-390b4bd323f7/121623e7-1287-49f0-9ea7-068ffc760e1f_02-1242x2208.jpg/392x696bb.jpg",
+                "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/22/58/1b/22581b48-e7bb-f8e4-d4bd-347ea0c89a58/77c505ba-b565-443b-83da-642a3bbc96f8_03-1242x2208.jpg/392x696bb.jpg",
+                "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/05/c7/2c05c7b6-d986-1dc2-a55b-f25286b12cce/f1b8408a-d231-4e9a-aeff-9bcc55be2d34_04-1242x2208.jpg/392x696bb.jpg"
+            ],
+            "app_permissions": {
+                "entitlements": [
+                    "com.apple.developer.usernotifications.communication",
+                    "com.apple.developer.declared-age-range",
+                    "com.apple.developer.group-session",
+                    "aps-environment",
+                    "com.apple.developer.usernotifications.time-sensitive",
+                    "com.apple.developer.associated-domains",
+                    "com.apple.developer.networking.wifi-info",
+                    "keychain-access-groups",
+                    "com.apple.developer.applesignin",
+                    "com.apple.developer.storekit.request-data",
+                    "com.apple.security.application-groups"
+                ],
+                "privacy": {
+                    "NSCameraUsageDescription": "Twitch needs permission to access the camera on this device to stream live video and change your profile image.",
+                    "NSLocalNetworkUsageDescription": "Twitch uses the local network to discover Cast-enabled devices on your WiFi network.",
+                    "NSMicrophoneUsageDescription": "Twitch needs permission to access the microphone on this device to stream live video.",
+                    "NSPhotoLibraryAddUsageDescription": "Twitch needs permission to write to your photo library in order to save images.",
+                    "NSUserTrackingUsageDescription": "Your iOS advertising ID and device data will be used to support creators and provide a personal ad experience."
+                }
+            },
+            "upstream_asset_regex": "(?i)^tv\\.twitch-.*-TwitchAdBlock(?:[-.][0-9]+(?:\\.[0-9]+)+)?\\.ipa$",
+            "version_regex": "^[vV]?(?<version>[0-9]+(?:\\.[0-9]+)+)$",
+            "mirror_tag_prefix": "twitch-adblock-v",
+            "mirror_asset_regex": "^Twitch-with-TwitchAdBlock-[0-9]+(?:\\.[0-9]+)+\\.ipa$",
+            "output_name": "Twitch-with-TwitchAdBlock-{version}.ipa",
+            "transformation": "none",
+            "runner": "ubuntu-latest"
         }
     }
 }
