@@ -70,6 +70,12 @@ def validate_config(config: dict[str, Any]) -> None:
                 f"{key} is missing config keys: {', '.join(sorted(missing))}"
             )
         re.compile(app["mirror_asset_regex"])
+        if "display_version_regex" in app:
+            regex = re.compile(app["display_version_regex"])
+            if "version" not in regex.groupindex:
+                raise ValueError(
+                    f"{key}.display_version_regex must contain a named version group"
+                )
         if app["mirror_tag_prefix"] in prefixes:
             raise ValueError(f"Duplicate mirror_tag_prefix: {app['mirror_tag_prefix']}")
         if app["app_id"] in app_ids:
@@ -127,6 +133,23 @@ def version_from_tag(tag: str, prefix: str) -> str:
     return version
 
 
+def display_version(
+    release: dict[str, Any], asset: dict[str, Any], app: dict[str, Any]
+) -> str:
+    build_version = version_from_tag(release["tag_name"], app["mirror_tag_prefix"])
+    pattern = app.get("display_version_regex")
+    if not pattern:
+        return build_version
+
+    candidates = [asset["name"]]
+    candidates.extend(re.findall(r"`([^`]+)`", release.get("body") or ""))
+    for candidate in candidates:
+        match = re.fullmatch(pattern, candidate)
+        if match:
+            return match.group("version")
+    raise ValueError(f"Could not extract display version for release: {release['tag_name']}")
+
+
 def matching_asset(release: dict[str, Any], pattern: str) -> dict[str, Any] | None:
     regex = re.compile(pattern)
     return next(
@@ -159,10 +182,11 @@ def app_releases(
 def version_entry(
     release: dict[str, Any], asset: dict[str, Any], app: dict[str, Any]
 ) -> dict[str, Any]:
-    version = version_from_tag(release["tag_name"], app["mirror_tag_prefix"])
+    version = display_version(release, asset, app)
+    build_version = version_from_tag(release["tag_name"], app["mirror_tag_prefix"])
     return {
         "version": version,
-        "buildVersion": version,
+        "buildVersion": build_version,
         "date": release["published_at"],
         "localizedDescription": clean_description(release.get("body")),
         "downloadURL": asset["browser_download_url"],
@@ -170,13 +194,16 @@ def version_entry(
     }
 
 
-def news_entry(release: dict[str, Any], app: dict[str, Any]) -> dict[str, Any]:
-    version = version_from_tag(release["tag_name"], app["mirror_tag_prefix"])
+def news_entry(
+    release: dict[str, Any], asset: dict[str, Any], app: dict[str, Any]
+) -> dict[str, Any]:
+    version = display_version(release, asset, app)
+    build_version = version_from_tag(release["tag_name"], app["mirror_tag_prefix"])
     date = datetime.fromisoformat(release["published_at"].replace("Z", "+00:00"))
     return {
         "appID": app["app_id"],
         "title": f"{version} - {date.strftime('%d %b')}",
-        "identifier": f"{app['app_id']}-release-{version}",
+        "identifier": f"{app['app_id']}-release-{build_version}",
         "caption": app["caption"],
         "date": release["published_at"],
         "tintColor": app["tint_colour"],
@@ -293,8 +320,8 @@ def update_source(config: dict[str, Any], releases: list[dict[str, Any]]) -> Non
             )
         )
         generated_news.extend(
-            news_entry(release, app)
-            for release, _ in mirrored[: config["retention"]["news_per_app"]]
+            news_entry(release, asset, app)
+            for release, asset in mirrored[: config["retention"]["news_per_app"]]
         )
 
     untouched_news = [

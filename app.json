@@ -133,7 +133,16 @@
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/22/58/1b/22581b48-e7bb-f8e4-d4bd-347ea0c89a58/77c505ba-b565-443b-83da-642a3bbc96f8_03-1242x2208.jpg/392x696bb.jpg",
         "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/05/c7/2c05c7b6-d986-1dc2-a55b-f25286b12cce/f1b8408a-d231-4e9a-aeff-9bcc55be2d34_04-1242x2208.jpg/392x696bb.jpg"
       ],
-      "versions": [],
+      "versions": [
+        {
+          "version": "29.4.2",
+          "buildVersion": "0.1.11",
+          "date": "2026-06-08T10:02:10Z",
+          "localizedDescription": "Upstream asset: \"tv.twitch-29.4.2-TwitchAdBlock-0.1.11.ipa\"\n\nUpstream Release Notes\nWhat's new in v0.1.11\r\n\r\nAnimated 3rd-party emotes\r\n\r\n7TV / BTTV / FFZ animated emotes now actually animate in chat — previously rendered as a static first frame. iOS UIImage natively decodes animated GIF but NOT animated WebP, so the redirect target had to switch from \".webp\" to \".gif\" to give the chat renderer bytes it can animate.\r\n\r\nPer-provider routing tracks the animated flag from each API at emote-load time:\r\n- 7TV: \"data.animated\" → \".gif\" for animated, \".webp\" for static (avoids 404 for static 7TV emotes that lack a \".gif\" variant on the CDN)\r\n- BTTV: \"imageType == \"gif\"\" → same URL serves animated GIF or static PNG\r\n- FFZ: \"animated\" dict non-empty → \"/animated/2.gif\" for animated, \"/2\" for static\r\n\r\nFixed — Emote settings default never applied on some installs\r\n\r\n\"%ctor\" ordering between Tweak.x and Emotes.x isn't guaranteed in Logos. If Emotes.x's \"%ctor\" ran before Tweak.x's allocated \"tweakDefaults\", the default-setter silently no-op'd against a \"nil\" \"NSUserDefaults\", leaving the emote toggle key absent — \"boolForKey:\" then returned \"NO\", looking exactly like an explicit user disable. The 3rd-party emotes toggle defaulted to OFF on affected installs.\r\n\r\nMoved the default to Tweak.x's \"%ctor\" (where \"tweakDefaults\" is guaranteed non-nil), plus a one-shot migration that force-writes \"YES\" once per device and sets a marker key so future toggles stick.\r\n\r\n\"inject_ipa.py\" now in the repo\r\n\r\nPreviously lived one directory above the repo per the original development layout. Anyone cloning fresh now gets the full build chain.\r\n\r\nFeatures section in README\r\n\r\nNew top-of-README Features section organized into Ad blocking / Chat / App customization / Compatibility buckets — scannable overview without grepping the changelog.\r\n\r\nReverted — CI auto-build on \"v*\" tag pushes\r\n\r\nAdded in v0.1.10, reverted here. The IPA-download step depends on \"level3tjg/decryptedappstore-action\", which hard-codes a dependency on decryptedappstore.com — currently unreachable. IPA builds are back to local-only.\r\n\r\nTried but didn't land — Background emote-image prefetch\r\n\r\nImplemented eager 15-way-concurrent \"NSURLSession\" prefetching of emote URLs at channel-join with \"NSURLCache.sharedURLCache\" pinning. Empirical result: no perceptible improvement. Twitch's chat session likely uses a private NSURLCache or in-memory image cache that bypasses our shared-cache warming. Removed rather than ship 5MB-per-channel-join background bandwidth with no benefit.\r\n\r\n---\r\n\r\nSee [CHANGELOG.md](https://github.com/gunnerkidBT/TwitchAdBlock/blob/v0.1.11/CHANGELOG.md) for full technical detail.\r\n\r\nInstall\r\n\r\nDrag \"tv.twitch-29.4.2-TwitchAdBlock-0.1.11.ipa\" into AltStore / SideStore to install and sign.",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v0.1.11/Twitch-with-TwitchAdBlock-0.1.11.ipa",
+          "size": 147011825
+        }
+      ],
       "appPermissions": {
         "entitlements": [
           "com.apple.developer.usernotifications.communication",
@@ -155,10 +164,27 @@
           "NSPhotoLibraryAddUsageDescription": "Twitch needs permission to write to your photo library in order to save images.",
           "NSUserTrackingUsageDescription": "Your iOS advertising ID and device data will be used to support creators and provide a personal ad experience."
         }
-      }
+      },
+      "version": "29.4.2",
+      "buildVersion": "0.1.11",
+      "versionDate": "2026-06-08T10:02:10Z",
+      "versionDescription": "Upstream asset: \"tv.twitch-29.4.2-TwitchAdBlock-0.1.11.ipa\"\n\nUpstream Release Notes\nWhat's new in v0.1.11\r\n\r\nAnimated 3rd-party emotes\r\n\r\n7TV / BTTV / FFZ animated emotes now actually animate in chat — previously rendered as a static first frame. iOS UIImage natively decodes animated GIF but NOT animated WebP, so the redirect target had to switch from \".webp\" to \".gif\" to give the chat renderer bytes it can animate.\r\n\r\nPer-provider routing tracks the animated flag from each API at emote-load time:\r\n- 7TV: \"data.animated\" → \".gif\" for animated, \".webp\" for static (avoids 404 for static 7TV emotes that lack a \".gif\" variant on the CDN)\r\n- BTTV: \"imageType == \"gif\"\" → same URL serves animated GIF or static PNG\r\n- FFZ: \"animated\" dict non-empty → \"/animated/2.gif\" for animated, \"/2\" for static\r\n\r\nFixed — Emote settings default never applied on some installs\r\n\r\n\"%ctor\" ordering between Tweak.x and Emotes.x isn't guaranteed in Logos. If Emotes.x's \"%ctor\" ran before Tweak.x's allocated \"tweakDefaults\", the default-setter silently no-op'd against a \"nil\" \"NSUserDefaults\", leaving the emote toggle key absent — \"boolForKey:\" then returned \"NO\", looking exactly like an explicit user disable. The 3rd-party emotes toggle defaulted to OFF on affected installs.\r\n\r\nMoved the default to Tweak.x's \"%ctor\" (where \"tweakDefaults\" is guaranteed non-nil), plus a one-shot migration that force-writes \"YES\" once per device and sets a marker key so future toggles stick.\r\n\r\n\"inject_ipa.py\" now in the repo\r\n\r\nPreviously lived one directory above the repo per the original development layout. Anyone cloning fresh now gets the full build chain.\r\n\r\nFeatures section in README\r\n\r\nNew top-of-README Features section organized into Ad blocking / Chat / App customization / Compatibility buckets — scannable overview without grepping the changelog.\r\n\r\nReverted — CI auto-build on \"v*\" tag pushes\r\n\r\nAdded in v0.1.10, reverted here. The IPA-download step depends on \"level3tjg/decryptedappstore-action\", which hard-codes a dependency on decryptedappstore.com — currently unreachable. IPA builds are back to local-only.\r\n\r\nTried but didn't land — Background emote-image prefetch\r\n\r\nImplemented eager 15-way-concurrent \"NSURLSession\" prefetching of emote URLs at channel-join with \"NSURLCache.sharedURLCache\" pinning. Empirical result: no perceptible improvement. Twitch's chat session likely uses a private NSURLCache or in-memory image cache that bypasses our shared-cache warming. Removed rather than ship 5MB-per-channel-join background bandwidth with no benefit.\r\n\r\n---\r\n\r\nSee [CHANGELOG.md](https://github.com/gunnerkidBT/TwitchAdBlock/blob/v0.1.11/CHANGELOG.md) for full technical detail.\r\n\r\nInstall\r\n\r\nDrag \"tv.twitch-29.4.2-TwitchAdBlock-0.1.11.ipa\" into AltStore / SideStore to install and sign.",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v0.1.11/Twitch-with-TwitchAdBlock-0.1.11.ipa",
+      "size": 147011825
     }
   ],
   "news": [
+    {
+      "appID": "tv.twitch",
+      "title": "29.4.2 - 08 Jun",
+      "identifier": "tv.twitch-release-0.1.11",
+      "caption": "Update for TwitchAdBlock available!",
+      "date": "2026-06-08T10:02:10Z",
+      "tintColor": "#9146FF",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/twitch/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v0.1.11"
+    },
     {
       "appID": "com.christianselig.Apollo",
       "title": "3.1.1 - 08 Jun",

@@ -114,7 +114,7 @@
             "localized_description": "Twitch with the unofficial TwitchAdBlock tweak for sideloading.\n\nIt blocks live-stream and VOD ads, removes feed promotions and ad-network requests, supports authenticated and fallback proxies, renders 7TV, BetterTTV, and FrankerFaceZ emotes in chat, and adds app customization options.\n\nThis source mirrors the patched Twitch IPA published by gunnerkidBT's TwitchAdBlock fork. The fork maintains compatibility with newer Twitch and iOS versions and is not affiliated with Twitch Interactive.",
             "caption": "Update for TwitchAdBlock available!",
             "tint_colour": "#9146FF",
-            "image_url": "hhttps://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/twitch/update.png",
+            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/twitch/update.png",
             "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/icons/twitch/icon.jpg",
             "category": "entertainment",
             "screenshots": [
@@ -148,8 +148,9 @@
             "upstream_asset_regex": "(?i)^tv\\.twitch-.*-TwitchAdBlock(?:[-.][0-9]+(?:\\.[0-9]+)+)?\\.ipa$",
             "version_regex": "^[vV]?(?<version>[0-9]+(?:\\.[0-9]+)+)$",
             "mirror_tag_prefix": "twitch-adblock-v",
-            "mirror_asset_regex": "^Twitch-with-TwitchAdBlock-[0-9]+(?:\\.[0-9]+)+\\.ipa$",
-            "output_name": "Twitch-with-TwitchAdBlock-{version}.ipa",
+            "mirror_asset_regex": "(?i)^(?:tv\\.twitch-.*-TwitchAdBlock(?:[-.][0-9]+(?:\\.[0-9]+)+)?|Twitch-with-TwitchAdBlock-[0-9]+(?:\\.[0-9]+)+)\\.ipa$",
+            "display_version_regex": "(?i)^tv\\.twitch-(?P<version>[0-9]+(?:\\.[0-9]+)+)-TwitchAdBlock(?:[-.][0-9]+(?:\\.[0-9]+)+)?\\.ipa$",
+            "output_name": "{asset_name}",
             "transformation": "none",
             "runner": "ubuntu-latest"
         }

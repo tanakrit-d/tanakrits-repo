@@ -95,6 +95,7 @@ jobs:
 
           mirror_tag="${MIRROR_TAG_PREFIX}${version}"
           output_name="${OUTPUT_TEMPLATE//\{version\}/$version}"
+          output_name="${output_name//\{asset_name\}/$asset_name}"
 
           delimiter="NOTES_$(uuidgen)"
           {
