@@ -52,11 +52,11 @@
                     "NSFaceIDUsageDescription": "Unlock Apollo when re-opening in order to prevent unauthorized access."
                 }
             },
-            "upstream_asset_regex": "^Apollo-Reborn-[0-9]+\\.[0-9]+\\.[0-9]+-GLASSICONS\\.ipa$",
+            "upstream_asset_regex": "^Apollo-Reborn-[0-9]+\\.[0-9]+\\.[0-9]+-GLASS\\.ipa$",
             "version_regex": "(?:^|_)[vV]?(?<version>[0-9]+(?:\\.[0-9]+)+)$",
-            "mirror_tag_prefix": "apollo-reborn-glassicons-v",
-            "mirror_asset_regex": "^Apollo_with_Apollo-Reborn-[0-9]+(?:\\.[0-9]+)+-GLASSICONS\\.ipa$",
-            "output_name": "Apollo_with_Apollo-Reborn-{version}-GLASSICONS.ipa",
+            "mirror_tag_prefix": "apollo-reborn-glass-v",
+            "mirror_asset_regex": "^Apollo_with_Apollo-Reborn-[0-9]+(?:\\.[0-9]+)+-GLASS\\.ipa$",
+            "output_name": "Apollo_with_Apollo-Reborn-{version}-GLASS.ipa",
             "transformation": "apollo_bundle_versions",
             "runner": "macos-latest"
         },
