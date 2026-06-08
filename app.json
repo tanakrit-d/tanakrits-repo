@@ -77,6 +77,14 @@
       "tintColor": "#da7b5b",
       "versions": [
         {
+          "version": "2.5.0",
+          "buildVersion": "2.5.0",
+          "date": "2026-06-08T00:50:06Z",
+          "localizedDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nAdded\r\n\r\n- Jellyfin extras support\r\n- Jellyfin metadata editing\r\n- Video and audio quality labels\r\n- tvOS Top Shelf support\r\n- New app menus\r\n- Mobile settings shortcut in the home menu\r\n- Mobile library browse options sheet\r\n- A startup section setting\r\n- Faster loading for large show detail pages\r\n\r\nImproved\r\n\r\n- More consistent back navigation\r\n- Better TV and dpad focus behavior\r\n- Better access to app bar actions on TV\r\n- More UI text is localized\r\n\r\nFixed\r\n\r\n- Jellyfin artwork uploads\r\n- Jellyfin default track selection\r\n- Subtitle search when no subtitle tracks exist (#1219)\r\n- ExoPlayer transcode seek positions\r\n- Player chrome overlay stability\r\n- Play-next looping at end of file\r\n- iOS video zoom and stretch fit\r\n- iOS anamorphic video aspect ratio\r\n- iOS frozen video after Control Center\r\n- Profile 8 Dolby Vision decoding\r\n- tvOS remote playback controls\r\n- tvOS HDR toggle behavior\r\n- Live TV time-shift skip overshoot\r\n- Watch Together recent room actions on dpad",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.5.0/Plezy-2.5.0.ipa",
+          "size": 42197116
+        },
+        {
           "version": "2.4.1",
           "buildVersion": "2.4.1",
           "date": "2026-06-06T13:04:53Z",
@@ -111,15 +119,26 @@
         "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-md.png",
         "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-search.png"
       ],
-      "version": "2.4.1",
-      "buildVersion": "2.4.1",
-      "versionDate": "2026-06-06T13:04:53Z",
-      "versionDescription": "Upstream asset: \"plezy-ios.ipa\"\r\n\r\nUpstream Release Notes\r\nFixed\r\n\r\n- macOS playback crashes caused by LuaJIT under hardened runtime\r\n- Android playback crashes on devices without HDR display mode API support\r\n\r\nFull Changelog: https://github.com/edde746/plezy/compare/2.4.0...2.4.1",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.4.1/Plezy-2.4.1.ipa",
-      "size": 42074463
+      "version": "2.5.0",
+      "buildVersion": "2.5.0",
+      "versionDate": "2026-06-08T00:50:06Z",
+      "versionDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nAdded\r\n\r\n- Jellyfin extras support\r\n- Jellyfin metadata editing\r\n- Video and audio quality labels\r\n- tvOS Top Shelf support\r\n- New app menus\r\n- Mobile settings shortcut in the home menu\r\n- Mobile library browse options sheet\r\n- A startup section setting\r\n- Faster loading for large show detail pages\r\n\r\nImproved\r\n\r\n- More consistent back navigation\r\n- Better TV and dpad focus behavior\r\n- Better access to app bar actions on TV\r\n- More UI text is localized\r\n\r\nFixed\r\n\r\n- Jellyfin artwork uploads\r\n- Jellyfin default track selection\r\n- Subtitle search when no subtitle tracks exist (#1219)\r\n- ExoPlayer transcode seek positions\r\n- Player chrome overlay stability\r\n- Play-next looping at end of file\r\n- iOS video zoom and stretch fit\r\n- iOS anamorphic video aspect ratio\r\n- iOS frozen video after Control Center\r\n- Profile 8 Dolby Vision decoding\r\n- tvOS remote playback controls\r\n- tvOS HDR toggle behavior\r\n- Live TV time-shift skip overshoot\r\n- Watch Together recent room actions on dpad",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.5.0/Plezy-2.5.0.ipa",
+      "size": 42197116
     }
   ],
   "news": [
+    {
+      "appID": "com.edde746.plezy",
+      "title": "2.5.0 - 08 Jun",
+      "identifier": "com.edde746.plezy-release-2.5.0",
+      "caption": "Update for Plezy available!",
+      "date": "2026-06-08T00:50:06Z",
+      "tintColor": "#da7b5b",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.5.0"
+    },
     {
       "appID": "com.christianselig.Apollo",
       "title": "3.1.1 - 07 Jun",
