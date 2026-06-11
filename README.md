@@ -9,7 +9,7 @@ apps and community-maintained tweaks from their upstream GitHub releases. This i
 | :---: | --- | --- | --- |
 | <img src="https://apolloreborn.app/assets/icon.png" alt="Apollo icon" width="64" height="64"> | **Apollo** | [Apollo-Reborn](https://github.com/Apollo-Reborn/Apollo-Reborn) | Mirrors the `Glass` IPA variant and sets `CFBundleVersion` and `CFBundleShortVersionString` to the Apollo-Reborn release version. |
 | <img src="images/icons/plezy/icon.webp" alt="Plezy icon" width="64" height="64"> | **Plezy** | [edde746/plezy](https://github.com/edde746/plezy) | Mirrors the upstream iOS IPA without binary changes and gives the mirrored asset a versioned filename. |
-| <img src="images/icons/twitch/icon.jpg" alt="Twitch icon" width="64" height="64"> | **Twitch** | [gunnerkidBT/TwitchAdBlock](https://github.com/gunnerkidBT/TwitchAdBlock) | Mirrors the upstream Twitch IPA patched with TwitchAdBlock without additional binary changes. The displayed app version is extracted separately from the TwitchAdBlock release version. |
+| <img src="images/icons/twitch/icon.png" alt="Twitch icon" width="64" height="64"> | **Twitch** | [gunnerkidBT/TwitchAdBlock](https://github.com/gunnerkidBT/TwitchAdBlock) | Mirrors the upstream Twitch IPA patched with TwitchAdBlock without additional binary changes. The displayed app version is extracted separately from the TwitchAdBlock release version. |
 
 ## Add The Source
 
