@@ -146,7 +146,7 @@
                 }
             },
             "upstream_asset_regex": "(?i)^tv\\.twitch-.*-TwitchAdBlock(?:[-.][0-9]+(?:\\.[0-9]+)+)?\\.ipa$",
-            "version_regex": "^[vV]?(?<version>[0-9]+(?:\\.[0-9]+)+)$",
+            "version_regex": "^[vV]?(?<version>[0-9]+(?:\\.[0-9]+)+(?:-[0-9]+(?:\\.[0-9]+)+)?)$",
             "mirror_tag_prefix": "twitch-adblock-v",
             "mirror_asset_regex": "(?i)^(?:tv\\.twitch-.*-TwitchAdBlock(?:[-.][0-9]+(?:\\.[0-9]+)+)?|Twitch-with-TwitchAdBlock-[0-9]+(?:\\.[0-9]+)+)\\.ipa$",
             "display_version_regex": "(?i)^tv\\.twitch-(?P<version>[0-9]+(?:\\.[0-9]+)+)-TwitchAdBlock(?:[-.][0-9]+(?:\\.[0-9]+)+)?\\.ipa$",

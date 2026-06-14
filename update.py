@@ -128,7 +128,7 @@ def clean_description(value: str | None) -> str:
 
 def version_from_tag(tag: str, prefix: str) -> str:
     version = tag.removeprefix(prefix).lstrip("vV")
-    if not re.fullmatch(r"\d+(?:\.\d+)+", version):
+    if not re.fullmatch(r"\d+(?:\.\d+)+(?:-\d+(?:\.\d+)+)?", version):
         raise ValueError(f"Invalid mirrored release tag: {tag}")
     return version
 
