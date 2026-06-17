@@ -44,6 +44,14 @@
       },
       "versions": [
         {
+          "version": "3.2.0",
+          "buildVersion": "3.2.0",
+          "date": "2026-06-17T00:52:32Z",
+          "localizedDescription": "Upstream asset: \"Apollo-Reborn-3.2.0-GLASS.ipa\"\n\nUpstream Release Notes\n> [!NOTE]\r\n> Stay tuned for our next upcoming release, bringing  *even more* new features like signing in without API keys, Picture-in-Picture (PiP), build your own theme, Img Chest image uploads, Apple on-device translations, redesigned subreddit sidebar, community highlights, and more!\r\n\r\nFeatures\r\n\r\n- New Apollo Reborn Widgets — nine Home Screen, Lock Screen, and StandBy widgets (Showerthoughts, Jokes, Post, Feed, Photo, Shortcuts, Apollo Actions, Calendar, and Headline) (#406: @jordanearle)\r\n  - To configure widgets: copy the one-time setup code from Settings > Apollo Reborn > Copy Widget Setup Code. Then, long-press any widget → Edit Widget → paste into Setup Code.\r\n  - Requires iOS 17 or later. Widgets do not work on iOS 26 if sideloading with Sideloadly - please use an alternative instead. The \"NOEXTENSIONS\" IPA variant does not include widgets.\r\n\r\n    \r\n    \r\n\r\n- Add a Universal OAuth Sign-In toggle in Settings > Apollo Reborn (on by default) to fall back to Apollo's native sign-in if the in-app login causes trouble (#432: @JeffreyCA)\r\n  - All IPAs released from now on have \"dystopia\" and \"redreader\" URL schemes already registered so no need to manually edit Info.plist anymore\r\n- Add a manual sign-in fallback for older iOS versions that can't load Reddit's login page, using an external browser and an Apollo Reborn userscript to paste a sign-in code back into Apollo (#430: @DeltAndy123; sign-in keyboard improvements by @Alstruit)\r\n- Add a Text Post Thumbnails toggle in Settings > Apollo Reborn > Media (on by default) — text posts that embed an image now show a thumbnail with a Text Post badge, and tapping it opens the image in the media viewer instead of the thread (#426: @icpryde)\r\n- Add Hide Mod Subreddits to remove moderated subreddits you can't leave from the Subreddits list — tap Edit, then the blue button to hide a subreddit and the green button to bring it back (#424: @icpryde)\r\n- Show moderator reports as native inline sections in the post and comment action menu (#412: @JeffreyCA)\r\n- Make the banned-profile overlay dismissable (#409: @JeffreyCA)\r\n- Combine cache-clearing options into one Clear Tweak Caches button under a renamed Data section (#409: @JeffreyCA)\r\n\r\nFixes\r\n\r\n- Show the author avatar and subreddit icon in Share as Image post exports, so the image matches what you see in the app (#438: @icpryde)\r\n- Fix several link card glitches in feeds — cards whose text overflowed into the post below, Bluesky posts losing their paragraph breaks, compact cards stuck at full height, and blank image areas on links whose thumbnail isn't ready yet (#427: @icpryde)\r\n- Fix gallery GIFs getting stuck on a loading spinner when swiping between items in an album (#404: @JeffreyCA)\r\n- Fix comment and post text showing a literal \"&#x200B;\" or an extra blank line at the end (#405: @JeffreyCA)\r\n- Fix comment scrolling freezing in threads that contain a link to removed media, such as a deleted \"v.redd.it\" video (#395: @JeffreyCA)\r\n- Fix spurious \"error :(\" overlay appearing over videos that play fine but whose preview image fails to load (#409: @JeffreyCA)\r\n- Fix Live Activities not updating on secret-protected self-hosted notification backends (#411: @nickclyde)\r\n- Fix an installation conflict when upgrading from some older versions (#401: @Alstruit)\r\n- Bundle libFLEX inside the app so rootless jailbreak users can keep the standalone libFLEX package installed without it conflicting with Apollo Reborn (#437: @iCrazeiOS)",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/apollo-reborn-glass-v3.2.0/Apollo_with_Apollo-Reborn-3.2.0-GLASS.ipa",
+          "size": 112414159
+        },
+        {
           "version": "3.1.1",
           "buildVersion": "3.1.1",
           "date": "2026-06-08T01:53:46Z",
@@ -52,12 +60,12 @@
           "size": 139232696
         }
       ],
-      "version": "3.1.1",
-      "buildVersion": "3.1.1",
-      "versionDate": "2026-06-08T01:53:46Z",
-      "versionDescription": "Upstream asset: \"Apollo-Reborn-3.1.1-GLASS.ipa\"\n\nUpstream Release Notes\n> [!NOTE]\r\n> We're aware of reports that Reddit has started revoking some users' API keys. Please see [our new updated instructions](https://github.com/Apollo-Reborn/Apollo-Reborn#dont-have-an-api-key) for workarounds.\r\n>\r\n> AltStore, SideStore, Feather sources can be found at https://apolloreborn.app/#download\r\n\r\n- Fix a crash when sharing a post to Messages or Mail from the share sheet — the system compose controller was misidentified as an Apollo composer, leaving GIF-toolbar injection timers that dereferenced the dismissed share UI and crashed (#378: @nickclyde)\r\n- Fix Reddit login on iOS 15 by automatically falling back to Old Reddit, and add an Old Reddit button to the auth view for users who need to switch manually (#377: @DeltAndy123)\r\n- Fix video controls overlay rendering, including the AirPlay button getting clipped or misaligned (#383: @JeffreyCA)\r\n- Fix flair alignment so post and user flairs no longer sit too low or clip their text (#389: @JeffreyCA)\r\n- Fix Color Flairs reverting to grey or the wrong shade after returning to Apollo from the background (#391: @icpryde)",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/apollo-reborn-glass-v3.1.1/Apollo_with_Apollo-Reborn-3.1.1-GLASS.ipa",
-      "size": 139232696
+      "version": "3.2.0",
+      "buildVersion": "3.2.0",
+      "versionDate": "2026-06-17T00:52:32Z",
+      "versionDescription": "Upstream asset: \"Apollo-Reborn-3.2.0-GLASS.ipa\"\n\nUpstream Release Notes\n> [!NOTE]\r\n> Stay tuned for our next upcoming release, bringing  *even more* new features like signing in without API keys, Picture-in-Picture (PiP), build your own theme, Img Chest image uploads, Apple on-device translations, redesigned subreddit sidebar, community highlights, and more!\r\n\r\nFeatures\r\n\r\n- New Apollo Reborn Widgets — nine Home Screen, Lock Screen, and StandBy widgets (Showerthoughts, Jokes, Post, Feed, Photo, Shortcuts, Apollo Actions, Calendar, and Headline) (#406: @jordanearle)\r\n  - To configure widgets: copy the one-time setup code from Settings > Apollo Reborn > Copy Widget Setup Code. Then, long-press any widget → Edit Widget → paste into Setup Code.\r\n  - Requires iOS 17 or later. Widgets do not work on iOS 26 if sideloading with Sideloadly - please use an alternative instead. The \"NOEXTENSIONS\" IPA variant does not include widgets.\r\n\r\n    \r\n    \r\n\r\n- Add a Universal OAuth Sign-In toggle in Settings > Apollo Reborn (on by default) to fall back to Apollo's native sign-in if the in-app login causes trouble (#432: @JeffreyCA)\r\n  - All IPAs released from now on have \"dystopia\" and \"redreader\" URL schemes already registered so no need to manually edit Info.plist anymore\r\n- Add a manual sign-in fallback for older iOS versions that can't load Reddit's login page, using an external browser and an Apollo Reborn userscript to paste a sign-in code back into Apollo (#430: @DeltAndy123; sign-in keyboard improvements by @Alstruit)\r\n- Add a Text Post Thumbnails toggle in Settings > Apollo Reborn > Media (on by default) — text posts that embed an image now show a thumbnail with a Text Post badge, and tapping it opens the image in the media viewer instead of the thread (#426: @icpryde)\r\n- Add Hide Mod Subreddits to remove moderated subreddits you can't leave from the Subreddits list — tap Edit, then the blue button to hide a subreddit and the green button to bring it back (#424: @icpryde)\r\n- Show moderator reports as native inline sections in the post and comment action menu (#412: @JeffreyCA)\r\n- Make the banned-profile overlay dismissable (#409: @JeffreyCA)\r\n- Combine cache-clearing options into one Clear Tweak Caches button under a renamed Data section (#409: @JeffreyCA)\r\n\r\nFixes\r\n\r\n- Show the author avatar and subreddit icon in Share as Image post exports, so the image matches what you see in the app (#438: @icpryde)\r\n- Fix several link card glitches in feeds — cards whose text overflowed into the post below, Bluesky posts losing their paragraph breaks, compact cards stuck at full height, and blank image areas on links whose thumbnail isn't ready yet (#427: @icpryde)\r\n- Fix gallery GIFs getting stuck on a loading spinner when swiping between items in an album (#404: @JeffreyCA)\r\n- Fix comment and post text showing a literal \"&#x200B;\" or an extra blank line at the end (#405: @JeffreyCA)\r\n- Fix comment scrolling freezing in threads that contain a link to removed media, such as a deleted \"v.redd.it\" video (#395: @JeffreyCA)\r\n- Fix spurious \"error :(\" overlay appearing over videos that play fine but whose preview image fails to load (#409: @JeffreyCA)\r\n- Fix Live Activities not updating on secret-protected self-hosted notification backends (#411: @nickclyde)\r\n- Fix an installation conflict when upgrading from some older versions (#401: @Alstruit)\r\n- Bundle libFLEX inside the app so rootless jailbreak users can keep the standalone libFLEX package installed without it conflicting with Apollo Reborn (#437: @iCrazeiOS)",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/apollo-reborn-glass-v3.2.0/Apollo_with_Apollo-Reborn-3.2.0-GLASS.ipa",
+      "size": 112414159
     },
     {
       "name": "Plezy",
@@ -190,6 +198,17 @@
     }
   ],
   "news": [
+    {
+      "appID": "com.christianselig.Apollo",
+      "title": "3.2.0 - 17 Jun",
+      "identifier": "com.christianselig.Apollo-release-3.2.0",
+      "caption": "Update for Apollo available!",
+      "date": "2026-06-17T00:52:32Z",
+      "tintColor": "#F0542D",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/apollo/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/apollo-reborn-glass-v3.2.0"
+    },
     {
       "appID": "com.edde746.plezy",
       "title": "2.7.1 - 15 Jun",
