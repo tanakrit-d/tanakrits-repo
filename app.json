@@ -151,6 +151,14 @@
       ],
       "versions": [
         {
+          "version": "29.9",
+          "buildVersion": "29.9-0.1.11",
+          "date": "2026-06-23T00:46:03Z",
+          "localizedDescription": "Upstream asset: \"tv.twitch-29.9-TwitchAdBlock-0.1.11.ipa\"\n\nUpstream Release Notes\nTwitch iOS 29.9 compatibility build of TwitchAdBlock v0.1.11.\n\nNo mod changes — the tweak source and compiled \"TwitchAdBlock.dylib\" are byte-identical to [v29.8-0.1.11](https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v29.8-0.1.11). Only the host app was updated from 29.8 to 29.9 and the same dylib re-injected. All hooked classes were verified to still resolve in the 29.9 binary.\n\nDownloads\n- \"tv.twitch-29.9-TwitchAdBlock-0.1.11.ipa\" — full build (includes all 5 of Twitch's app extensions).\n- \"tv.twitch-29.9-TwitchAdBlock-0.1.11-noplugins.ipa\" — plugin-free build. The 5 app extensions (GameBroadcasting, NotificationService, Share Extension, TwitchEmotes, TwitchWidgets) are stripped out. Recommended for free Apple ID accounts, which are limited to 10 App IDs per 7 days: the full build registers 6 App IDs (main app + 5 extensions), while this build registers only 1. Core stream-watching, chat, custom emotes, and ad-blocking are unaffected; you lose home-screen widgets, screen broadcasting, the \"Share to Twitch\" share-sheet action, the iMessage emote stickers, and rich (image) push notifications — basic push notifications still work.\n\nInstall\nDownload an IPA and install via AltStore / SideStore (drag in to sign) or TrollStore (\"+\" → select IPA).",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v29.9-0.1.11/tv.twitch-29.9-TwitchAdBlock-0.1.11.ipa",
+          "size": 147989585
+        },
+        {
           "version": "29.8",
           "buildVersion": "29.8-0.1.11",
           "date": "2026-06-14T11:06:20Z",
@@ -189,15 +197,26 @@
           "NSUserTrackingUsageDescription": "Your iOS advertising ID and device data will be used to support creators and provide a personal ad experience."
         }
       },
-      "version": "29.8",
-      "buildVersion": "29.8-0.1.11",
-      "versionDate": "2026-06-14T11:06:20Z",
-      "versionDescription": "Upstream asset: \"tv.twitch-29.8-TwitchAdBlock-0.1.11.ipa\"\n\nUpstream Release Notes\nTwitch iOS 29.8 compatibility build of TwitchAdBlock v0.1.11.\r\n\r\nNo tweak source changes from [v0.1.11](https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v0.1.11) — the compiled \"TwitchAdBlock.dylib\" is byte-identical; only the host IPA was updated from 29.4.2 to 29.8 and the dylib re-injected.\r\n\r\nInstall\r\nDownload \"tv.twitch-29.8-TwitchAdBlock-0.1.11.ipa\" and install via AltStore / SideStore (drag in to sign) or TrollStore (\"+\" → select IPA).",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v29.8-0.1.11/tv.twitch-29.8-TwitchAdBlock-0.1.11.ipa",
-      "size": 150354088
+      "version": "29.9",
+      "buildVersion": "29.9-0.1.11",
+      "versionDate": "2026-06-23T00:46:03Z",
+      "versionDescription": "Upstream asset: \"tv.twitch-29.9-TwitchAdBlock-0.1.11.ipa\"\n\nUpstream Release Notes\nTwitch iOS 29.9 compatibility build of TwitchAdBlock v0.1.11.\n\nNo mod changes — the tweak source and compiled \"TwitchAdBlock.dylib\" are byte-identical to [v29.8-0.1.11](https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v29.8-0.1.11). Only the host app was updated from 29.8 to 29.9 and the same dylib re-injected. All hooked classes were verified to still resolve in the 29.9 binary.\n\nDownloads\n- \"tv.twitch-29.9-TwitchAdBlock-0.1.11.ipa\" — full build (includes all 5 of Twitch's app extensions).\n- \"tv.twitch-29.9-TwitchAdBlock-0.1.11-noplugins.ipa\" — plugin-free build. The 5 app extensions (GameBroadcasting, NotificationService, Share Extension, TwitchEmotes, TwitchWidgets) are stripped out. Recommended for free Apple ID accounts, which are limited to 10 App IDs per 7 days: the full build registers 6 App IDs (main app + 5 extensions), while this build registers only 1. Core stream-watching, chat, custom emotes, and ad-blocking are unaffected; you lose home-screen widgets, screen broadcasting, the \"Share to Twitch\" share-sheet action, the iMessage emote stickers, and rich (image) push notifications — basic push notifications still work.\n\nInstall\nDownload an IPA and install via AltStore / SideStore (drag in to sign) or TrollStore (\"+\" → select IPA).",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v29.9-0.1.11/tv.twitch-29.9-TwitchAdBlock-0.1.11.ipa",
+      "size": 147989585
     }
   ],
   "news": [
+    {
+      "appID": "tv.twitch",
+      "title": "29.9 - 23 Jun",
+      "identifier": "tv.twitch-release-29.9-0.1.11",
+      "caption": "Update for TwitchAdBlock available!",
+      "date": "2026-06-23T00:46:03Z",
+      "tintColor": "#9146FF",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/twitch/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v29.9-0.1.11"
+    },
     {
       "appID": "com.christianselig.Apollo",
       "title": "3.2.0 - 17 Jun",
