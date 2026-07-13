@@ -85,6 +85,14 @@
       "tintColor": "#da7b5b",
       "versions": [
         {
+          "version": "2.9.0",
+          "buildVersion": "2.9.0",
+          "date": "2026-07-13T02:28:14Z",
+          "localizedDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nAdded\r\n\r\n- Plex and Jellyfin music browsing\r\n- Gapless music playback, queue, lyrics, and sleep timer\r\n- Android background music playback\r\n- Music downloads and quality setting\r\n- Explore tab with Trakt and MyAnimeList catalogs\r\n- Seerr sign-in and media requests\r\n- Jellyfin favorites filter and actions\r\n- Stereo downmix with center channel boost\r\n- Desktop Force TV mode\r\n- Live TV recording library selection\r\n- Playlist picker search\r\n\r\nImproved\r\n\r\n- Live TV guide, recordings, and details design\r\n- Settings, sign-in, and profile design\r\n- Music queue and volume controls\r\n- Library filter visibility and management\r\n- TV navigation and scrolling performance\r\n- Artwork loading and memory usage\r\n- Plex Home profile switching\r\n- Offline download ownership and watch syncing\r\n- Windows playback and connectivity\r\n- Stream interruption recovery\r\n\r\nFixed\r\n\r\n- Android audio after standby and pause\r\n- Android AAC-LATM playback\r\n- Windows media key duplication\r\n- Windows audio after sleep\r\n- Offline playback version selection\r\n- Jellyfin shuffle queues\r\n- Jellyfin Live TV session cleanup\r\n- Live TV state after backgrounding and refreshes\r\n- Timeline seeking with held controls\r\n- Plex multi-episode playback state\r\n- Remembered playback versions\r\n- Volume changes when toggling mute\r\n- Player Back navigation\r\n- Paused server sessions expiring\r\n- iOS and PiP audio session handling\r\n- macOS CPU usage while displays sleep\r\n- Deleted items remaining on Home\r\n- Episode poster cropping\r\n- Companion remote search keyboard dismissal\r\n- Playlist picker TV focus\r\n- Clip library grouping\r\n- Profile and server connection races\r\n\r\nFull Changelog: https://github.com/edde746/plezy/compare/2.8.0...2.9.0",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.9.0/Plezy-2.9.0.ipa",
+          "size": 45195919
+        },
+        {
           "version": "2.8.0",
           "buildVersion": "2.8.0",
           "date": "2026-06-29T00:48:01Z",
@@ -99,14 +107,6 @@
           "localizedDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nFixed\r\n\r\n* Timeline focus sink\r\n* Jellyfin Specials order\r\n\r\nFull Changelog: https://github.com/edde746/plezy/compare/2.7.0...",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.7.1/Plezy-2.7.1.ipa",
           "size": 42276948
-        },
-        {
-          "version": "2.6.0",
-          "buildVersion": "2.6.0",
-          "date": "2026-06-11T00:49:50Z",
-          "localizedDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nAdded\r\n\r\n- Continue Watching behavior setting\r\n- Plex Plays/User Rating sorts\r\n\r\nImproved\r\n\r\n- Watch state consistency\r\n- Home hub previews\r\n- Jellyfin recency ordering\r\n- TV keyboard search focus\r\n- Episode switching performance\r\n\r\nFixed\r\n\r\n- Mobile chapters & queue\r\n- Rare Apple Dolby Vision decoding issue\r\n- Recently Added scoping\r\n- Server tasks via remote\r\n- Next unwatched selection\r\n- Redundant mark-watched updates\r\n- Image placeholder sizing\r\n- TV grid sizing\r\n- tvOS Continue Watching autoplay missing start\r\n- tvOS Top Shelf sync\r\n- More untranslated strings\r\n\r\nFull Changelog: https://github.com/edde746/plezy/compare/2.5.0...2.6.0",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.6.0/Plezy-2.6.0.ipa",
-          "size": 42210973
         }
       ],
       "appPermissions": {
@@ -135,12 +135,12 @@
         "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-md.png",
         "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-search.png"
       ],
-      "version": "2.8.0",
-      "buildVersion": "2.8.0",
-      "versionDate": "2026-06-29T00:48:01Z",
-      "versionDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nAdded\r\n\r\n- Media detail genres\r\n- Episode action setting\r\n- Specials download toggle\r\n- Plex TV Date Added sort\r\n- Jellyfin episode added sort\r\n\r\nImproved\r\n\r\n- Android playback timing\r\n- Android subtitle rendering\r\n- Artwork memory usage\r\n- Episode row layout\r\n- Multi-server labels\r\n- Profile session handling\r\n- Tracker session handling\r\n\r\nFixed\r\n\r\n- Plex transcode seeking\r\n- Plex transcode reporting\r\n- PGS subtitles while transcoding\r\n- Duplicate seeks\r\n- Early playback completion\r\n- Subtitle startup and cleanup\r\n- External subtitle loading\r\n- Queue spoiler hiding\r\n- Episode spoiler hiding\r\n- Watch-order downloads\r\n- Specials ordering\r\n- Jellyfin trickplay layout\r\n- Library focus\r\n- Android passthrough handling\r\n- Android HDR capability checks\r\n- TV passthrough settings\r\n- Trakt session refreshes\r\n- Fribb ID parsing\r\n- Hidden library profile scoping\r\n- Removed Jellyfin connections\r\n- Live TV timeline heartbeat\r\n\r\nFull Changelog: https://github.com/edde746/plezy/compare/2.7.1...2.8.0",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.8.0/Plezy-2.8.0.ipa",
-      "size": 42292954
+      "version": "2.9.0",
+      "buildVersion": "2.9.0",
+      "versionDate": "2026-07-13T02:28:14Z",
+      "versionDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nAdded\r\n\r\n- Plex and Jellyfin music browsing\r\n- Gapless music playback, queue, lyrics, and sleep timer\r\n- Android background music playback\r\n- Music downloads and quality setting\r\n- Explore tab with Trakt and MyAnimeList catalogs\r\n- Seerr sign-in and media requests\r\n- Jellyfin favorites filter and actions\r\n- Stereo downmix with center channel boost\r\n- Desktop Force TV mode\r\n- Live TV recording library selection\r\n- Playlist picker search\r\n\r\nImproved\r\n\r\n- Live TV guide, recordings, and details design\r\n- Settings, sign-in, and profile design\r\n- Music queue and volume controls\r\n- Library filter visibility and management\r\n- TV navigation and scrolling performance\r\n- Artwork loading and memory usage\r\n- Plex Home profile switching\r\n- Offline download ownership and watch syncing\r\n- Windows playback and connectivity\r\n- Stream interruption recovery\r\n\r\nFixed\r\n\r\n- Android audio after standby and pause\r\n- Android AAC-LATM playback\r\n- Windows media key duplication\r\n- Windows audio after sleep\r\n- Offline playback version selection\r\n- Jellyfin shuffle queues\r\n- Jellyfin Live TV session cleanup\r\n- Live TV state after backgrounding and refreshes\r\n- Timeline seeking with held controls\r\n- Plex multi-episode playback state\r\n- Remembered playback versions\r\n- Volume changes when toggling mute\r\n- Player Back navigation\r\n- Paused server sessions expiring\r\n- iOS and PiP audio session handling\r\n- macOS CPU usage while displays sleep\r\n- Deleted items remaining on Home\r\n- Episode poster cropping\r\n- Companion remote search keyboard dismissal\r\n- Playlist picker TV focus\r\n- Clip library grouping\r\n- Profile and server connection races\r\n\r\nFull Changelog: https://github.com/edde746/plezy/compare/2.8.0...2.9.0",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.9.0/Plezy-2.9.0.ipa",
+      "size": 45195919
     },
     {
       "name": "Twitch",
@@ -214,6 +214,17 @@
     }
   ],
   "news": [
+    {
+      "appID": "com.edde746.plezy",
+      "title": "2.9.0 - 13 Jul",
+      "identifier": "com.edde746.plezy-release-2.9.0",
+      "caption": "Update for Plezy available!",
+      "date": "2026-07-13T02:28:14Z",
+      "tintColor": "#da7b5b",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.9.0"
+    },
     {
       "appID": "com.christianselig.Apollo",
       "title": "3.4.0 - 09 Jul",
@@ -301,17 +312,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.7.1"
-    },
-    {
-      "appID": "com.edde746.plezy",
-      "title": "2.6.0 - 11 Jun",
-      "identifier": "com.edde746.plezy-release-2.6.0",
-      "caption": "Update for Plezy available!",
-      "date": "2026-06-11T00:49:50Z",
-      "tintColor": "#da7b5b",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.6.0"
     }
   ]
 }
