@@ -160,6 +160,14 @@
       "versions": [
         {
           "version": "30.7",
+          "buildVersion": "30.7-0.1.13",
+          "date": "2026-08-15T01:01:17Z",
+          "localizedDescription": "Upstream asset: \"tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa\"\n\nUpstream Release Notes\nTwitchMods v0.1.13 — for Twitch iOS 30.7\r\n\r\nNew in v0.1.13\r\n- Casting & AirPlay now work with ad-blocking on. Previously, having the ad-block proxy enabled could make casting to a Chromecast crash after a few seconds, or make AirPlay to an Apple TV show \"offline.\" The mod now automatically steps aside while you're casting/AirPlaying, so the stream plays on the TV — and your phone goes right back to blocking ads the moment you stop. (The stream *on the TV* still shows ads — the TV fetches the video itself, so that can't be blocked — but your phone stays ad-free.)\r\n\r\nEverything else (v0.1.12)\r\n- Blocks ads (live + VOD pre-rolls, feed banners, sponsor spots, the \"Go Ad-Free\" Turbo button)\r\n- Keep Live Feed Playing · 7TV/BTTV/FFZ chat emotes + Reload · settings backup/restore · Diagnostics · launch screen · hide Stories\r\n\r\nDownloads\r\n- \"tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa\" — full app.\r\n- \"tv.twitch-30.7-TwitchAdBlock-0.1.13-noplugins.ipa\" — app extensions removed so a free Apple ID only uses 1 App ID slot when sideloading.\r\n\r\nInstall with AltStore / SideStore (drag in the IPA) or TrollStore (tap +, pick the IPA).\r\n\r\nFull plain-language changelog: [\"CHANGELOG.md\"](https://github.com/gunnerkidBT/TwitchAdBlock/blob/master/CHANGELOG.md)",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v30.7-0.1.13/tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa",
+          "size": 152372292
+        },
+        {
+          "version": "30.7",
           "buildVersion": "30.7-0.1.12",
           "date": "2026-08-12T01:39:40Z",
           "localizedDescription": "Upstream asset: \"tv.twitch-30.7-TwitchAdBlock-0.1.12.ipa\"\n\nUpstream Release Notes\nTwitchMods v0.1.12 — for Twitch iOS 30.7\r\n\r\nSame features as v0.1.12, rebuilt to run on the latest Twitch app (30.7). All\r\nhooks verified against the 30.7 binary; no feature changes.\r\n\r\nWhat's included (v0.1.12)\r\n- Blocks ads — live + VOD pre-rolls via proxy, feed ad banners, sponsor spots, and the Following-tab \"Go Ad-Free\" Turbo button.\r\n- Keep Live Feed Playing — no more getting kicked to Watch/Follow.\r\n- Chat emotes — 7TV / BetterTTV / FrankerFaceZ, plus a Reload Emotes button.\r\n- Back up & restore your settings, and a Diagnostics screen.\r\n- Pick your launch screen, hide Twitch Stories, clearer settings.\r\n\r\nDownloads\r\n- \"tv.twitch-30.7-TwitchAdBlock-0.1.12.ipa\" — full app.\r\n- \"tv.twitch-30.7-TwitchAdBlock-0.1.12-noplugins.ipa\" — app extensions removed so a free Apple ID only uses 1 App ID slot when sideloading.\r\n\r\nInstall with AltStore / SideStore (drag in the IPA) or TrollStore (tap +, pick the IPA).\r\n\r\nFull plain-language changelog: [\"CHANGELOG.md\"](https://github.com/gunnerkidBT/TwitchAdBlock/blob/master/CHANGELOG.md)",
@@ -173,14 +181,6 @@
           "localizedDescription": "Upstream asset: \"tv.twitch-30.2-TwitchAdBlock-0.1.12.ipa\"\n\nUpstream Release Notes\nTwitchMods v0.1.12 — for Twitch iOS 30.2\r\n\r\nSame features as v0.1.12, rebuilt to run on the latest Twitch app (30.2). All\r\nhooks verified against the 30.2 binary; no feature changes.\r\n\r\nWhat's included (v0.1.12)\r\n- Blocks ads — live + VOD pre-rolls via proxy, feed ad banners, sponsor spots, and the Following-tab \"Go Ad-Free\" Turbo button.\r\n- Keep Live Feed Playing — no more getting kicked to Watch/Follow.\r\n- Chat emotes — 7TV / BetterTTV / FrankerFaceZ, plus a Reload Emotes button.\r\n- Back up & restore your settings, and a Diagnostics screen.\r\n- Pick your launch screen, hide Twitch Stories, clearer settings.\r\n\r\nDownloads\r\n- \"tv.twitch-30.2-TwitchAdBlock-0.1.12.ipa\" — full app.\r\n- \"tv.twitch-30.2-TwitchAdBlock-0.1.12-noplugins.ipa\" — app extensions removed so a free Apple ID only uses 1 App ID slot when sideloading.\r\n\r\nInstall with AltStore / SideStore (drag in the IPA) or TrollStore (tap +, pick the IPA).\r\n\r\nFull plain-language changelog: [\"CHANGELOG.md\"](https://github.com/gunnerkidBT/TwitchAdBlock/blob/master/CHANGELOG.md)",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v30.2-0.1.12/tv.twitch-30.2-TwitchAdBlock-0.1.12.ipa",
           "size": 151558997
-        },
-        {
-          "version": "29.9",
-          "buildVersion": "29.9-0.1.12",
-          "date": "2026-06-26T00:48:10Z",
-          "localizedDescription": "Upstream asset: \"tv.twitch-29.9-TwitchAdBlock-0.1.12.ipa\"\n\nUpstream Release Notes\nTwitchMods v0.1.12 — for Twitch iOS 29.9\r\n\r\nWhat's new\r\n- The Live tab keeps playing — no more getting kicked to Watch/Follow after a while.\r\n- Hid the \"Go Ad-Free\" button (the Turbo upsell) on the Following tab.\r\n- Blocks a few more ads — streamer-read sponsor spots.\r\n- Reload Emotes button — refresh 7TV/BTTV/FFZ emotes without restarting the app.\r\n- Back up & restore your settings — export to a file and import it back later.\r\n- Diagnostics screen — a quick green/red check that the mod still works on your Twitch version.\r\n- Easier-to-read settings — a short description under each option, grouped under clear headings.\r\n\r\nDownloads\r\n- \"tv.twitch-29.9-TwitchAdBlock-0.1.12.ipa\" — full app.\r\n- \"tv.twitch-29.9-TwitchAdBlock-0.1.12-noplugins.ipa\" — app extensions removed so a free Apple ID only uses 1 App ID slot when sideloading.\r\n\r\nInstall with AltStore / SideStore (drag in the IPA) or TrollStore (tap +, pick the IPA).\r\n\r\nFull plain-language changelog: [\"CHANGELOG.md\"](https://github.com/gunnerkidBT/TwitchAdBlock/blob/master/CHANGELOG.md)",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v29.9-0.1.12/tv.twitch-29.9-TwitchAdBlock-0.1.12.ipa",
-          "size": 147998485
         }
       ],
       "appPermissions": {
@@ -206,14 +206,25 @@
         }
       },
       "version": "30.7",
-      "buildVersion": "30.7-0.1.12",
-      "versionDate": "2026-08-12T01:39:40Z",
-      "versionDescription": "Upstream asset: \"tv.twitch-30.7-TwitchAdBlock-0.1.12.ipa\"\n\nUpstream Release Notes\nTwitchMods v0.1.12 — for Twitch iOS 30.7\r\n\r\nSame features as v0.1.12, rebuilt to run on the latest Twitch app (30.7). All\r\nhooks verified against the 30.7 binary; no feature changes.\r\n\r\nWhat's included (v0.1.12)\r\n- Blocks ads — live + VOD pre-rolls via proxy, feed ad banners, sponsor spots, and the Following-tab \"Go Ad-Free\" Turbo button.\r\n- Keep Live Feed Playing — no more getting kicked to Watch/Follow.\r\n- Chat emotes — 7TV / BetterTTV / FrankerFaceZ, plus a Reload Emotes button.\r\n- Back up & restore your settings, and a Diagnostics screen.\r\n- Pick your launch screen, hide Twitch Stories, clearer settings.\r\n\r\nDownloads\r\n- \"tv.twitch-30.7-TwitchAdBlock-0.1.12.ipa\" — full app.\r\n- \"tv.twitch-30.7-TwitchAdBlock-0.1.12-noplugins.ipa\" — app extensions removed so a free Apple ID only uses 1 App ID slot when sideloading.\r\n\r\nInstall with AltStore / SideStore (drag in the IPA) or TrollStore (tap +, pick the IPA).\r\n\r\nFull plain-language changelog: [\"CHANGELOG.md\"](https://github.com/gunnerkidBT/TwitchAdBlock/blob/master/CHANGELOG.md)",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v30.7-0.1.12/tv.twitch-30.7-TwitchAdBlock-0.1.12.ipa",
-      "size": 152370988
+      "buildVersion": "30.7-0.1.13",
+      "versionDate": "2026-08-15T01:01:17Z",
+      "versionDescription": "Upstream asset: \"tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa\"\n\nUpstream Release Notes\nTwitchMods v0.1.13 — for Twitch iOS 30.7\r\n\r\nNew in v0.1.13\r\n- Casting & AirPlay now work with ad-blocking on. Previously, having the ad-block proxy enabled could make casting to a Chromecast crash after a few seconds, or make AirPlay to an Apple TV show \"offline.\" The mod now automatically steps aside while you're casting/AirPlaying, so the stream plays on the TV — and your phone goes right back to blocking ads the moment you stop. (The stream *on the TV* still shows ads — the TV fetches the video itself, so that can't be blocked — but your phone stays ad-free.)\r\n\r\nEverything else (v0.1.12)\r\n- Blocks ads (live + VOD pre-rolls, feed banners, sponsor spots, the \"Go Ad-Free\" Turbo button)\r\n- Keep Live Feed Playing · 7TV/BTTV/FFZ chat emotes + Reload · settings backup/restore · Diagnostics · launch screen · hide Stories\r\n\r\nDownloads\r\n- \"tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa\" — full app.\r\n- \"tv.twitch-30.7-TwitchAdBlock-0.1.13-noplugins.ipa\" — app extensions removed so a free Apple ID only uses 1 App ID slot when sideloading.\r\n\r\nInstall with AltStore / SideStore (drag in the IPA) or TrollStore (tap +, pick the IPA).\r\n\r\nFull plain-language changelog: [\"CHANGELOG.md\"](https://github.com/gunnerkidBT/TwitchAdBlock/blob/master/CHANGELOG.md)",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v30.7-0.1.13/tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa",
+      "size": 152372292
     }
   ],
   "news": [
+    {
+      "appID": "tv.twitch",
+      "title": "30.7 - 15 Aug",
+      "identifier": "tv.twitch-release-30.7-0.1.13",
+      "caption": "Update for TwitchAdBlock available!",
+      "date": "2026-08-15T01:01:17Z",
+      "tintColor": "#9146FF",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/twitch/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v30.7-0.1.13"
+    },
     {
       "appID": "tv.twitch",
       "title": "30.7 - 12 Aug",
@@ -301,17 +312,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/twitch/update.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v30.2-0.1.12"
-    },
-    {
-      "appID": "tv.twitch",
-      "title": "29.9 - 26 Jun",
-      "identifier": "tv.twitch-release-29.9-0.1.12",
-      "caption": "Update for TwitchAdBlock available!",
-      "date": "2026-06-26T00:48:10Z",
-      "tintColor": "#9146FF",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/twitch/update.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v29.9-0.1.12"
     }
   ]
 }
