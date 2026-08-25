@@ -85,6 +85,14 @@
       "tintColor": "#da7b5b",
       "versions": [
         {
+          "version": "2.17.1",
+          "buildVersion": "2.17.1",
+          "date": "2026-08-25T01:03:18Z",
+          "localizedDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nPlayback\n\n- Large MKVs on Android resume and seek immediately\n- Dolby Vision plays through the Dolby Vision decoder on Android\n- Opus, Vorbis, and FLAC tracks play instead of stalling on Android\n\nDownloads\n\n- An unreachable downloaded file streams from the server on Android\n\nProfiles & startup\n\n- The profile prompt no longer interrupts a companion-remote session\n\ntvOS\n\n- Siri Remote navigation matches native tvOS pacing\n- A single flick moves exactly one item\n- Rail and hub-row scrolling glides instead of snapping",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.17.1/Plezy-2.17.1.ipa",
+          "size": 48613958
+        },
+        {
           "version": "2.16.0",
           "buildVersion": "2.16.0",
           "date": "2026-08-20T01:01:07Z",
@@ -99,14 +107,6 @@
           "localizedDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nNew features\n\n- Multi-version movies and episodes get a split Play button\n- Player changes can be saved globally, per library, per show or movie, or not at all\n- Search results show their source server and library\n- Plex artist pages group albums by release type\n- Connected MDBList watchlists can be selected in Explore\n- iOS and tvOS system video controls add skip buttons\n\nPlayback\n\n- Video starts faster through cached metadata and parallelized setup\n- Play actions show loading feedback during fetches\n- Network prefetching removes gaps between music tracks\n- ExoPlayer seeks correctly in MKVs with late track metadata\n- Android MPV renders software-decoded Dolby Vision correctly\n- Compatible Android routes can bitstream DTS-HD MA\n- Android falls back to FFmpeg DTS decoding when passthrough is unavailable\n- Android passthrough only enables compatible audio routes\n- Plex Live TV can select and burn embedded DVB subtitles\n- Right-arrow focus reaches the last player control\n- Timed-out endpoint probes close promptly\n\nMusic\n\n- Plex playlists prefer user-assigned posters\n- Album and playlist grids have consistent card spacing\n\nPlex & Live TV\n\n- Live TV guide reloads preserve focus and apply day picks immediately\n- Older Plex servers regain show logos in Continue Watching\n\nTV & profiles\n\n- D-pad navigation preserves collection and playlist grid positions\n- Closing Fire TV system overlays no longer reopens the profile picker\n\nUI & translations\n\n- Sheet Back-button hover circles are centered\n- Missing translations are filled; unused keys are removed\n\ntvOS\n\n- Apple TV Direct Play no longer develops recurring stutter or passthrough dropouts\n\nmacOS\n\n- Audio falls back to AVFoundation when CoreAudio fails\n- The nonfunctional audio-passthrough option is removed\n\nWindows\n\n- HDR letterbox bars render true black\n\nLinux\n\n- Wayland playback no longer crashes with software GL",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.15.0/Plezy-2.15.0.ipa",
           "size": 48394234
-        },
-        {
-          "version": "2.14.0",
-          "buildVersion": "2.14.0",
-          "date": "2026-08-17T01:02:32Z",
-          "localizedDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nNew features\r\n\r\n- Audio and subtitle sync sliders cover ±10 seconds in 50 ms steps\r\n- The bundled ffmpeg enables the loudnorm filter for volume normalization\r\n\r\nPlayback\r\n\r\n- Plex video transcodes use fMP4 HLS, so HEVC presets stop corrupting\r\n- Plex transcodes seek in-band instead of pre-warming at the resume offset\r\n- Same-day Specials no longer hijack up next\r\n- Episode advances that fail on a transient server blip are retried\r\n- Playback no longer fails when a preference write is refused\r\n- TrueHD offers its MAT carrier on Android 10–12 audio routes\r\n- Timeline heartbeats stop once a Plex server terminates the session\r\n- ExoPlayer track labels say AAC instead of mp4a.40.2\r\n- Emby scrub previews load from the server's BIF index\r\n- iOS and tvOS keep HDR and Dolby Vision when the video is zoomed\r\n- tvOS schedules frames with more presentation lead\r\n\r\nSubtitles\r\n\r\n- Korean glyphs render on the MPV path via a bundled Hangul font\r\n- Disabling subtitles clears the displayed ASS cue immediately\r\n- ASS frames that overflow the glyph atlas render as a flattened composite\r\n- External subtitle files load with the media whether or not they are selected\r\n- Android renders every PGS composition object and keeps the PGS display-plane aspect\r\n\r\nMusic\r\n\r\n- Hardware media keys work while the app is in the foreground on Android\r\n- iOS music playback gains lock-screen and headphone controls\r\n\r\nPlex\r\n\r\n- Live TV favorite updates persist again\r\n- PIN sign-in keeps polling after transient network errors\r\n\r\nWatch Together\r\n\r\n- Lobby guests are told the room's control mode\r\n\r\nDownloads & profiles\r\n\r\n- The parallel download limit stays intact on slow networks\r\n- Offline downloads stay visible when a profile's servers are unreachable\r\n\r\nAndroid, TV & automotive\r\n\r\n- MKV files with late track metadata play again\r\n- A backgrounded TV stops the server session when it releases the player\r\n- Quality labels stay visible when rating badges crowd the detail line\r\n- TV pauses on the first Select press after skipping the intro\r\n- Parked playback is no longer blocked when the car service gives no verdict\r\n- The background Watch Next refresh is removed\r\n\r\nUI\r\n\r\n- The sidebar's Libraries section stays collapsed across restarts\r\n- Phone back exits the player even with the controls up\r\n- Escape leaves fullscreen instead of quitting the app on desktop\r\n- Player, downloads and server-setup text that was left in English is now translated\r\n\r\nmacOS\r\n\r\n- Every audio format, including compressed formats, routes through CoreAudio\r\n\r\nWindows\r\n\r\n- The MSVC runtime is bundled, so an outdated redistributable no longer crashes launch\r\n\r\nLinux\r\n\r\n- VAAPI hardware decode and AV1 software fallback are restored in the bundled libmpv\r\n- The Flutter-texture fallback is removed; video always renders on the native Wayland plane\r\n- HDR transactions and plane presentation are bounded against unacknowledged frames",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.14.0/Plezy-2.14.0.ipa",
-          "size": 48362842
         }
       ],
       "appPermissions": {
@@ -135,12 +135,12 @@
         "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-md.png",
         "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-search.png"
       ],
-      "version": "2.16.0",
-      "buildVersion": "2.16.0",
-      "versionDate": "2026-08-20T01:01:07Z",
-      "versionDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nNew features\n\n- Search results can be filtered by media type\n- The sidebar is restyled as an M3 Expressive navigation rail\n\nPlayback\n\n- Playback stats show the source audio track and codec during passthrough\n- Compressed embedded MKV subtitles render on the ExoPlayer path\n- Android MPV no longer shows a blue screen for hardware-decoded HEVC on Nvidia Shield\n\nPlex\n\n- Artwork is requested at native size instead of server-side upscales\n\nJellyfin & Emby\n\n- Items removed from Emby Continue Watching no longer reappear\n\nExplore & trackers\n\n- The Seerr request action appears on items opened from Discover hubs and search\n- AniList and MAL entries set to rewatching stay rewatching when scrobbled\n\nTV & profiles\n\n- Waking the device mid-video resumes playback instead of a stuck profile picker\n- D-pad focus follows the played item when Continue Watching reorders\n- Posters and thumbnails load at full resolution on low-end TV hardware\n\nUI\n\n- Closing context menus no longer scrolls detail pages to the top or resets the season selector\n\nDesktop\n\n- Quitting hides the window immediately instead of showing teardown\n\ntvOS\n\n- Dolby Direct Play no longer develops continuous judder\n- Adding a server no longer freezes remote input at the username field\n- Siri Remote swipe navigation matches the native focus-engine feel\n\nLinux\n\n- Audio Normalization no longer causes startup audio stutter\n- Wayland HDR no longer flickers to SDR every few seconds",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.16.0/Plezy-2.16.0.ipa",
-      "size": 48388913
+      "version": "2.17.1",
+      "buildVersion": "2.17.1",
+      "versionDate": "2026-08-25T01:03:18Z",
+      "versionDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nPlayback\n\n- Large MKVs on Android resume and seek immediately\n- Dolby Vision plays through the Dolby Vision decoder on Android\n- Opus, Vorbis, and FLAC tracks play instead of stalling on Android\n\nDownloads\n\n- An unreachable downloaded file streams from the server on Android\n\nProfiles & startup\n\n- The profile prompt no longer interrupts a companion-remote session\n\ntvOS\n\n- Siri Remote navigation matches native tvOS pacing\n- A single flick moves exactly one item\n- Rail and hub-row scrolling glides instead of snapping",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.17.1/Plezy-2.17.1.ipa",
+      "size": 48613958
     },
     {
       "name": "Twitch",
@@ -216,6 +216,17 @@
   "news": [
     {
       "appID": "com.edde746.plezy",
+      "title": "2.17.1 - 25 Aug",
+      "identifier": "com.edde746.plezy-release-2.17.1",
+      "caption": "Update for Plezy available!",
+      "date": "2026-08-25T01:03:18Z",
+      "tintColor": "#da7b5b",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.17.1"
+    },
+    {
+      "appID": "com.edde746.plezy",
       "title": "2.16.0 - 20 Aug",
       "identifier": "com.edde746.plezy-release-2.16.0",
       "caption": "Update for Plezy available!",
@@ -246,17 +257,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.15.0"
-    },
-    {
-      "appID": "com.edde746.plezy",
-      "title": "2.14.0 - 17 Aug",
-      "identifier": "com.edde746.plezy-release-2.14.0",
-      "caption": "Update for Plezy available!",
-      "date": "2026-08-17T01:02:32Z",
-      "tintColor": "#da7b5b",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.14.0"
     },
     {
       "appID": "tv.twitch",
