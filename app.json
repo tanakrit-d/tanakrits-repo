@@ -85,6 +85,14 @@
       "tintColor": "#da7b5b",
       "versions": [
         {
+          "version": "2.19.1",
+          "buildVersion": "2.19.1",
+          "date": "2026-09-08T02:54:56Z",
+          "localizedDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nPlayback\n\n- Paused playback resumes after the Android screensaver\n- AV1 plays without corrupt or black video on more Android devices\n- Steadier frame pacing on Android\n- TrueHD passthrough recovers after seeking\n\nJellyfin & Emby\n\n- Emby Live TV plays instead of failing to load\n- Live TV tunes when a tuner takes longer to start\n- Sessions report the platform in the client and device name\n\nWatch Together\n\n- Relays with no port in their address connect\n\nDesktop\n\n- Closing the app during playback ends the server session immediately",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.19.1/Plezy-2.19.1.ipa",
+          "size": 48887532
+        },
+        {
           "version": "2.19.0",
           "buildVersion": "2.19.0",
           "date": "2026-09-07T02:43:27Z",
@@ -99,14 +107,6 @@
           "localizedDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nNew features\n\n- Search the Live TV guide for channels and programs\n- Music sessions restore paused on launch\n- Account preferences section\n\nPlayback\n\n- Android playback moves to the mpv player backend\n- ExoPlayer stays selectable under Settings > Playback > Player Backend\n- 10-bit and HDR video reach the display untouched on Android\n- Software-decoded HDR stays HDR on Android\n- Stopping HDR playback no longer leaves the TV black for up to 30 seconds\n- Apple devices keep hardware decoding through a transient decode error\n- Playback starts again after a failed player handoff instead of needing a restart\n- Android direct play no longer switches to the mpv backend mid-episode\n- Android direct play honors DTS-HD MA and container aspect ratios\n- The play-next prompt shows the next episode's thumbnail\n- Play Next Countdown is configurable from 0 to 30 seconds\n- Brightness swipe, volume swipe, and pinch-to-zoom each have their own switch\n- A Deinterlacing toggle for DVD-era content on the mpv backend\n- A 140% zoom preset\n- A separate default streaming quality for cellular connections\n\nPlex\n\n- A quality preset direct plays a file already under it instead of transcoding\n- Shows with credits detection disabled no longer get a skip-credits action\n- Instant Mix reports failures instead of doing nothing\n- Home-video libraries offer User Rating and Plays sorts\n\nJellyfin & Emby\n\n- A device without a hardware decoder is no longer handed that codec's transcode\n- Servers with an AV1 encoder can transcode to AV1\n- Audio can no longer be what blocks direct play\n- A video-only transcode copies DTS or TrueHD instead of re-encoding it\n\nExplore & trackers\n\n- Sign in to Seerr with Quick Connect\n- Seerr accepts a URL typed without http:// or https://\n\nDownloads\n\n- Downloaded tracks are filed under Music/Artist/Album with real track names\n\nUI\n\n- A Grid Spacing setting controls the gap between library posters\n- Settings are reorganized into General, Appearance, and Playback homes\n- Artwork and library requests are several times faster on Android\n\nTV\n\n- Mark a whole season watched from the show screen\n- TrueHD, DTS-HD MA, and E-AC3 bitstream to the receiver on Android TV\n- Bitstream passthrough is on by default on Android TV\n- HDR letterbox bars are black instead of gray on Fire TV\n\nDesktop\n\n- Text and icons render correctly on macOS again\n- Video stays visible while the player UI is on screen on Windows\n- Always on Top persists across episodes",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.18.0/Plezy-2.18.0.ipa",
           "size": 48705828
-        },
-        {
-          "version": "2.17.1",
-          "buildVersion": "2.17.1",
-          "date": "2026-08-25T01:03:18Z",
-          "localizedDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nPlayback\n\n- Large MKVs on Android resume and seek immediately\n- Dolby Vision plays through the Dolby Vision decoder on Android\n- Opus, Vorbis, and FLAC tracks play instead of stalling on Android\n\nDownloads\n\n- An unreachable downloaded file streams from the server on Android\n\nProfiles & startup\n\n- The profile prompt no longer interrupts a companion-remote session\n\ntvOS\n\n- Siri Remote navigation matches native tvOS pacing\n- A single flick moves exactly one item\n- Rail and hub-row scrolling glides instead of snapping",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.17.1/Plezy-2.17.1.ipa",
-          "size": 48613958
         }
       ],
       "appPermissions": {
@@ -135,12 +135,12 @@
         "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-md.png",
         "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-search.png"
       ],
-      "version": "2.19.0",
-      "buildVersion": "2.19.0",
-      "versionDate": "2026-09-07T02:43:27Z",
-      "versionDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nNew features\n\n- Separate Off, Show button, and Automatic modes for intro and credits skipping\n- Audio, subtitle, and video-format previews on detail pages\n- Collection headers with artwork, summaries, and item counts\n- A Show Watched Indicators toggle\n- An optional Remember Brightness Level setting\n\nPerformance\n\n- Faster D-pad scrolling on Android TV and Fire TV\n- Smoother TV home navigation\n- Smoother software-decoded playback on lower-end Android GPUs\n- Faster loading of large download lists\n- Opening large logs no longer freezes or crashes the app\n- Server connections no longer stall on an unavailable IPv4 or IPv6 path\n\nPlayback\n\n- Fewer dropped frames with subtitles or audio passthrough on Android\n- Subtitle Render Resolution works on the Android mpv backend\n- Subtitles stay on the picture with ambient lighting enabled\n- Dolby Vision profile 7 and Dolby Vision/HDR10+ files play on affected Fire TV devices\n- High-bitrate HEVC plays without green flashes or smeared frames on affected Fire TV devices\n- Faster H.264 High 10 playback startup on Android devices without a compatible hardware decoder\n- Unsupported AV1 profiles play without green or black video on Android\n- Deinterlacing works for software-decoded video on Android and Linux\n- Dolby and DTS passthrough works with more Android receiver setups\n- Passthrough audio recovers after HDMI route changes\n- 44.1 kHz 5.1 audio stays in surround on Android\n- Closing hardware-decoded playback no longer hangs on Android\n- Special characters survive in Android media titles and subtitle paths\n- External players start unwatched items from the beginning on Android\n- Audio selection follows playback preferences rather than the library language\n- Long opening chapters no longer trigger Skip Intro\n\nPlex\n\n- Live TV honors the selected quality preset\n- Live TV seeks land at the correct time after tuning or replacing a stream\n- Other Videos libraries appear in search results\n- Watchlist actions work for library and Explore titles\n- A Play Smaller Videos at Original Quality toggle\n- Local connections stay local after device sleep\n- Plex Home playback picks up Account preferences changes\n- Subtitle selection follows the server setting\n\nJellyfin & Emby\n\n- Jellyfin Live TV works with MPEG-TS-only tuners\n- Jellyfin Live TV honors the selected quality preset\n- Jellyfin Live TV supports compatible direct-play streams\n- Playback, subtitles, scrub previews, and library notifications work with Jellyfin 12\n- Emby quality-limited playback works on devices with AV1 support\n\nExplore & trackers\n\n- Find library copies under native, romaji, and localized titles\n- Report unchecked servers without losing known library copies\n- Seerr request actions reflect current account permissions\n- Seerr authentication-proxy errors no longer disconnect valid sessions\n- Advanced Seerr anime requests use Sonarr anime defaults\n- Editable tags on advanced Seerr requests\n\nWatch Together\n\n- Transfer hosting to another participant without leaving the room\n- Speed-change notifications name the participant\n- Rooms stay synchronized through buffering and system clock changes\n- Reconnecting no longer silently joins a reused room code\n- Self-hosted relays need updating before clients for automatic room recovery\n\nDownloads\n\n- Downloaded episodes show resume progress\n- Download queue failures show an error\n- Collection downloads respect cellular-download restrictions\n\nUI\n\n- Home and libraries refresh automatically when server content changes\n- D-pad focus stays on the same title after sorting or refreshing\n- Phones support rotation with side navigation in landscape\n- Phone detail pages center their logos, metadata, and actions\n- Android Automotive screens stay clear of side system bars\n- Grid Spacing applies to horizontal media rows\n- The first sidebar library selection opens the correct library\n- Deleting an item closes its detail page, not the screen above it\n- Hero titles and logos stay legible in light theme\n- Live TV channel logos stay legible on light backgrounds\n- The player clock stays hidden on portrait phones\n- Tighter spacing around search filters\n\nTV\n\n- Show details display the focused episode title\n- Play follows the focused episode on show details\n- Edit mpv.conf line by line with the system keyboard\n- Profile pickers and players keep remote focus\n- Explore descriptions are reachable with the D-pad\n- Audio passthrough defaults on for Apple TV\n- ExoPlayer plays DTS-HD audio on receivers without DTS-HD support\n\nDesktop\n\n- Windows starts without a preinstalled Vulkan loader\n- Windows remembers snapped window size and position\n- Less HDR-to-SDR playback overhead on Qualcomm Windows GPUs\n- Steam Input no longer doubles controller actions on Linux",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.19.0/Plezy-2.19.0.ipa",
-      "size": 48894256
+      "version": "2.19.1",
+      "buildVersion": "2.19.1",
+      "versionDate": "2026-09-08T02:54:56Z",
+      "versionDescription": "Upstream asset: \"plezy-ios.ipa\"\n\nUpstream Release Notes\nPlayback\n\n- Paused playback resumes after the Android screensaver\n- AV1 plays without corrupt or black video on more Android devices\n- Steadier frame pacing on Android\n- TrueHD passthrough recovers after seeking\n\nJellyfin & Emby\n\n- Emby Live TV plays instead of failing to load\n- Live TV tunes when a tuner takes longer to start\n- Sessions report the platform in the client and device name\n\nWatch Together\n\n- Relays with no port in their address connect\n\nDesktop\n\n- Closing the app during playback ends the server session immediately",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/plezy-v2.19.1/Plezy-2.19.1.ipa",
+      "size": 48887532
     },
     {
       "name": "Twitch",
@@ -216,6 +216,17 @@
   "news": [
     {
       "appID": "com.edde746.plezy",
+      "title": "2.19.1 - 08 Sep",
+      "identifier": "com.edde746.plezy-release-2.19.1",
+      "caption": "Update for Plezy available!",
+      "date": "2026-09-08T02:54:56Z",
+      "tintColor": "#da7b5b",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.19.1"
+    },
+    {
+      "appID": "com.edde746.plezy",
       "title": "2.19.0 - 07 Sep",
       "identifier": "com.edde746.plezy-release-2.19.0",
       "caption": "Update for Plezy available!",
@@ -235,17 +246,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.18.0"
-    },
-    {
-      "appID": "com.edde746.plezy",
-      "title": "2.17.1 - 25 Aug",
-      "identifier": "com.edde746.plezy-release-2.17.1",
-      "caption": "Update for Plezy available!",
-      "date": "2026-08-25T01:03:18Z",
-      "tintColor": "#da7b5b",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.17.1"
     },
     {
       "appID": "com.christianselig.Apollo",
