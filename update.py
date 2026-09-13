@@ -28,7 +28,7 @@ def load_json(path: Path) -> dict[str, Any]:
     with path.open(encoding="utf-8") as file:
         value = json.load(file)
     if not isinstance(value, dict):
-        raise ValueError(f"{path} must contain a JSON object")
+        raise TypeError(f"{path} must contain a JSON object")
     return value
 
 
@@ -38,7 +38,7 @@ def validate_config(config: dict[str, Any]) -> None:
             raise ValueError(f"Missing top-level config key: {key}")
 
     if not isinstance(config["source"], dict):
-        raise ValueError("source must be an object")
+        raise TypeError("source must be an object")
     for key in ("name", "json_file"):
         if not isinstance(config["source"].get(key), str) or not config["source"][key]:
             raise ValueError(f"source.{key} must be a non-empty string")
@@ -199,7 +199,7 @@ def news_entry(
 ) -> dict[str, Any]:
     version = display_version(release, asset, app)
     build_version = version_from_tag(release["tag_name"], app["mirror_tag_prefix"])
-    date = datetime.fromisoformat(release["published_at"].replace("Z", "+00:00"))
+    date = datetime.fromisoformat(release["published_at"])
     return {
         "appID": app["app_id"],
         "title": f"{version} - {date.strftime('%d %b')}",

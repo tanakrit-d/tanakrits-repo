@@ -40,6 +40,7 @@ jobs:
                 and (.value.mirror_tag_prefix | type == "string")
                 and (.value.output_name | type == "string")
                 and (.value.transformation | type == "string")
+                and ((.value.preferred_upstream_asset_regex // "") | type == "string")
               )
           ' config.json
           echo "matrix=$(jq -c '[.apps | to_entries[] | .value + {key: .key}]' config.json)" >> "$GITHUB_OUTPUT"
@@ -60,6 +61,7 @@ jobs:
       APP_NAME: ${{ matrix.app.app_name }}
       UPSTREAM_REPOSITORY: ${{ matrix.app.repo_url }}
       UPSTREAM_ASSET_REGEX: ${{ matrix.app.upstream_asset_regex }}
+      PREFERRED_UPSTREAM_ASSET_REGEX: ${{ matrix.app.preferred_upstream_asset_regex || '' }}
       VERSION_REGEX: ${{ matrix.app.version_regex }}
       MIRROR_TAG_PREFIX: ${{ matrix.app.mirror_tag_prefix }}
       OUTPUT_TEMPLATE: ${{ matrix.app.output_name }}
@@ -75,12 +77,30 @@ jobs:
 
           tag=$(jq -r '.tag_name // empty' <<< "$response")
           notes=$(jq -r '.body // ""' <<< "$response")
-          asset_url=$(jq -r --arg regex "$UPSTREAM_ASSET_REGEX" '
-            first((.assets // [])[] | select(.name | test($regex)) | .browser_download_url) // empty
-          ' <<< "$response")
-          asset_name=$(jq -r --arg regex "$UPSTREAM_ASSET_REGEX" '
-            first((.assets // [])[] | select(.name | test($regex)) | .name) // empty
-          ' <<< "$response")
+
+          # Some projects publish multiple IPAs for the same release.
+          # Prefer the explicitly configured asset (for example, YTKACE's
+          # iOS 17+ build) and fall back to the general asset regex.
+          if [[ -n "$PREFERRED_UPSTREAM_ASSET_REGEX" ]]; then
+            asset_url=$(jq -r --arg preferred "$PREFERRED_UPSTREAM_ASSET_REGEX" --arg regex "$UPSTREAM_ASSET_REGEX" '
+              first((.assets // [])[] | select(.name | test($preferred)) | .browser_download_url)
+              // first((.assets // [])[] | select(.name | test($regex)) | .browser_download_url)
+              // empty
+            ' <<< "$response")
+            asset_name=$(jq -r --arg preferred "$PREFERRED_UPSTREAM_ASSET_REGEX" --arg regex "$UPSTREAM_ASSET_REGEX" '
+              first((.assets // [])[] | select(.name | test($preferred)) | .name)
+              // first((.assets // [])[] | select(.name | test($regex)) | .name)
+              // empty
+            ' <<< "$response")
+          else
+            asset_url=$(jq -r --arg regex "$UPSTREAM_ASSET_REGEX" '
+              first((.assets // [])[] | select(.name | test($regex)) | .browser_download_url) // empty
+            ' <<< "$response")
+            asset_name=$(jq -r --arg regex "$UPSTREAM_ASSET_REGEX" '
+              first((.assets // [])[] | select(.name | test($regex)) | .name) // empty
+            ' <<< "$response")
+          fi
+
           version=$(jq -nr --arg tag "$tag" --arg regex "$VERSION_REGEX" '
             try ($tag | capture($regex).version) catch ""
           ')
@@ -88,6 +108,7 @@ jobs:
           if [[ -z "$tag" || -z "$version" || -z "$asset_url" ]]; then
             echo "Could not find a matching stable IPA for ${APP_KEY}."
             echo "Latest tag: ${tag:-missing}"
+            echo "Preferred asset regex: ${PREFERRED_UPSTREAM_ASSET_REGEX:-none}"
             echo "Available assets:"
             jq -r '(.assets // [])[]?.name' <<< "$response"
             exit 1
@@ -126,7 +147,7 @@ jobs:
         if: steps.check.outputs.should_mirror == 'true'
         env:
           ASSET_URL: ${{ steps.release.outputs.asset_url }}
-        run: curl -fL "$ASSET_URL" -o upstream.ipa
+        run: curl -fL --retry 3 --retry-all-errors "$ASSET_URL" -o upstream.ipa
 
       - name: Build mirrored IPA
         if: steps.check.outputs.should_mirror == 'true'
@@ -178,6 +199,7 @@ jobs:
           VERSION: ${{ steps.release.outputs.version }}
         run: |
           {
+            echo "Upstream release: https://github.com/${UPSTREAM_REPOSITORY}/releases/tag/${UPSTREAM_TAG}"
             echo "Upstream asset: \`${UPSTREAM_ASSET}\`"
             echo
             echo "## Upstream Release Notes"
