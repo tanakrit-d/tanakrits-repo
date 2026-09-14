@@ -247,5 +247,115 @@
     }
   ],
   "news": [
+    {
+      "appID": "com.christianselig.Apollo",
+      "title": "3.7.1 - 13 Sep",
+      "identifier": "com.christianselig.Apollo-release-3.7.1",
+      "caption": "Update for Apollo available!",
+      "date": "2026-09-13T22:40:17Z",
+      "tintColor": "#F0542D",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/apollo/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/apollo-reborn-glass-v3.7.1"
+    },
+    {
+      "appID": "com.google.ios.youtube",
+      "title": "0.9.3 - 13 Sep",
+      "identifier": "com.google.ios.youtube-release-0.9.3",
+      "caption": "Update for Youtube available!",
+      "date": "2026-09-13T22:40:10Z",
+      "tintColor": "#FF0000",
+      "imageURL": "",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/ytkace-v0.9.3"
+    },
+    {
+      "appID": "com.christianselig.Apollo",
+      "title": "3.7.0 - 11 Sep",
+      "identifier": "com.christianselig.Apollo-release-3.7.0",
+      "caption": "Update for Apollo available!",
+      "date": "2026-09-11T02:51:06Z",
+      "tintColor": "#F0542D",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/apollo/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/apollo-reborn-glass-v3.7.0"
+    },
+    {
+      "appID": "com.edde746.plezy",
+      "title": "2.19.1 - 08 Sep",
+      "identifier": "com.edde746.plezy-release-2.19.1",
+      "caption": "Update for Plezy available!",
+      "date": "2026-09-08T02:54:56Z",
+      "tintColor": "#da7b5b",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.19.1"
+    },
+    {
+      "appID": "com.edde746.plezy",
+      "title": "2.19.0 - 07 Sep",
+      "identifier": "com.edde746.plezy-release-2.19.0",
+      "caption": "Update for Plezy available!",
+      "date": "2026-09-07T02:43:27Z",
+      "tintColor": "#da7b5b",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.19.0"
+    },
+    {
+      "appID": "com.edde746.plezy",
+      "title": "2.18.0 - 31 Aug",
+      "identifier": "com.edde746.plezy-release-2.18.0",
+      "caption": "Update for Plezy available!",
+      "date": "2026-08-31T03:24:01Z",
+      "tintColor": "#da7b5b",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.18.0"
+    },
+    {
+      "appID": "com.christianselig.Apollo",
+      "title": "3.6.0 - 19 Aug",
+      "identifier": "com.christianselig.Apollo-release-3.6.0",
+      "caption": "Update for Apollo available!",
+      "date": "2026-08-19T01:01:42Z",
+      "tintColor": "#F0542D",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/apollo/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/apollo-reborn-glass-v3.6.0"
+    },
+    {
+      "appID": "tv.twitch",
+      "title": "30.7 - 15 Aug",
+      "identifier": "tv.twitch-release-30.7-0.1.13",
+      "caption": "Update for TwitchAdBlock available!",
+      "date": "2026-08-15T01:01:17Z",
+      "tintColor": "#9146FF",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/twitch/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v30.7-0.1.13"
+    },
+    {
+      "appID": "tv.twitch",
+      "title": "30.7 - 12 Aug",
+      "identifier": "tv.twitch-release-30.7-0.1.12",
+      "caption": "Update for TwitchAdBlock available!",
+      "date": "2026-08-12T01:39:40Z",
+      "tintColor": "#9146FF",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/twitch/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v30.7-0.1.12"
+    },
+    {
+      "appID": "tv.twitch",
+      "title": "30.2 - 08 Jul",
+      "identifier": "tv.twitch-release-30.2-0.1.12",
+      "caption": "Update for TwitchAdBlock available!",
+      "date": "2026-07-08T02:24:49Z",
+      "tintColor": "#9146FF",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/twitch/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v30.2-0.1.12"
+    }
   ]
 }
