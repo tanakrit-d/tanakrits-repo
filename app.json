@@ -222,27 +222,32 @@
       "size": 134780934,
       "appPermissions": {
         "entitlements": [
-          "com.apple.security.application-groups",
+          "application-identifier",
+          "aps-environment",
           "com.apple.developer.associated-domains",
           "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
           "com.apple.developer.declared-age-range",
-          "com.apple.developer.storekit.request-data",
           "com.apple.developer.device-information.user-assigned-device-name",
           "com.apple.developer.group-session",
-          "keychain-access-groups",
           "com.apple.developer.networking.multicast",
-          "aps-environment",
+          "com.apple.developer.networking.wifi-info",
           "com.apple.developer.siri",
-          "com.apple.developer.networking.wifi-info"
+          "com.apple.developer.storekit.request-data",
+          "com.apple.developer.usernotifications.communication",
+          "com.apple.developer.usernotifications.time-sensitive",
+          "com.apple.security.application-groups",
+          "keychain-access-groups"
         ],
         "privacy": {
-          "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
-          "NSMicrophoneUsageDescription": "Used to record audio for videos.",
-          "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
-          "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
-          "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
-          "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
-          "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+          "NSCameraUsageDescription": "This lets you create videos using the app.",
+          "NSUserTrackingUsageDescription": "To personalize ads and provide ad measurement, YouTube will link activity from this app with activity from non-Google apps and websites.",
+          "NSBluetoothPeripheralUsageDescription": "YouTube needs bluetooth access to scan for nearby Cast devices.",
+          "NSLocalNetworkUsageDescription": "Access to your network allows YouTube to discover and connect to devices such as your TV.",
+          "NSAppleMusicUsageDescription": "This lets you add your own audio files to your videos.",
+          "NSMicrophoneUsageDescription": "This lets you include audio with your videos and search using your voice.",
+          "NSLocationWhenInUseUsageDescription": "This enables local content discovery, improved recommendations, and enhanced search results.",
+          "NSContactsUsageDescription": "Your contacts will be sent to YouTube servers to help you find friends to share videos with.",
+          "NSPhotoLibraryUsageDescription": "This lets you upload media you've already created."
         }
       }
     }
@@ -266,7 +271,7 @@
       "caption": "Update for YouTube available!",
       "date": "2026-09-13T22:40:10Z",
       "tintColor": "#FF0000",
-      "imageURL": "",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/apollo/update.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/ytkace-v0.9.3"
     },

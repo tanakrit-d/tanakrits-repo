@@ -163,7 +163,7 @@
             "localized_description": "YTKACE is an open-source YouTube enhancement for iOS.\n\nIt adds video, audio and Shorts downloads, background playback, PiP, playback speed controls, SponsorBlock, interface customization, tab editing, a download library, and searchable settings.\n\nTwo IPA builds are published: an iOS 16-compatible build based on YouTube 21.33.6, and an iOS 17+ build based on the latest supported YouTube version.",
             "caption": "Update for YouTube available!",
             "tint_colour": "#FF0000",
-            "image_url": "",
+            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/apollo/update.png",
             "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/09/bb/96/09bb96a3-61b8-ff31-ad9a-7d7fe566c9ca/Placeholder.mill/200x200bb-75.webp",
             "category": "entertainment",
             "screenshots": [
@@ -175,27 +175,32 @@
             ],
             "app_permissions": {
                 "entitlements": [
-                    "com.apple.security.application-groups",
+                    "application-identifier",
+                    "aps-environment",
                     "com.apple.developer.associated-domains",
                     "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
                     "com.apple.developer.declared-age-range",
-                    "com.apple.developer.storekit.request-data",
                     "com.apple.developer.device-information.user-assigned-device-name",
                     "com.apple.developer.group-session",
-                    "keychain-access-groups",
                     "com.apple.developer.networking.multicast",
-                    "aps-environment",
+                    "com.apple.developer.networking.wifi-info",
                     "com.apple.developer.siri",
-                    "com.apple.developer.networking.wifi-info"
+                    "com.apple.developer.storekit.request-data",
+                    "com.apple.developer.usernotifications.communication",
+                    "com.apple.developer.usernotifications.time-sensitive",
+                    "com.apple.security.application-groups",
+                    "keychain-access-groups"
                 ],
                 "privacy": {
-                    "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
-                    "NSMicrophoneUsageDescription": "Used to record audio for videos.",
-                    "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
-                    "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
-                    "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
-                    "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
-                    "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+                    "NSCameraUsageDescription": "This lets you create videos using the app.",
+                    "NSUserTrackingUsageDescription": "To personalize ads and provide ad measurement, YouTube will link activity from this app with activity from non-Google apps and websites.",
+                    "NSBluetoothPeripheralUsageDescription": "YouTube needs bluetooth access to scan for nearby Cast devices.",
+                    "NSLocalNetworkUsageDescription": "Access to your network allows YouTube to discover and connect to devices such as your TV.",
+                    "NSAppleMusicUsageDescription": "This lets you add your own audio files to your videos.",
+                    "NSMicrophoneUsageDescription": "This lets you include audio with your videos and search using your voice.",
+                    "NSLocationWhenInUseUsageDescription": "This enables local content discovery, improved recommendations, and enhanced search results.",
+                    "NSContactsUsageDescription": "Your contacts will be sent to YouTube servers to help you find friends to share videos with.",
+                    "NSPhotoLibraryUsageDescription": "This lets you upload media you've already created."
                 }
             },
             "upstream_asset_regex": "^YTKACE-[0-9]+\\.[0-9]+\\.[0-9]+.*\\.ipa$|^YTKACE_[0-9]+\\.[0-9]+\\.[0-9]+_YouTube(?:_iOS16)?_[0-9]+\\.[0-9]+\\.[0-9]+\\.ipa$",
