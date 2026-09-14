@@ -3,18 +3,18 @@
 An automatically updated AltStore-compatible source that mirrors selected iOS
 apps and community-maintained tweaks from their upstream GitHub releases. This is largely for personal use, but feel to utilise it :^)
 
-## Apps
+## Applications
 
 | Icon | App | Upstream | Repository changes |
 | :---: | --- | --- | --- |
 | <img src="https://apolloreborn.app/assets/icon.png" alt="Apollo icon" width="64" height="64"> | **Apollo** | [Apollo-Reborn](https://github.com/Apollo-Reborn/Apollo-Reborn) | Mirrors the `Glass` IPA variant and sets `CFBundleVersion` and `CFBundleShortVersionString` to the Apollo-Reborn release version. |
 | <img src="images/icons/plezy/icon.webp" alt="Plezy icon" width="64" height="64"> | **Plezy** | [edde746/plezy](https://github.com/edde746/plezy) | Mirrors the upstream iOS IPA without binary changes and gives the mirrored asset a versioned filename. |
 | <img src="images/icons/twitch/icon.png" alt="Twitch icon" width="64" height="64"> | **Twitch** | [gunnerkidBT/TwitchAdBlock](https://github.com/gunnerkidBT/TwitchAdBlock) | Mirrors the upstream Twitch IPA patched with TwitchAdBlock without additional binary changes. The displayed app version is extracted separately from the TwitchAdBlock release version. |
+| <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/09/bb/96/09bb96a3-61b8-ff31-ad9a-7d7fe566c9ca/Placeholder.mill/200x200bb-75.webp" alt="YoutTube icon" width="64" height="64"> | **YouTube** | [itzzace/ytkace](https://github.com/itzzace/ytkace) | Mirrors the upstream YouTube IPA patched with YTKACE without additional binary changes. |
 
-## Add The Source
+## Adding the source
 
-Use the following source URL with AltStore Classic, SideStore, Feather, or
-whatever floats your boat:
+Use the following source URL with AltStore Classic, SideStore, Feather, etc:
 
 ```text
 https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/app.json
@@ -23,7 +23,7 @@ https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/app.
 > [!NOTE]  
 > Not compatible with AltStore PAL.
 
-## How It Works
+## How it works
 
 The scheduled GitHub Actions workflow checks each configured upstream project
 daily for its latest stable IPA, mirrors new releases, and regenerates
