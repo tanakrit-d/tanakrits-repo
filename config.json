@@ -6,8 +6,8 @@
         "json_file": "app.json"
     },
     "retention": {
-        "versions_per_app": 3,
-        "news_per_app": 3
+        "versions_per_app": 2,
+        "news_per_app": 2
     },
     "apps": {
         "apollo-reborn": {
@@ -15,7 +15,7 @@
             "app_id": "com.christianselig.Apollo",
             "app_name": "Apollo",
             "developer_name": "Christian Selig (& Apollo-Reborn contributors)",
-            "subtitle": "Apollo for Reddit with Apollo-Reborn",
+            "subtitle": "Apollo for Reddit with ApolloReborn",
             "localized_description": "Apollo-Reborn is the community-maintained Apollo sideload build powered by the Apollo-Reborn tweak.\n\nIt restores custom API support, media fixes, uploads, inline media, translation, saved categories, Liquid Glass support on iOS 26+, and the rest of the project's ongoing fixes and enhancements.\n\nThis source mirrors the GLASS Icons variant, which bundles the Liquid Glass alternate icon catalog without the iOS 26 UI runtime opt-in, so legacy UIKit behaviors such as the bottom tab bar swipe gesture are preserved.\n\nThis source is intended for AltStore Classic, SideStore, and Feather. Apollo-Reborn is not compatible with AltStore PAL.\n\nThis project is not affiliated with Apollo or Christian Selig.",
             "caption": "Update for Apollo available!",
             "tint_colour": "#F0542D",
@@ -161,7 +161,7 @@
             "developer_name": "itzzace",
             "subtitle": "YouTube with YTKACE",
             "localized_description": "YTKACE is an open-source YouTube enhancement for iOS.\n\nIt adds video, audio and Shorts downloads, background playback, PiP, playback speed controls, SponsorBlock, interface customization, tab editing, a download library, and searchable settings.\n\nTwo IPA builds are published: an iOS 16-compatible build based on YouTube 21.33.6, and an iOS 17+ build based on the latest supported YouTube version.",
-            "caption": "Update for Youtube available!",
+            "caption": "Update for YouTube available!",
             "tint_colour": "#FF0000",
             "image_url": "",
             "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/09/bb/96/09bb96a3-61b8-ff31-ad9a-7d7fe566c9ca/Placeholder.mill/200x200bb-75.webp",
@@ -173,6 +173,31 @@
                 "https://raw.githubusercontent.com/itzzace/ytkace/main/screenshots/framed/shorts-download-menu.png",
                 "https://raw.githubusercontent.com/itzzace/ytkace/main/screenshots/framed/tab-editor.png"
             ],
+            "appPermissions": {
+                "entitlements": [
+                    "com.apple.security.application-groups",
+                    "com.apple.developer.associated-domains",
+                    "com.apple.developer.coremedia.allow-alternate-video-decoder-selection",
+                    "com.apple.developer.declared-age-range",
+                    "com.apple.developer.storekit.request-data",
+                    "com.apple.developer.device-information.user-assigned-device-name",
+                    "com.apple.developer.group-session",
+                    "keychain-access-groups",
+                    "com.apple.developer.networking.multicast",
+                    "aps-environment",
+                    "com.apple.developer.siri",
+                    "com.apple.developer.networking.wifi-info"
+                ],
+                "privacy": {
+                    "NSCameraUsageDescription": "Used to record and upload videos to YouTube.",
+                    "NSMicrophoneUsageDescription": "Used to record audio for videos.",
+                    "NSPhotoLibraryUsageDescription": "Used to upload photos and videos from your library.",
+                    "NSPhotoLibraryAddUsageDescription": "Used to save videos to your photo library.",
+                    "NSAppleMusicUsageDescription": "Allows access to Apple Music for background playback and media features.",
+                    "NSBluetoothPeripheralUsageDescription": "Used for connecting to Bluetooth devices.",
+                    "NSLocalNetworkUsageDescription": "Used to discover and connect to devices on your local network."
+                }
+            },
             "upstream_asset_regex": "^YTKACE-[0-9]+\\.[0-9]+\\.[0-9]+.*\\.ipa$|^YTKACE_[0-9]+\\.[0-9]+\\.[0-9]+_YouTube(?:_iOS16)?_[0-9]+\\.[0-9]+\\.[0-9]+\\.ipa$",
             "version_regex": "^[vV]?(?<version>[0-9]+(?:\\.[0-9]+)+)$",
             "mirror_tag_prefix": "ytkace-v",
