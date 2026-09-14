@@ -173,7 +173,7 @@
                 "https://raw.githubusercontent.com/itzzace/ytkace/main/screenshots/framed/shorts-download-menu.png",
                 "https://raw.githubusercontent.com/itzzace/ytkace/main/screenshots/framed/tab-editor.png"
             ],
-            "appPermissions": {
+            "app_permissions": {
                 "entitlements": [
                     "com.apple.security.application-groups",
                     "com.apple.developer.associated-domains",
