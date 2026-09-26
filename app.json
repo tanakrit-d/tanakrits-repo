@@ -206,28 +206,28 @@
       ],
       "versions": [
         {
+          "version": "1.1.0",
+          "buildVersion": "1.1.0",
+          "date": "2026-09-26T03:21:09Z",
+          "localizedDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.1.0\nUpstream asset: \"YTKACE_1.1.0_YouTube_21.38.3.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\nWhat's new:\n• Updated to YouTube 21.38.3\n• Redesigned the YTKACE library player with a floating mini player, PiP and YouTube style controls\n• SponsorBlock now skips segments in downloaded videos\n• New Download Method option with Direct downloads\n• Modify YouTube's video zoom\n• Keep Shorts in Subscriptions\n• Option to disable PiP for Shorts\n• Speed menu button\n• Options to disable HDR, remove 1080p Premium and set a separate Shorts speed\n• Layout mode option\n• Choose the subtitle language for downloads\n\nFixed:\n• PiP not working for music videos\n• Gap left by hidden comment guidelines, topic chips and community posts\n• Download and queue buttons on older YouTube versions\n• Autoplay in queues\n• Improved Playback Fix and download retrying\n\nThanks to @Ganeron11 and @kes158 for contributions\n\nYouTube 21.38.3 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.1.0_YouTube_21.38.3.ipa\" for iOS 17 and newer\n• \"YTKACE_1.1.0_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.1.0/YTKACE_1.1.0_YouTube_21.38.3.ipa",
+          "size": 137203351
+        },
+        {
           "version": "1.0.1",
           "buildVersion": "1.0.1",
           "date": "2026-09-22T03:09:18Z",
           "localizedDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.0.1\nUpstream asset: \"YTKACE_1.0.1_YouTube_21.38.2.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\nWhat's new:\n• Updated to YouTube 21.38.2\n• Download subtitles with your videos\n• Transcript button to copy or share a video's captions\n• Added toggle to Open videos paused instead of playing right away\n• Search bar in YTKACE settings\n\nFixed:\n• Crash on iOS 15\n• Prevent Open in Shorts doing nothing\n• Stop Autoplay doing nothing\n• Queue not appearing until the video was reopened\n• Captions turning off after Playback Fix recovers a video\n\nYouTube 21.38.2 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.0.1_YouTube_21.38.2.ipa\" for iOS 17 and newer\n• \"YTKACE_1.0.1_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.0.1/YTKACE_1.0.1_YouTube_21.38.2.ipa",
           "size": 137039590
-        },
-        {
-          "version": "1.0.0",
-          "buildVersion": "1.0.0",
-          "date": "2026-09-21T03:09:49Z",
-          "localizedDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.0.0\nUpstream asset: \"YTKACE_1.0.0_YouTube_21.37.5.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\nWhat's new:\n• Updated to YouTube 21.37.5\n• Queue videos without Premium — play next, play last, reorder, shuffle, loop and clear\n• Playlist downloads — grab every video or pick the ones you want\n• YouTube's Download button can now open the YTKACE menu\n• Choose where the download button lives: player overlay, YouTube's button, or both\n• Save downloads to the share sheet, with separate video and audio destinations\n• Hide the products shelf\n• iOS 15 support for the tweak packages\n\nFixed:\n• 2K and 4K missing from the download quality list\n• Shorts Save button not removed unless YouTube was in English\n• Community posts breaking with Block Premium Prompts on\n• Action bar disappearing while scrolling the feed\n• Settings unreachable if both the YTKACE and Library tabs were removed\n• YTKACE settings opening another tweak's settings when both were installed\n\nYouTube 21.37.5 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.0.0_YouTube_21.37.5.ipa\" for iOS 17 and newer\n• \"YTKACE_1.0.0_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.0.0/YTKACE_1.0.0_YouTube_21.37.5.ipa",
-          "size": 136694474
         }
       ],
-      "version": "1.0.1",
-      "buildVersion": "1.0.1",
-      "versionDate": "2026-09-22T03:09:18Z",
-      "versionDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.0.1\nUpstream asset: \"YTKACE_1.0.1_YouTube_21.38.2.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\nWhat's new:\n• Updated to YouTube 21.38.2\n• Download subtitles with your videos\n• Transcript button to copy or share a video's captions\n• Added toggle to Open videos paused instead of playing right away\n• Search bar in YTKACE settings\n\nFixed:\n• Crash on iOS 15\n• Prevent Open in Shorts doing nothing\n• Stop Autoplay doing nothing\n• Queue not appearing until the video was reopened\n• Captions turning off after Playback Fix recovers a video\n\nYouTube 21.38.2 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.0.1_YouTube_21.38.2.ipa\" for iOS 17 and newer\n• \"YTKACE_1.0.1_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.0.1/YTKACE_1.0.1_YouTube_21.38.2.ipa",
-      "size": 137039590,
+      "version": "1.1.0",
+      "buildVersion": "1.1.0",
+      "versionDate": "2026-09-26T03:21:09Z",
+      "versionDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.1.0\nUpstream asset: \"YTKACE_1.1.0_YouTube_21.38.3.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\nWhat's new:\n• Updated to YouTube 21.38.3\n• Redesigned the YTKACE library player with a floating mini player, PiP and YouTube style controls\n• SponsorBlock now skips segments in downloaded videos\n• New Download Method option with Direct downloads\n• Modify YouTube's video zoom\n• Keep Shorts in Subscriptions\n• Option to disable PiP for Shorts\n• Speed menu button\n• Options to disable HDR, remove 1080p Premium and set a separate Shorts speed\n• Layout mode option\n• Choose the subtitle language for downloads\n\nFixed:\n• PiP not working for music videos\n• Gap left by hidden comment guidelines, topic chips and community posts\n• Download and queue buttons on older YouTube versions\n• Autoplay in queues\n• Improved Playback Fix and download retrying\n\nThanks to @Ganeron11 and @kes158 for contributions\n\nYouTube 21.38.3 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.1.0_YouTube_21.38.3.ipa\" for iOS 17 and newer\n• \"YTKACE_1.1.0_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.1.0/YTKACE_1.1.0_YouTube_21.38.3.ipa",
+      "size": 137203351,
       "appPermissions": {
         "entitlements": [
           "application-identifier",
@@ -262,6 +262,17 @@
   ],
   "news": [
     {
+      "appID": "com.google.ios.youtube",
+      "title": "1.1.0 - 26 Sep",
+      "identifier": "com.google.ios.youtube-release-1.1.0",
+      "caption": "Update for YouTube available!",
+      "date": "2026-09-26T03:21:09Z",
+      "tintColor": "#FF0000",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/apollo/update.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/ytkace-v1.1.0"
+    },
+    {
       "appID": "com.christianselig.Apollo",
       "title": "3.8.0 - 25 Sep",
       "identifier": "com.christianselig.Apollo-release-3.8.0",
@@ -293,17 +304,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/apollo/update.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/ytkace-v1.0.1"
-    },
-    {
-      "appID": "com.google.ios.youtube",
-      "title": "1.0.0 - 21 Sep",
-      "identifier": "com.google.ios.youtube-release-1.0.0",
-      "caption": "Update for YouTube available!",
-      "date": "2026-09-21T03:09:49Z",
-      "tintColor": "#FF0000",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/apollo/update.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/ytkace-v1.0.0"
     },
     {
       "appID": "com.edde746.plezy",
