@@ -26,7 +26,9 @@ def select_release(release: dict[str, Any], app: dict[str, Any]) -> dict[str, st
     if release.get("draft") or release.get("prerelease"):
         raise ValueError("Upstream release must be stable and published")
     tag = release["tag_name"]
-    match = compile_pattern(app["version_regex"]).fullmatch(tag)
+    # Version patterns may capture a suffix of a compound upstream tag.
+    # Match the previous jq capture behavior and let the config supply anchors.
+    match = compile_pattern(app["version_regex"]).search(tag)
     if not match:
         raise ValueError(f"Unsupported upstream tag: {tag}")
     version = match.group("version")
