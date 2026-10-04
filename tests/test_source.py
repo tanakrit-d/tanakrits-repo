@@ -131,6 +131,30 @@ class SourceTests(unittest.TestCase):
                 self.release(["YTKACE_1.1.1_YouTube_21.34.2.ipa"]), app
             )
 
+    def test_youtube_version_matches_app_instead_of_tweak(self):
+        app = self.config["apps"]["youtube"]
+        for name, expected in (
+            ("YTKACE_1.1.2_YouTube_21.40.5.ipa", "21.40.5"),
+            ("YTKACE_1.1.2_YouTube_iOS16_21.33.6.ipa", "21.33.6"),
+        ):
+            with self.subTest(name=name):
+                upstream = self.release([name], "v1.1.2")
+                selected = mirror.select_release(upstream, app)
+                self.assertEqual(selected["mirror_tag"], "ytkace-v1.1.2")
+                release = dict(upstream, tag_name=selected["mirror_tag"])
+                asset = release["assets"][0]
+                version = update.version_entry(release, asset, app)
+                self.assertEqual(version["version"], expected)
+                self.assertEqual(version["buildVersion"], "1.1.2")
+                generated = update.update_app(None, app, [(release, asset)], 2)
+                self.assertEqual(generated["version"], expected)
+                self.assertEqual(generated["versions"][0]["version"], expected)
+                news = update.news_entry(release, asset, app)
+                self.assertTrue(news["title"].startswith(expected + " - "))
+                self.assertEqual(
+                    news["identifier"], "com.google.ios.youtube-release-1.1.2"
+                )
+
     def test_twitch_separates_app_and_build_versions(self):
         app = self.config["apps"]["twitch-adblock"]
         release = self.release(

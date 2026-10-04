@@ -207,7 +207,7 @@
             "version_regex": "^[vV]?(?<version>[0-9]+(?:\\.[0-9]+)+)$",
             "mirror_tag_prefix": "ytkace-v",
             "mirror_asset_regex": "^YTKACE_[0-9]+\\.[0-9]+\\.[0-9]+_YouTube(?:_iOS16)?_[0-9]+\\.[0-9]+\\.[0-9]+\\.ipa$",
-            "display_version_regex": "^YTKACE_(?P<version>[0-9]+(?:\\.[0-9]+)+)_YouTube(?:_iOS16)?_[0-9]+\\.[0-9]+\\.[0-9]+\\.ipa$",
+            "display_version_regex": "^YTKACE_[0-9]+(?:\\.[0-9]+)+_YouTube(?:_iOS16)?_(?P<version>[0-9]+(?:\\.[0-9]+)+)\\.ipa$",
             "output_name": "{asset_name}",
             "transformation": "none",
             "runner": "ubuntu-latest",
