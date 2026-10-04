@@ -163,7 +163,7 @@
             "localized_description": "YTKACE is an open-source YouTube enhancement for iOS.\n\nIt adds video, audio and Shorts downloads, background playback, PiP, playback speed controls, SponsorBlock, interface customization, tab editing, a download library, and searchable settings.\n\nTwo IPA builds are published: an iOS 16-compatible build based on YouTube 21.33.6, and an iOS 17+ build based on the latest supported YouTube version.",
             "caption": "Update for YouTube available!",
             "tint_colour": "#FF0000",
-            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/apollo/update.png",
+            "image_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/09/bb/96/09bb96a3-61b8-ff31-ad9a-7d7fe566c9ca/Placeholder.mill/200x200bb-75.webp",
             "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/09/bb/96/09bb96a3-61b8-ff31-ad9a-7d7fe566c9ca/Placeholder.mill/200x200bb-75.webp",
             "category": "entertainment",
             "screenshots": [
@@ -203,14 +203,15 @@
                     "NSPhotoLibraryUsageDescription": "This lets you upload media you've already created."
                 }
             },
-            "upstream_asset_regex": "^YTKACE-[0-9]+\\.[0-9]+\\.[0-9]+.*\\.ipa$|^YTKACE_[0-9]+\\.[0-9]+\\.[0-9]+_YouTube(?:_iOS16)?_[0-9]+\\.[0-9]+\\.[0-9]+\\.ipa$",
+            "upstream_asset_regex": "^YTKACE_[0-9]+\\.[0-9]+\\.[0-9]+_YouTube(?:_iOS16)?_[0-9]+\\.[0-9]+\\.[0-9]+\\.ipa$",
             "version_regex": "^[vV]?(?<version>[0-9]+(?:\\.[0-9]+)+)$",
             "mirror_tag_prefix": "ytkace-v",
             "mirror_asset_regex": "^YTKACE_[0-9]+\\.[0-9]+\\.[0-9]+_YouTube(?:_iOS16)?_[0-9]+\\.[0-9]+\\.[0-9]+\\.ipa$",
             "display_version_regex": "^YTKACE_(?P<version>[0-9]+(?:\\.[0-9]+)+)_YouTube(?:_iOS16)?_[0-9]+\\.[0-9]+\\.[0-9]+\\.ipa$",
             "output_name": "{asset_name}",
             "transformation": "none",
-            "runner": "ubuntu-latest"
+            "runner": "ubuntu-latest",
+            "preferred_upstream_asset_regex": "^YTKACE_[0-9]+\\.[0-9]+\\.[0-9]+_YouTube_[0-9]+\\.[0-9]+\\.[0-9]+\\.ipa$"
         }
     }
 }

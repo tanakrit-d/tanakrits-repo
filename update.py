@@ -4,9 +4,11 @@ import argparse
 import json
 import os
 import re
+import tempfile
 from datetime import datetime
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlparse
 
 
 def parse_args() -> argparse.Namespace:
@@ -30,6 +32,91 @@ def load_json(path: Path) -> dict[str, Any]:
     if not isinstance(value, dict):
         raise TypeError(f"{path} must contain a JSON object")
     return value
+
+
+def compile_pattern(pattern: str) -> re.Pattern[str]:
+    # Accept the named-group spelling used by the previous jq-based workflow.
+    return re.compile(re.sub(r"\(\?<([A-Za-z_]\w*)>", r"(?P<\1>", pattern))
+
+
+def require_string(value: Any, label: str) -> None:
+    if not isinstance(value, str) or not value.strip():
+        raise ValueError(f"{label} must be a non-empty string")
+
+
+def require_url(value: Any, label: str) -> None:
+    require_string(value, label)
+    parsed = urlparse(value)
+    if parsed.scheme != "https" or not parsed.netloc:
+        raise ValueError(f"{label} must be an HTTPS URL")
+
+
+def require_date(value: Any, label: str) -> None:
+    require_string(value, label)
+    try:
+        date = datetime.fromisoformat(value)
+    except ValueError as error:
+        raise ValueError(f"{label} must be an ISO timestamp") from error
+    if date.tzinfo is None:
+        raise ValueError(f"{label} must include a timezone")
+
+
+def validate_source(data: dict[str, Any]) -> None:
+    require_string(data.get("name"), "source.name")
+    if not isinstance(data.get("apps"), list) or not data["apps"]:
+        raise ValueError("source.apps must be a non-empty array")
+    app_ids = set()
+    for app in data["apps"]:
+        if not isinstance(app, dict):
+            raise ValueError("Each source app must be an object")
+        for field in ("name", "bundleIdentifier", "developerName"):
+            require_string(app.get(field), f"app.{field}")
+        app_id = app["bundleIdentifier"]
+        if app_id in app_ids:
+            raise ValueError(f"Duplicate source app: {app_id}")
+        app_ids.add(app_id)
+        require_url(app.get("iconURL"), f"{app_id}.iconURL")
+        if not isinstance(app.get("versions"), list) or not app["versions"]:
+            raise ValueError(f"{app_id}.versions must be a non-empty array")
+        builds = set()
+        for version in app["versions"]:
+            if not isinstance(version, dict):
+                raise ValueError(f"{app_id}: each version must be an object")
+            require_string(version.get("version"), f"{app_id}.version")
+            require_string(version.get("buildVersion"), f"{app_id}.buildVersion")
+            if version["buildVersion"] in builds:
+                raise ValueError(f"{app_id}: duplicate buildVersion")
+            builds.add(version["buildVersion"])
+            require_url(version.get("downloadURL"), f"{app_id}.downloadURL")
+            require_date(version.get("date"), f"{app_id}.date")
+            if type(version.get("size")) is not int or version["size"] <= 0:
+                raise ValueError(f"{app_id}.size must be a positive integer")
+        latest = app["versions"][0]
+        for field, version_field in (
+            ("version", "version"),
+            ("buildVersion", "buildVersion"),
+            ("downloadURL", "downloadURL"),
+            ("size", "size"),
+            ("versionDate", "date"),
+        ):
+            if field in app and app[field] != latest[version_field]:
+                raise ValueError(f"{app_id}.{field} disagrees with latest version")
+    if not isinstance(data.get("news", []), list):
+        raise ValueError("source.news must be an array")
+    identifiers = set()
+    for item in data.get("news", []):
+        if not isinstance(item, dict):
+            raise ValueError("Each news entry must be an object")
+        for field in ("identifier", "title", "appID"):
+            require_string(item.get(field), f"news.{field}")
+        if item["appID"] not in app_ids or item["identifier"] in identifiers:
+            raise ValueError(
+                "News must reference an existing app and have a unique identifier"
+            )
+        identifiers.add(item["identifier"])
+        require_date(item.get("date"), "news.date")
+        require_url(item.get("url"), "news.url")
+        require_url(item.get("imageURL"), "news.imageURL")
 
 
 def validate_config(config: dict[str, Any]) -> None:
@@ -59,23 +146,61 @@ def validate_config(config: dict[str, Any]) -> None:
         "icon_url",
         "mirror_tag_prefix",
         "mirror_asset_regex",
+        "upstream_asset_regex",
+        "version_regex",
+        "output_name",
+        "transformation",
+        "runner",
     }
     prefixes: set[str] = set()
     app_ids: set[str] = set()
 
     for key, app in config["apps"].items():
+        if not isinstance(app, dict):
+            raise ValueError(f"{key} must be an object")
         missing = required - app.keys()
         if missing:
             raise ValueError(
                 f"{key} is missing config keys: {', '.join(sorted(missing))}"
             )
-        re.compile(app["mirror_asset_regex"])
-        if "display_version_regex" in app:
-            regex = re.compile(app["display_version_regex"])
-            if "version" not in regex.groupindex:
-                raise ValueError(
-                    f"{key}.display_version_regex must contain a named version group"
-                )
+        for field in required:
+            require_string(app.get(field), f"{key}.{field}")
+        for field in (
+            "upstream_asset_regex",
+            "mirror_asset_regex",
+            "version_regex",
+            "preferred_upstream_asset_regex",
+            "display_version_regex",
+        ):
+            if field in app:
+                require_string(app[field], f"{key}.{field}")
+                regex = compile_pattern(app[field])
+                if (
+                    field in ("version_regex", "display_version_regex")
+                    and "version" not in regex.groupindex
+                ):
+                    raise ValueError(
+                        f"{key}.{field} must contain a named version group"
+                    )
+        if app["transformation"] not in ("none", "apollo_bundle_versions"):
+            raise ValueError(f"{key}: unknown transformation {app['transformation']}")
+        if app["transformation"] == "apollo_bundle_versions" and not app[
+            "runner"
+        ].startswith("macos-"):
+            raise ValueError(f"{key}: Apollo transformation requires a macOS runner")
+        if not re.fullmatch(r"[\w.-]+/[\w.-]+", app["repo_url"]):
+            raise ValueError(f"{key}.repo_url must use owner/name form")
+        for field in ("icon_url", "image_url"):
+            require_url(app[field], f"{key}.{field}")
+        template = app["output_name"]
+        if re.search(r"\{(?!version\}|asset_name\})", template):
+            raise ValueError(f"{key}: unknown output_name placeholder")
+        if (
+            Path(template).name != template
+            or "\\" in template
+            or (template != "{asset_name}" and not template.endswith(".ipa"))
+        ):
+            raise ValueError(f"{key}.output_name must be an IPA filename")
         if app["mirror_tag_prefix"] in prefixes:
             raise ValueError(f"Duplicate mirror_tag_prefix: {app['mirror_tag_prefix']}")
         if app["app_id"] in app_ids:
@@ -83,9 +208,11 @@ def validate_config(config: dict[str, Any]) -> None:
         prefixes.add(app["mirror_tag_prefix"])
         app_ids.add(app["app_id"])
 
+    if not isinstance(config["retention"], dict):
+        raise ValueError("retention must be an object")
     for key in ("versions_per_app", "news_per_app"):
         if (
-            not isinstance(config["retention"].get(key), int)
+            type(config["retention"].get(key)) is not int
             or config["retention"][key] < 1
         ):
             raise ValueError(f"retention.{key} must be a positive integer")
@@ -144,14 +271,16 @@ def display_version(
     candidates = [asset["name"]]
     candidates.extend(re.findall(r"`([^`]+)`", release.get("body") or ""))
     for candidate in candidates:
-        match = re.fullmatch(pattern, candidate)
+        match = compile_pattern(pattern).fullmatch(candidate)
         if match:
             return match.group("version")
-    raise ValueError(f"Could not extract display version for release: {release['tag_name']}")
+    raise ValueError(
+        f"Could not extract display version for release: {release['tag_name']}"
+    )
 
 
 def matching_asset(release: dict[str, Any], pattern: str) -> dict[str, Any] | None:
-    regex = re.compile(pattern)
+    regex = compile_pattern(pattern)
     return next(
         (
             asset
@@ -219,6 +348,10 @@ def update_app(
     releases: list[tuple[dict[str, Any], dict[str, Any]]],
     limit: int,
 ) -> dict[str, Any]:
+    if not releases:
+        raise ValueError(
+            f"{app['app_name']}: no matching stable mirrored releases; source unchanged"
+        )
     result = dict(existing or {})
     result.update(
         {
@@ -246,28 +379,17 @@ def update_app(
         version_entry(release, asset, app) for release, asset in releases[:limit]
     ]
     result["versions"] = versions
-    if versions:
-        latest = versions[0]
-        result.update(
-            {
-                "version": latest["version"],
-                "buildVersion": latest["buildVersion"],
-                "versionDate": latest["date"],
-                "versionDescription": latest["localizedDescription"],
-                "downloadURL": latest["downloadURL"],
-                "size": latest["size"],
-            }
-        )
-    else:
-        for key in (
-            "version",
-            "buildVersion",
-            "versionDate",
-            "versionDescription",
-            "downloadURL",
-            "size",
-        ):
-            result.pop(key, None)
+    latest = versions[0]
+    result.update(
+        {
+            "version": latest["version"],
+            "buildVersion": latest["buildVersion"],
+            "versionDate": latest["date"],
+            "versionDescription": latest["localizedDescription"],
+            "downloadURL": latest["downloadURL"],
+            "size": latest["size"],
+        }
+    )
     return result
 
 
@@ -334,9 +456,29 @@ def update_source(config: dict[str, Any], releases: list[dict[str, Any]]) -> Non
         reverse=True,
     )
 
-    with source_path.open("w", encoding="utf-8") as file:
-        json.dump(data, file, indent=2, ensure_ascii=False)
-        file.write("\n")
+    validate_source(data)
+    temporary_path = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="w",
+            encoding="utf-8",
+            dir=source_path.parent,
+            prefix=f".{source_path.name}.",
+            suffix=".tmp",
+            delete=False,
+        ) as file:
+            temporary_path = Path(file.name)
+            json.dump(data, file, indent=2, ensure_ascii=False)
+            file.write("\n")
+            file.flush()
+            os.fsync(file.fileno())
+        temporary_path.chmod(
+            source_path.stat().st_mode & 0o777 if source_path.exists() else 0o644
+        )
+        temporary_path.replace(source_path)
+    finally:
+        if temporary_path is not None:
+            temporary_path.unlink(missing_ok=True)
 
 
 def main() -> int:
@@ -345,8 +487,10 @@ def main() -> int:
     validate_config(config)
 
     source_path = Path(config["source"]["json_file"])
-    if source_path.exists() and source_path.stat().st_size:
-        load_json(source_path)
+    if source_path.exists():
+        validate_source(load_json(source_path))
+    elif args.validate_only:
+        raise ValueError(f"Source file does not exist: {source_path}")
 
     if args.validate_only:
         print(f"Validated {args.config} and {source_path}")

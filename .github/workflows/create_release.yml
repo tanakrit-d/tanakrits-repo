@@ -25,24 +25,15 @@ jobs:
       - name: Check out repository
         uses: actions/checkout@v6
 
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
       - name: Validate config and create app matrix
         id: matrix
         run: |
-          jq -e '
-            .apps
-            | to_entries
-            | length > 0 and all(
-                .[];
-                (.value.repo_url | type == "string")
-                and (.value.runner | type == "string")
-                and (.value.upstream_asset_regex | type == "string")
-                and (.value.version_regex | type == "string")
-                and (.value.mirror_tag_prefix | type == "string")
-                and (.value.output_name | type == "string")
-                and (.value.transformation | type == "string")
-                and ((.value.preferred_upstream_asset_regex // "") | type == "string")
-              )
-          ' config.json
+          python update.py --validate-only
           echo "matrix=$(jq -c '[.apps | to_entries[] | .value + {key: .key}]' config.json)" >> "$GITHUB_OUTPUT"
 
   mirror:
@@ -60,88 +51,27 @@ jobs:
       APP_KEY: ${{ matrix.app.key }}
       APP_NAME: ${{ matrix.app.app_name }}
       UPSTREAM_REPOSITORY: ${{ matrix.app.repo_url }}
-      UPSTREAM_ASSET_REGEX: ${{ matrix.app.upstream_asset_regex }}
-      PREFERRED_UPSTREAM_ASSET_REGEX: ${{ matrix.app.preferred_upstream_asset_regex || '' }}
-      VERSION_REGEX: ${{ matrix.app.version_regex }}
-      MIRROR_TAG_PREFIX: ${{ matrix.app.mirror_tag_prefix }}
-      OUTPUT_TEMPLATE: ${{ matrix.app.output_name }}
       TRANSFORMATION: ${{ matrix.app.transformation }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v6
 
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
       - name: Find latest stable upstream release
         id: release
         run: |
-          response=$(gh api "repos/${UPSTREAM_REPOSITORY}/releases/latest")
-
-          tag=$(jq -r '.tag_name // empty' <<< "$response")
-          notes=$(jq -r '.body // ""' <<< "$response")
-
-          # Some projects publish multiple IPAs for the same release.
-          # Prefer the explicitly configured asset (for example, YTKACE's
-          # iOS 17+ build) and fall back to the general asset regex.
-          if [[ -n "$PREFERRED_UPSTREAM_ASSET_REGEX" ]]; then
-            asset_url=$(jq -r --arg preferred "$PREFERRED_UPSTREAM_ASSET_REGEX" --arg regex "$UPSTREAM_ASSET_REGEX" '
-              first((.assets // [])[] | select(.name | test($preferred)) | .browser_download_url)
-              // first((.assets // [])[] | select(.name | test($regex)) | .browser_download_url)
-              // empty
-            ' <<< "$response")
-            asset_name=$(jq -r --arg preferred "$PREFERRED_UPSTREAM_ASSET_REGEX" --arg regex "$UPSTREAM_ASSET_REGEX" '
-              first((.assets // [])[] | select(.name | test($preferred)) | .name)
-              // first((.assets // [])[] | select(.name | test($regex)) | .name)
-              // empty
-            ' <<< "$response")
-          else
-            asset_url=$(jq -r --arg regex "$UPSTREAM_ASSET_REGEX" '
-              first((.assets // [])[] | select(.name | test($regex)) | .browser_download_url) // empty
-            ' <<< "$response")
-            asset_name=$(jq -r --arg regex "$UPSTREAM_ASSET_REGEX" '
-              first((.assets // [])[] | select(.name | test($regex)) | .name) // empty
-            ' <<< "$response")
-          fi
-
-          version=$(jq -nr --arg tag "$tag" --arg regex "$VERSION_REGEX" '
-            try ($tag | capture($regex).version) catch ""
-          ')
-
-          if [[ -z "$tag" || -z "$version" || -z "$asset_url" ]]; then
-            echo "Could not find a matching stable IPA for ${APP_KEY}."
-            echo "Latest tag: ${tag:-missing}"
-            echo "Preferred asset regex: ${PREFERRED_UPSTREAM_ASSET_REGEX:-none}"
-            echo "Available assets:"
-            jq -r '(.assets // [])[]?.name' <<< "$response"
-            exit 1
-          fi
-
-          mirror_tag="${MIRROR_TAG_PREFIX}${version}"
-          output_name="${OUTPUT_TEMPLATE//\{version\}/$version}"
-          output_name="${output_name//\{asset_name\}/$asset_name}"
-
-          delimiter="NOTES_$(uuidgen)"
-          {
-            echo "tag=$tag"
-            echo "version=$version"
-            echo "asset_url=$asset_url"
-            echo "asset_name=$asset_name"
-            echo "mirror_tag=$mirror_tag"
-            echo "output_name=$output_name"
-            echo "notes<<$delimiter"
-            echo "$notes"
-            echo "$delimiter"
-          } >> "$GITHUB_OUTPUT"
+          gh api "repos/${UPSTREAM_REPOSITORY}/releases/latest" | python mirror.py select
 
       - name: Check whether release is already mirrored
         id: check
         env:
           MIRROR_TAG: ${{ steps.release.outputs.mirror_tag }}
-        run: |
-          if gh release view "$MIRROR_TAG" --repo "$GITHUB_REPOSITORY" >/dev/null 2>&1; then
-            echo "Release $MIRROR_TAG is already mirrored."
-            echo "should_mirror=false" >> "$GITHUB_OUTPUT"
-          else
-            echo "should_mirror=true" >> "$GITHUB_OUTPUT"
-          fi
+          OUTPUT_NAME: ${{ steps.release.outputs.output_name }}
+        run: python mirror.py check
 
       - name: Download upstream IPA
         if: steps.check.outputs.should_mirror == 'true'
@@ -188,11 +118,12 @@ jobs:
           plist_set_or_add CFBundleShortVersionString "$VERSION"
           zip -6 -rq "../$OUTPUT_NAME" Payload -x "*/.*"
 
-      - name: Create mirrored release
+      - name: Create or repair mirrored release
         if: steps.check.outputs.should_mirror == 'true'
         env:
           MIRROR_TAG: ${{ steps.release.outputs.mirror_tag }}
           OUTPUT_NAME: ${{ steps.release.outputs.output_name }}
+          RELEASE_EXISTS: ${{ steps.check.outputs.release_exists }}
           UPSTREAM_TAG: ${{ steps.release.outputs.tag }}
           UPSTREAM_ASSET: ${{ steps.release.outputs.asset_name }}
           UPSTREAM_NOTES: ${{ steps.release.outputs.notes }}
@@ -206,10 +137,17 @@ jobs:
             echo "$UPSTREAM_NOTES"
           } > RELEASE_NOTES.md
 
-          gh release create "$MIRROR_TAG" "$OUTPUT_NAME" \
-            --repo "$GITHUB_REPOSITORY" \
-            --title "${APP_NAME} v${VERSION}" \
-            --notes-file RELEASE_NOTES.md
+          if [[ "$RELEASE_EXISTS" == "true" ]]; then
+            gh release upload "$MIRROR_TAG" "$OUTPUT_NAME" \
+              --repo "$GITHUB_REPOSITORY" --clobber
+            gh release edit "$MIRROR_TAG" \
+              --repo "$GITHUB_REPOSITORY" --notes-file RELEASE_NOTES.md
+          else
+            gh release create "$MIRROR_TAG" "$OUTPUT_NAME" \
+              --repo "$GITHUB_REPOSITORY" \
+              --title "${APP_NAME} v${VERSION}" \
+              --notes-file RELEASE_NOTES.md
+          fi
 
   update-source:
     needs: [prepare, mirror]
@@ -228,14 +166,17 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Install dependencies
-        run: python -m pip install requests
+      - name: Set up uv
+        uses: astral-sh/setup-uv@bec219d24cd3e171d82865faccec33120bb574f4 # v10.1.0
+
+      - name: Install locked dependencies
+        run: uv sync --locked --no-dev
 
       - name: Update and validate source
         run: |
           git pull --rebase origin main
-          python update.py
-          python update.py --validate-only
+          uv run --locked --no-dev python update.py
+          uv run --locked --no-dev python update.py --validate-only
           jq empty app.json
 
       - name: Commit source changes
