@@ -78,6 +78,26 @@ class SourceTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             update.validate_config(self.config)
 
+    def test_apollo_extracts_tweak_version_from_compound_tag(self):
+        app = self.config["apps"]["apollo-reborn"]
+        for tag in ("v1.15.11_3.8.5", "v3.8.5", "3.8.5"):
+            with self.subTest(tag=tag):
+                release = self.release(["Apollo-Reborn-3.8.5-GLASS.ipa"], tag)
+                selected = mirror.select_release(release, app)
+                self.assertEqual(selected["version"], "3.8.5")
+                self.assertEqual(selected["mirror_tag"], "apollo-reborn-glass-v3.8.5")
+                self.assertEqual(
+                    selected["output_name"], "Apollo_with_Apollo-Reborn-3.8.5-GLASS.ipa"
+                )
+        for tag in ("v1.15.11_3.8.5-beta", "v1.15.11_invalid"):
+            with (
+                self.subTest(tag=tag),
+                self.assertRaisesRegex(ValueError, "Unsupported upstream tag"),
+            ):
+                mirror.select_release(
+                    self.release(["Apollo-Reborn-3.8.5-GLASS.ipa"], tag), app
+                )
+
     def test_youtube_prefers_modern_variant_regardless_of_order(self):
         names = [
             "YTKACE_1.1.1_YouTube_iOS16_21.33.6.ipa",
