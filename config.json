@@ -6,6 +6,7 @@
         "json_file": "app.json"
     },
     "retention": {
+        "github_releases_per_app": 3,
         "versions_per_app": 2,
         "news_per_app": 2
     },
@@ -190,7 +191,7 @@
             "app_name": "Balatro (Multiplayer)",
             "developer_name": "LocalThunk (& Multiplayer contributors)",
             "subtitle": "Balatro with Multiplayer",
-            "localized_description": "Balatro bundled with Multiplayer for iOS.\n\nAdds online competitive play. Create or join a lobby to play against other players.\n\nBuilt by tanakrit-d/balatro-ios-mod-builder. Requires iOS 15 or later and signing for sideloading.",
+            "localized_description": "Balatro bundled with Multiplayer for iOS.\n\nAdds online competitive play. Create or join a lobby to play against other players.",
             "caption": "Update for Balatro (Multiplayer) available!",
             "tint_colour": "#EF4A3C",
             "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp/news.png",
@@ -216,7 +217,7 @@
             "app_name": "Balatro (Pokermon)",
             "developer_name": "LocalThunk (& Pokermon contributors)",
             "subtitle": "Balatro with Pokermon",
-            "localized_description": "Balatro bundled with Pokermon for iOS.\n\nAdds Pokémon-themed Jokers and new content. Build your run around a team of Pokémon Jokers.\n\nBuilt by tanakrit-d/balatro-ios-mod-builder. Requires iOS 15 or later and signing for sideloading.",
+            "localized_description": "Balatro bundled with Pokermon for iOS.\n\nAdds Pokémon-themed Jokers and new content. Build your run around a team of Pokémon Jokers.",
             "caption": "Update for Balatro (Pokermon) available!",
             "tint_colour": "#EF4A3C",
             "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balatro_pk/news.png",

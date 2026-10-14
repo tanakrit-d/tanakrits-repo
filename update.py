@@ -217,6 +217,17 @@ def validate_config(config: dict[str, Any]) -> None:
             or config["retention"][key] < 1
         ):
             raise ValueError(f"retention.{key} must be a positive integer")
+    github_limit = config["retention"].get("github_releases_per_app")
+    if github_limit is not None:
+        if type(github_limit) is not int or github_limit < 1:
+            raise ValueError(
+                "retention.github_releases_per_app must be a positive integer"
+            )
+        if github_limit < max(
+            config["retention"]["versions_per_app"],
+            config["retention"]["news_per_app"],
+        ):
+            raise ValueError("GitHub retention must cover source versions and news")
 
 
 def github_releases(repository: str) -> list[dict[str, Any]]:

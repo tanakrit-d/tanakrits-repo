@@ -197,3 +197,6 @@ jobs:
 
           git commit -m "chore: update source"
           git push origin HEAD:main
+
+      - name: Keep the latest three mirrored releases per app
+        run: uv run --locked --no-dev python cleanup.py --repository "$GITHUB_REPOSITORY" --apply
