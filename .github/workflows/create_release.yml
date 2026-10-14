@@ -51,6 +51,7 @@ jobs:
       APP_KEY: ${{ matrix.app.key }}
       APP_NAME: ${{ matrix.app.app_name }}
       UPSTREAM_REPOSITORY: ${{ matrix.app.repo_url }}
+      UPSTREAM_TAG_REGEX: ${{ matrix.app.upstream_tag_regex || '' }}
       TRANSFORMATION: ${{ matrix.app.transformation }}
     steps:
       - name: Check out repository
@@ -64,7 +65,11 @@ jobs:
       - name: Find latest stable upstream release
         id: release
         run: |
-          gh api "repos/${UPSTREAM_REPOSITORY}/releases/latest" | python mirror.py select
+          if [[ -n "$UPSTREAM_TAG_REGEX" ]]; then
+            gh api --paginate --slurp "repos/${UPSTREAM_REPOSITORY}/releases?per_page=100" | jq 'flatten' | python mirror.py select
+          else
+            gh api "repos/${UPSTREAM_REPOSITORY}/releases/latest" | python mirror.py select
+          fi
 
       - name: Check whether release is already mirrored
         id: check

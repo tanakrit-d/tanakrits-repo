@@ -68,6 +68,7 @@ class SourceTests(unittest.TestCase):
             ("output_name", "{unknown}.ipa"),
             ("app_name", None),
             ("preferred_upstream_asset_regex", "["),
+            ("upstream_tag_regex", "["),
         ]:
             with self.subTest(field=field, value=value):
                 config = copy.deepcopy(self.config)
@@ -217,9 +218,18 @@ class SourceTests(unittest.TestCase):
             update.update_source(self.config, releases)
             source = update.load_json(path)
             update.validate_source(source)
-            self.assertEqual(len(source["apps"]), 4)
-            self.assertEqual(len(source["news"]), 8)
-            self.assertTrue(all(len(app["versions"]) == 2 for app in source["apps"]))
+            self.assertEqual(len(source["apps"]), len(self.config["apps"]))
+            expected_versions = {
+                app["bundleIdentifier"]: min(
+                    len(app["versions"]), self.config["retention"]["versions_per_app"]
+                )
+                for app in self.source["apps"]
+            }
+            self.assertEqual(len(source["news"]), sum(expected_versions.values()))
+            for app in source["apps"]:
+                self.assertEqual(
+                    len(app["versions"]), expected_versions[app["bundleIdentifier"]]
+                )
 
     def test_selection_cli_writes_github_outputs(self):
         release = self.release(["YTKACE_1.1.1_YouTube_21.34.2.ipa"])

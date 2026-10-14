@@ -170,6 +170,7 @@ def validate_config(config: dict[str, Any]) -> None:
             "mirror_asset_regex",
             "version_regex",
             "preferred_upstream_asset_regex",
+            "upstream_tag_regex",
             "display_version_regex",
         ):
             if field in app:
@@ -255,7 +256,7 @@ def clean_description(value: str | None) -> str:
 
 def version_from_tag(tag: str, prefix: str) -> str:
     version = tag.removeprefix(prefix).lstrip("vV")
-    if not re.fullmatch(r"\d+(?:\.\d+)+(?:-\d+(?:\.\d+)+)?", version):
+    if not re.fullmatch(r"\d+(?:\.\d+)+[a-z]*(?:-\d+(?:\.\d+)+)?", version):
         raise ValueError(f"Invalid mirrored release tag: {tag}")
     return version
 
@@ -313,7 +314,7 @@ def version_entry(
 ) -> dict[str, Any]:
     version = display_version(release, asset, app)
     build_version = version_from_tag(release["tag_name"], app["mirror_tag_prefix"])
-    return {
+    result = {
         "version": version,
         "buildVersion": build_version,
         "date": release["published_at"],
@@ -321,6 +322,9 @@ def version_entry(
         "downloadURL": asset["browser_download_url"],
         "size": asset.get("size", 0),
     }
+    if "min_os_version" in app:
+        result["minOSVersion"] = app["min_os_version"]
+    return result
 
 
 def news_entry(

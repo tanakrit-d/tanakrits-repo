@@ -2,7 +2,7 @@
     "source": {
         "name": "Tanakrit's Source",
         "subtitle": "App Releases",
-        "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/icons/repo/logo.webp",
+        "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/repo/icon.webp",
         "json_file": "app.json"
     },
     "retention": {
@@ -19,19 +19,9 @@
             "localized_description": "Apollo-Reborn is the community-maintained Apollo sideload build powered by the Apollo-Reborn tweak.\n\nIt restores custom API support, media fixes, uploads, inline media, translation, saved categories, Liquid Glass support on iOS 26+, and the rest of the project's ongoing fixes and enhancements.\n\nThis source mirrors the GLASS Icons variant, which bundles the Liquid Glass alternate icon catalog without the iOS 26 UI runtime opt-in, so legacy UIKit behaviors such as the bottom tab bar swipe gesture are preserved.\n\nThis source is intended for AltStore Classic, SideStore, and Feather. Apollo-Reborn is not compatible with AltStore PAL.\n\nThis project is not affiliated with Apollo or Christian Selig.",
             "caption": "Update for Apollo available!",
             "tint_colour": "#F0542D",
-            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/apollo/update.png",
-            "icon_url": "https://apolloreborn.app/assets/icon.png",
+            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/apollo/news.png",
+            "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/apollo/icon.png",
             "category": "social",
-            "screenshots": [
-                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/settings.jpg",
-                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/custom.jpg",
-                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/recents.jpg",
-                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/inline.jpg",
-                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/lg-icons.jpg",
-                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/avatar-profile.jpg",
-                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/avatar-comments.jpg",
-                "https://raw.githubusercontent.com/Apollo-Reborn/Apollo-Reborn/main/img/translation.jpg"
-            ],
             "app_permissions": {
                 "entitlements": [
                     "com.apple.security.application-groups",
@@ -69,14 +59,8 @@
             "localized_description": "A modern cross-platform Plex and Jellyfin client.",
             "caption": "Update for Plezy available!",
             "tint_colour": "#da7b5b",
-            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/plezy/update.png",
-            "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/icons/plezy/icon.webp",
-            "screenshots": [
-                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-home.png",
-                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-library.png",
-                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-md.png",
-                "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/screenshots/plezy/phone-search.png"
-            ],
+            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/plezy/news.png",
+            "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/plezy/icon.png",
             "app_permissions": {
                 "entitlements": [
                     "keychain-access-groups",
@@ -114,15 +98,9 @@
             "localized_description": "Twitch with the unofficial TwitchAdBlock tweak for sideloading.\n\nIt blocks live-stream and VOD ads, removes feed promotions and ad-network requests, supports authenticated and fallback proxies, renders 7TV, BetterTTV, and FrankerFaceZ emotes in chat, and adds app customization options.\n\nThis source mirrors the patched Twitch IPA published by gunnerkidBT's TwitchAdBlock fork. The fork maintains compatibility with newer Twitch and iOS versions and is not affiliated with Twitch Interactive.",
             "caption": "Update for TwitchAdBlock available!",
             "tint_colour": "#9146FF",
-            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/news/twitch/update.png",
-            "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/icons/twitch/icon.png",
+            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
+            "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/icon.png",
             "category": "entertainment",
-            "screenshots": [
-                "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/23/48/80/234880cc-db04-7d86-a3d5-70a0b46d6896/37b30cee-8c44-4162-944b-4def125308cf_01-1242x2208.jpg/392x696bb.jpg",
-                "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/60/aa/4e/60aa4eec-76de-e4dd-77b6-390b4bd323f7/121623e7-1287-49f0-9ea7-068ffc760e1f_02-1242x2208.jpg/392x696bb.jpg",
-                "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/22/58/1b/22581b48-e7bb-f8e4-d4bd-347ea0c89a58/77c505ba-b565-443b-83da-642a3bbc96f8_03-1242x2208.jpg/392x696bb.jpg",
-                "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource211/v4/2c/05/c7/2c05c7b6-d986-1dc2-a55b-f25286b12cce/f1b8408a-d231-4e9a-aeff-9bcc55be2d34_04-1242x2208.jpg/392x696bb.jpg"
-            ],
             "app_permissions": {
                 "entitlements": [
                     "com.apple.developer.usernotifications.communication",
@@ -163,16 +141,9 @@
             "localized_description": "YTKACE is an open-source YouTube enhancement for iOS.\n\nIt adds video, audio and Shorts downloads, background playback, PiP, playback speed controls, SponsorBlock, interface customization, tab editing, a download library, and searchable settings.\n\nTwo IPA builds are published: an iOS 16-compatible build based on YouTube 21.33.6, and an iOS 17+ build based on the latest supported YouTube version.",
             "caption": "Update for YouTube available!",
             "tint_colour": "#FF0000",
-            "image_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/09/bb/96/09bb96a3-61b8-ff31-ad9a-7d7fe566c9ca/Placeholder.mill/200x200bb-75.webp",
-            "icon_url": "https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/09/bb/96/09bb96a3-61b8-ff31-ad9a-7d7fe566c9ca/Placeholder.mill/200x200bb-75.webp",
+            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/youtube/news.png",
+            "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/youtube/icon.png",
             "category": "entertainment",
-            "screenshots": [
-                "https://raw.githubusercontent.com/itzzace/ytkace/main/screenshots/framed/settings.png",
-                "https://raw.githubusercontent.com/itzzace/ytkace/main/screenshots/framed/video-download-menu.png",
-                "https://raw.githubusercontent.com/itzzace/ytkace/main/screenshots/framed/audio-player.png",
-                "https://raw.githubusercontent.com/itzzace/ytkace/main/screenshots/framed/shorts-download-menu.png",
-                "https://raw.githubusercontent.com/itzzace/ytkace/main/screenshots/framed/tab-editor.png"
-            ],
             "app_permissions": {
                 "entitlements": [
                     "application-identifier",
@@ -212,6 +183,58 @@
             "transformation": "none",
             "runner": "ubuntu-latest",
             "preferred_upstream_asset_regex": "^YTKACE_[0-9]+\\.[0-9]+\\.[0-9]+_YouTube_[0-9]+\\.[0-9]+\\.[0-9]+\\.ipa$"
+        },
+        "balatro-multiplayer": {
+            "repo_url": "tanakrit-d/balatro-ios-mod-builder",
+            "app_id": "mod.balatro.multiplayer",
+            "app_name": "Balatro (Multiplayer)",
+            "developer_name": "LocalThunk (& Multiplayer contributors)",
+            "subtitle": "Balatro with Multiplayer",
+            "localized_description": "Balatro bundled with Multiplayer for iOS.\n\nAdds online competitive play. Create or join a lobby to play against other players.\n\nBuilt by tanakrit-d/balatro-ios-mod-builder. Requires iOS 15 or later and signing for sideloading.",
+            "caption": "Update for Balatro (Multiplayer) available!",
+            "tint_colour": "#EF4A3C",
+            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp/news.png",
+            "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp/icon.png",
+            "category": "games",
+            "upstream_tag_regex": "^multiplayer-[0-9]+(?:\\.[0-9]+)+[a-z]*$",
+            "upstream_asset_regex": "^b-multiplayer\\.[0-9]+(?:\\.[0-9]+)+[a-z]*\\.ipa$",
+            "version_regex": "^multiplayer-(?<version>[0-9]+(?:\\.[0-9]+)+[a-z]*)$",
+            "mirror_tag_prefix": "balatro-multiplayer-v",
+            "mirror_asset_regex": "^b-multiplayer\\.[0-9]+(?:\\.[0-9]+)+[a-z]*\\.ipa$",
+            "output_name": "{asset_name}",
+            "transformation": "none",
+            "runner": "ubuntu-latest",
+            "min_os_version": "15.0",
+            "app_permissions": {
+                "entitlements": [],
+                "privacy": {}
+            }
+        },
+        "balatro-pokermon": {
+            "repo_url": "tanakrit-d/balatro-ios-mod-builder",
+            "app_id": "mod.balatro.pokermon",
+            "app_name": "Balatro (Pokermon)",
+            "developer_name": "LocalThunk (& Pokermon contributors)",
+            "subtitle": "Balatro with Pokermon",
+            "localized_description": "Balatro bundled with Pokermon for iOS.\n\nAdds Pokémon-themed Jokers and new content. Build your run around a team of Pokémon Jokers.\n\nBuilt by tanakrit-d/balatro-ios-mod-builder. Requires iOS 15 or later and signing for sideloading.",
+            "caption": "Update for Balatro (Pokermon) available!",
+            "tint_colour": "#EF4A3C",
+            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balatro_pk/news.png",
+            "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balatro_pk/icon.png",
+            "category": "games",
+            "upstream_tag_regex": "^pokermon-[0-9]+(?:\\.[0-9]+)+[a-z]*$",
+            "upstream_asset_regex": "^b-pokermon\\.[0-9]+(?:\\.[0-9]+)+[a-z]*\\.ipa$",
+            "version_regex": "^pokermon-(?<version>[0-9]+(?:\\.[0-9]+)+[a-z]*)$",
+            "mirror_tag_prefix": "balatro-pokermon-v",
+            "mirror_asset_regex": "^b-pokermon\\.[0-9]+(?:\\.[0-9]+)+[a-z]*\\.ipa$",
+            "output_name": "{asset_name}",
+            "transformation": "none",
+            "runner": "ubuntu-latest",
+            "min_os_version": "15.0",
+            "app_permissions": {
+                "entitlements": [],
+                "privacy": {}
+            }
         }
     }
 }

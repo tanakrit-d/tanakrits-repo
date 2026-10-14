@@ -5,12 +5,14 @@ apps and community-maintained tweaks from their upstream GitHub releases. This i
 
 ## Applications
 
-| Icon | App | Upstream | Repository changes |
-| :---: | --- | --- | --- |
-| <img src="https://apolloreborn.app/assets/icon.png" alt="Apollo icon" width="64" height="64"> | **Apollo** | [Apollo-Reborn](https://github.com/Apollo-Reborn/Apollo-Reborn) | Mirrors the `Glass` IPA variant and sets `CFBundleVersion` and `CFBundleShortVersionString` to the Apollo-Reborn release version. |
-| <img src="images/icons/plezy/icon.webp" alt="Plezy icon" width="64" height="64"> | **Plezy** | [edde746/plezy](https://github.com/edde746/plezy) | Mirrors the upstream iOS IPA without binary changes and gives the mirrored asset a versioned filename. |
-| <img src="images/icons/twitch/icon.png" alt="Twitch icon" width="64" height="64"> | **Twitch** | [gunnerkidBT/TwitchAdBlock](https://github.com/gunnerkidBT/TwitchAdBlock) | Mirrors the upstream Twitch IPA patched with TwitchAdBlock without additional binary changes. The displayed app version is extracted separately from the TwitchAdBlock release version. |
-| <img src="https://is1-ssl.mzstatic.com/image/thumb/PurpleSource221/v4/09/bb/96/09bb96a3-61b8-ff31-ad9a-7d7fe566c9ca/Placeholder.mill/200x200bb-75.webp" alt="YoutTube icon" width="64" height="64"> | **YouTube** | [itzzace/ytkace](https://github.com/itzzace/ytkace) | Mirrors the upstream YouTube IPA patched with YTKACE without additional binary changes. The displayed version follows YouTube’s app version; mirror tags and build identifiers retain the YTKACE tweak version. |
+| Icon | App | Upstream |
+| :---: | --- | --- |
+| <img src="images/apollo/icon.png" alt="Apollo icon" width="64" height="64"> | **Apollo** | [Apollo-Reborn/Apollo-Reborn](https://github.com/Apollo-Reborn/Apollo-Reborn) |
+| <img src="images/balato_mp/icon.png" alt="Balatro Multiplayer icon" width="64" height="64"> | **Balatro (Multiplayer)** | [balatro-ios-mod-builder](https://github.com/tanakrit-d/balatro-ios-mod-builder) |
+| <img src="images/balatro_pk/icon.png" alt="Balatro Pokermon icon" width="64" height="64"> | **Balatro (Pokermon)** | [balatro-ios-mod-builder](https://github.com/tanakrit-d/balatro-ios-mod-builder) |
+| <img src="images/plezy/icon.png" alt="Plezy icon" width="64" height="64"> | **Plezy** | [edde746/plezy](https://github.com/edde746/plezy) |
+| <img src="images/twitch/icon.png" alt="Twitch icon" width="64" height="64"> | **Twitch** | [gunnerkidBT/TwitchAdBlock](https://github.com/gunnerkidBT/TwitchAdBlock) |
+| <img src="images/youtube/icon.png" alt="YouTube icon" width="64" height="64"> | **YouTube** | [itzzace/ytkace](https://github.com/itzzace/ytkace) |
 
 ## Adding the source
 
@@ -26,12 +28,18 @@ https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/app.
 ## How it works
 
 The scheduled GitHub Actions workflow checks each configured upstream project
-daily for its latest stable IPA, mirrors new releases, and regenerates
+daily for its latest stable IPA (per stream where configured), mirrors new
+releases, and regenerates
 [`app.json`](app.json). The source retains up to two releases and two news
 entries per app.
 
 App metadata, upstream asset matching, and mirror transformations are defined
-in [`config.json`](config.json). Validate local changes with:
+in [`config.json`](config.json). Projects with multiple release streams use
+`upstream_tag_regex` to select the latest stable release for each stream, with
+separate bundle identifiers and mirror tag prefixes. The initial Balatro entries
+link directly to upstream IPAs until the workflow creates their first mirrors.
+
+Validate local changes with:
 
 ```sh
 uv sync --locked

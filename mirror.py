@@ -26,6 +26,10 @@ def select_release(release: dict[str, Any], app: dict[str, Any]) -> dict[str, st
     if release.get("draft") or release.get("prerelease"):
         raise ValueError("Upstream release must be stable and published")
     tag = release["tag_name"]
+    if "upstream_tag_regex" in app and not compile_pattern(
+        app["upstream_tag_regex"]
+    ).fullmatch(tag):
+        raise ValueError(f"Unsupported upstream stream tag: {tag}")
     # Version patterns may capture a suffix of a compound upstream tag.
     # Match the previous jq capture behavior and let the config supply anchors.
     match = compile_pattern(app["version_regex"]).search(tag)
@@ -75,6 +79,23 @@ def select_release(release: dict[str, Any], app: dict[str, Any]) -> dict[str, st
     }
 
 
+def select_latest_release(
+    releases: list[dict[str, Any]], app: dict[str, Any]
+) -> dict[str, str]:
+    pattern = compile_pattern(app["upstream_tag_regex"])
+    candidates = [
+        release
+        for release in releases
+        if not release.get("draft")
+        and not release.get("prerelease")
+        and pattern.fullmatch(release.get("tag_name", ""))
+    ]
+    if not candidates:
+        raise ValueError(f"No stable upstream release for {app['app_name']}")
+    latest = max(candidates, key=lambda release: release.get("published_at", ""))
+    return select_release(latest, app)
+
+
 def check_release(repository: str, tag: str, output_name: str) -> dict[str, str]:
     response = subprocess.run(
         ["gh", "api", f"repos/{repository}/releases/tags/{quote(tag, safe='')}"],
@@ -114,8 +135,12 @@ def main() -> None:
     if args.command == "select":
         config = load_json(Path("config.json"))
         validate_config(config)
-        values = select_release(
-            json.load(sys.stdin), config["apps"][os.environ["APP_KEY"]]
+        release = json.load(sys.stdin)
+        app = config["apps"][os.environ["APP_KEY"]]
+        values = (
+            select_latest_release(release, app)
+            if isinstance(release, list)
+            else select_release(release, app)
         )
     else:
         values = check_release(
