@@ -5,7 +5,7 @@ apps and community-maintained tweaks from their upstream GitHub releases. This i
 
 ## Applications
 
-| Icon | App | Upstream |
+|      | App | Upstream |
 | :---: | --- | --- |
 | <img src="images/apollo/icon.png" alt="Apollo icon" width="64" height="64"> | **Apollo** | [Apollo-Reborn/Apollo-Reborn](https://github.com/Apollo-Reborn/Apollo-Reborn) |
 | <img src="images/balato_mp/icon.png" alt="Balatro Multiplayer icon" width="64" height="64"> | **Balatro (Multiplayer)** | [balatro-ios-mod-builder](https://github.com/tanakrit-d/balatro-ios-mod-builder) |
