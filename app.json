@@ -235,7 +235,7 @@
       "bundleIdentifier": "mod.balatro.multiplayer",
       "developerName": "LocalThunk (& Multiplayer contributors)",
       "subtitle": "Balatro with Multiplayer",
-      "localizedDescription": "Balatro bundled with Multiplayer for iOS.\n\nAdds online competitive play. Create or join a lobby to play against other players.\n\nBuilt by tanakrit-d/balatro-ios-mod-builder. Requires iOS 15 or later and signing for sideloading.",
+      "localizedDescription": "Balatro bundled with Multiplayer for iOS.\n\nAdds online competitive play. Create or join a lobby to play against other players.",
       "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp/icon.png",
       "tintColor": "#EF4A3C",
       "category": "games",
@@ -247,18 +247,18 @@
         {
           "version": "0.5.5",
           "buildVersion": "0.5.5",
-          "date": "2026-10-13T22:24:19Z",
-          "localizedDescription": "Unsigned iOS IPA. Requires iOS 15 or later and signing for sideloading.\n\nBuild commit: \"9926d49f82fa59e03cdfe84d93b671f74da8b0bd\". Exact dependencies are recorded in \"versions.lock.json\".",
-          "downloadURL": "https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/download/multiplayer-0.5.5/b-multiplayer.0.5.5.ipa",
+          "date": "2026-10-15T03:02:43Z",
+          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-0.5.5\nUpstream asset: \"b-multiplayer.0.5.5.ipa\"\n\nUpstream Release Notes\nUnsigned iOS IPA. Requires iOS 15 or later and signing for sideloading.\n\nBuild commit: \"9926d49f82fa59e03cdfe84d93b671f74da8b0bd\". Exact dependencies are recorded in \"versions.lock.json\".",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-v0.5.5/b-multiplayer.0.5.5.ipa",
           "size": 68095792,
           "minOSVersion": "15.0"
         }
       ],
       "version": "0.5.5",
       "buildVersion": "0.5.5",
-      "versionDate": "2026-10-13T22:24:19Z",
-      "versionDescription": "Unsigned iOS IPA. Requires iOS 15 or later and signing for sideloading.\n\nBuild commit: \"9926d49f82fa59e03cdfe84d93b671f74da8b0bd\". Exact dependencies are recorded in \"versions.lock.json\".",
-      "downloadURL": "https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/download/multiplayer-0.5.5/b-multiplayer.0.5.5.ipa",
+      "versionDate": "2026-10-15T03:02:43Z",
+      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-0.5.5\nUpstream asset: \"b-multiplayer.0.5.5.ipa\"\n\nUpstream Release Notes\nUnsigned iOS IPA. Requires iOS 15 or later and signing for sideloading.\n\nBuild commit: \"9926d49f82fa59e03cdfe84d93b671f74da8b0bd\". Exact dependencies are recorded in \"versions.lock.json\".",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-v0.5.5/b-multiplayer.0.5.5.ipa",
       "size": 68095792
     },
     {
@@ -266,7 +266,7 @@
       "bundleIdentifier": "mod.balatro.pokermon",
       "developerName": "LocalThunk (& Pokermon contributors)",
       "subtitle": "Balatro with Pokermon",
-      "localizedDescription": "Balatro bundled with Pokermon for iOS.\n\nAdds Pokémon-themed Jokers and new content. Build your run around a team of Pokémon Jokers.\n\nBuilt by tanakrit-d/balatro-ios-mod-builder. Requires iOS 15 or later and signing for sideloading.",
+      "localizedDescription": "Balatro bundled with Pokermon for iOS.\n\nAdds Pokémon-themed Jokers and new content. Build your run around a team of Pokémon Jokers.",
       "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balatro_pk/icon.png",
       "tintColor": "#EF4A3C",
       "category": "games",
@@ -278,43 +278,43 @@
         {
           "version": "3.9.1",
           "buildVersion": "3.9.1",
-          "date": "2026-10-13T22:24:28Z",
-          "localizedDescription": "Unsigned iOS IPA. Requires iOS 15 or later and signing for sideloading.\n\nBuild commit: \"9926d49f82fa59e03cdfe84d93b671f74da8b0bd\". Exact dependencies are recorded in \"versions.lock.json\".",
-          "downloadURL": "https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/download/pokermon-3.9.1/b-pokermon.3.9.1.ipa",
+          "date": "2026-10-15T03:02:46Z",
+          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1\nUpstream asset: \"b-pokermon.3.9.1.ipa\"\n\nUpstream Release Notes\nUnsigned iOS IPA. Requires iOS 15 or later and signing for sideloading.\n\nBuild commit: \"9926d49f82fa59e03cdfe84d93b671f74da8b0bd\". Exact dependencies are recorded in \"versions.lock.json\".",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1/b-pokermon.3.9.1.ipa",
           "size": 121500580,
           "minOSVersion": "15.0"
         }
       ],
       "version": "3.9.1",
       "buildVersion": "3.9.1",
-      "versionDate": "2026-10-13T22:24:28Z",
-      "versionDescription": "Unsigned iOS IPA. Requires iOS 15 or later and signing for sideloading.\n\nBuild commit: \"9926d49f82fa59e03cdfe84d93b671f74da8b0bd\". Exact dependencies are recorded in \"versions.lock.json\".",
-      "downloadURL": "https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/download/pokermon-3.9.1/b-pokermon.3.9.1.ipa",
+      "versionDate": "2026-10-15T03:02:46Z",
+      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1\nUpstream asset: \"b-pokermon.3.9.1.ipa\"\n\nUpstream Release Notes\nUnsigned iOS IPA. Requires iOS 15 or later and signing for sideloading.\n\nBuild commit: \"9926d49f82fa59e03cdfe84d93b671f74da8b0bd\". Exact dependencies are recorded in \"versions.lock.json\".",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1/b-pokermon.3.9.1.ipa",
       "size": 121500580
     }
   ],
   "news": [
     {
       "appID": "mod.balatro.pokermon",
-      "title": "3.9.1 - 13 Oct",
+      "title": "3.9.1 - 15 Oct",
       "identifier": "mod.balatro.pokermon-release-3.9.1",
       "caption": "Update for Balatro (Pokermon) available!",
-      "date": "2026-10-13T22:24:28Z",
+      "date": "2026-10-15T03:02:46Z",
       "tintColor": "#EF4A3C",
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balatro_pk/news.png",
       "notify": true,
-      "url": "https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1"
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/balatro-pokermon-v3.9.1"
     },
     {
       "appID": "mod.balatro.multiplayer",
-      "title": "0.5.5 - 13 Oct",
+      "title": "0.5.5 - 15 Oct",
       "identifier": "mod.balatro.multiplayer-release-0.5.5",
       "caption": "Update for Balatro (Multiplayer) available!",
-      "date": "2026-10-13T22:24:19Z",
+      "date": "2026-10-15T03:02:43Z",
       "tintColor": "#EF4A3C",
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp/news.png",
       "notify": true,
-      "url": "https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-0.5.5"
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/balatro-multiplayer-v0.5.5"
     },
     {
       "appID": "com.google.ios.youtube",
