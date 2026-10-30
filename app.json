@@ -236,7 +236,7 @@
       "developerName": "LocalThunk (& Multiplayer contributors)",
       "subtitle": "Legacy Balatro Multiplayer",
       "localizedDescription": "Balatro bundled with legacy Multiplayer 0.5.5 for iOS.\n\nArchived build retained for existing installs. This entry no longer receives updates.",
-      "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp/icon.png",
+      "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp_legacy/icon.png",
       "tintColor": "#EF4A3C",
       "category": "games",
       "appPermissions": {
