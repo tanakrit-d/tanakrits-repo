@@ -231,37 +231,6 @@
       }
     },
     {
-      "name": "Balatro (Pokermon)",
-      "bundleIdentifier": "mod.balatro.pokermon",
-      "developerName": "LocalThunk (& Pokermon contributors)",
-      "subtitle": "Balatro with Pokermon",
-      "localizedDescription": "Balatro bundled with Pokermon for iOS.\n\nAdds Pokémon-themed Jokers and new content. Build your run around a team of Pokémon Jokers.",
-      "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balatro_pk/icon.png",
-      "tintColor": "#EF4A3C",
-      "category": "games",
-      "appPermissions": {
-        "entitlements": [],
-        "privacy": {}
-      },
-      "versions": [
-        {
-          "version": "3.9.1",
-          "buildVersion": "3.9.1",
-          "date": "2026-10-15T03:02:46Z",
-          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1\nUpstream asset: \"b-pokermon.3.9.1.ipa\"\n\nUpstream Release Notes\nUnsigned iOS IPA. Requires iOS 15 or later and signing for sideloading.\n\nBuild commit: \"9926d49f82fa59e03cdfe84d93b671f74da8b0bd\". Exact dependencies are recorded in \"versions.lock.json\".",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1/b-pokermon.3.9.1.ipa",
-          "size": 121500580,
-          "minOSVersion": "15.0"
-        }
-      ],
-      "version": "3.9.1",
-      "buildVersion": "3.9.1",
-      "versionDate": "2026-10-15T03:02:46Z",
-      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1\nUpstream asset: \"b-pokermon.3.9.1.ipa\"\n\nUpstream Release Notes\nUnsigned iOS IPA. Requires iOS 15 or later and signing for sideloading.\n\nBuild commit: \"9926d49f82fa59e03cdfe84d93b671f74da8b0bd\". Exact dependencies are recorded in \"versions.lock.json\".",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1/b-pokermon.3.9.1.ipa",
-      "size": 121500580
-    },
-    {
       "name": "Balatro (PvP) (Legacy)",
       "bundleIdentifier": "mod.balatro.multiplayer",
       "developerName": "LocalThunk (& Multiplayer contributors)",
@@ -279,18 +248,18 @@
           "version": "0.5.5",
           "buildVersion": "0.5.5",
           "date": "2026-10-30T13:57:30Z",
-          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-legacy-0.5.5\nUpstream asset: \"b-multiplayer-legacy.0.5.5.ipa\"\n\nUpstream Release Notes\nLegacy Multiplayer 0.5.5.\r\n\r\nRetains the existing Legacy app identifier. Exact bundled dependencies are recorded in the attached \"versions.lock.json\".\r\n\r\nSHA-256: \"2e7594775a3159ba9f05f08ad2f484a8cac1002e9f2d04d91285fb2eee8a68d8\"",
+          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-legacy-0.5.5\nUpstream asset: \"b-multiplayer-legacy.0.5.5.ipa\"\n\nUpstream Release Notes\nBuild commit: \"ed562adbdc40936b52ad3994b076b413d1273372\". Exact dependencies are recorded in \"versions.lock.json\".\n\nBalatro (PvP) (Legacy). Multiplayer 0.5.5 with its pinned Steamodded dependency and dedicated Legacy icon. Retains the original bundle identifier for existing installs. This stream does not track new mod releases.",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-legacy-v0.5.5/b-multiplayer-legacy.0.5.5.ipa",
-          "size": 72720746,
+          "size": 72720747,
           "minOSVersion": "15.0"
         }
       ],
       "version": "0.5.5",
       "buildVersion": "0.5.5",
       "versionDate": "2026-10-30T13:57:30Z",
-      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-legacy-0.5.5\nUpstream asset: \"b-multiplayer-legacy.0.5.5.ipa\"\n\nUpstream Release Notes\nLegacy Multiplayer 0.5.5.\r\n\r\nRetains the existing Legacy app identifier. Exact bundled dependencies are recorded in the attached \"versions.lock.json\".\r\n\r\nSHA-256: \"2e7594775a3159ba9f05f08ad2f484a8cac1002e9f2d04d91285fb2eee8a68d8\"",
+      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-legacy-0.5.5\nUpstream asset: \"b-multiplayer-legacy.0.5.5.ipa\"\n\nUpstream Release Notes\nBuild commit: \"ed562adbdc40936b52ad3994b076b413d1273372\". Exact dependencies are recorded in \"versions.lock.json\".\n\nBalatro (PvP) (Legacy). Multiplayer 0.5.5 with its pinned Steamodded dependency and dedicated Legacy icon. Retains the original bundle identifier for existing installs. This stream does not track new mod releases.",
       "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-legacy-v0.5.5/b-multiplayer-legacy.0.5.5.ipa",
-      "size": 72720746
+      "size": 72720747
     },
     {
       "name": "Balatro (PvP)",
@@ -310,18 +279,49 @@
           "version": "1.0.3",
           "buildVersion": "1.0.3",
           "date": "2026-10-30T13:57:39Z",
-          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-1.0.3\nUpstream asset: \"b-multiplayer.1.0.3.ipa\"\n\nUpstream Release Notes\nBuild commit: \"8571226b6e30b6eb0151d7514adafed10a08b7cb\". Exact dependencies are recorded in \"versions.lock.json\".\n\nBalatro (PVP). Includes MultiplayerPvP, MultiplayerAPI, Steamodded, Lovely and statically linked iOS OpenSSL. Uses the forks’ mobile branches with Steam-free login for custom Community servers; configure mod-configs/multiplayer/MultiplayerAPI/config.lua before building to bundle your server defaults.",
+          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-1.0.3\nUpstream asset: \"b-multiplayer.1.0.3.ipa\"\n\nUpstream Release Notes\nBuild commit: \"ed562adbdc40936b52ad3994b076b413d1273372\". Exact dependencies are recorded in \"versions.lock.json\".\n\nBalatro (PvP). Includes MultiplayerPvP, MultiplayerAPI, Steamodded, Lovely and statically linked iOS OpenSSL. Uses the forks’ mobile branches with Steam-free login for custom Community servers; configure mod-configs/multiplayer/MultiplayerAPI/config.lua before building to bundle your server defaults.",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-pvp-v1.0.3/b-multiplayer.1.0.3.ipa",
-          "size": 73313167,
+          "size": 73330365,
           "minOSVersion": "15.0"
         }
       ],
       "version": "1.0.3",
       "buildVersion": "1.0.3",
       "versionDate": "2026-10-30T13:57:39Z",
-      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-1.0.3\nUpstream asset: \"b-multiplayer.1.0.3.ipa\"\n\nUpstream Release Notes\nBuild commit: \"8571226b6e30b6eb0151d7514adafed10a08b7cb\". Exact dependencies are recorded in \"versions.lock.json\".\n\nBalatro (PVP). Includes MultiplayerPvP, MultiplayerAPI, Steamodded, Lovely and statically linked iOS OpenSSL. Uses the forks’ mobile branches with Steam-free login for custom Community servers; configure mod-configs/multiplayer/MultiplayerAPI/config.lua before building to bundle your server defaults.",
+      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-1.0.3\nUpstream asset: \"b-multiplayer.1.0.3.ipa\"\n\nUpstream Release Notes\nBuild commit: \"ed562adbdc40936b52ad3994b076b413d1273372\". Exact dependencies are recorded in \"versions.lock.json\".\n\nBalatro (PvP). Includes MultiplayerPvP, MultiplayerAPI, Steamodded, Lovely and statically linked iOS OpenSSL. Uses the forks’ mobile branches with Steam-free login for custom Community servers; configure mod-configs/multiplayer/MultiplayerAPI/config.lua before building to bundle your server defaults.",
       "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-pvp-v1.0.3/b-multiplayer.1.0.3.ipa",
-      "size": 73313167
+      "size": 73330365
+    },
+    {
+      "name": "Balatro (Pokermon)",
+      "bundleIdentifier": "mod.balatro.pokermon",
+      "developerName": "LocalThunk (& Pokermon contributors)",
+      "subtitle": "Balatro with Pokermon",
+      "localizedDescription": "Balatro bundled with Pokermon for iOS.\n\nAdds Pokémon-themed Jokers and new content. Build your run around a team of Pokémon Jokers.",
+      "iconURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balatro_pk/icon.png",
+      "tintColor": "#EF4A3C",
+      "category": "games",
+      "appPermissions": {
+        "entitlements": [],
+        "privacy": {}
+      },
+      "versions": [
+        {
+          "version": "3.9.1",
+          "buildVersion": "3.9.1",
+          "date": "2026-10-15T03:02:46Z",
+          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1\nUpstream asset: \"b-pokermon.3.9.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"ed562adbdc40936b52ad3994b076b413d1273372\". Exact dependencies are recorded in \"versions.lock.json\".",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1/b-pokermon.3.9.1.ipa",
+          "size": 125816989,
+          "minOSVersion": "15.0"
+        }
+      ],
+      "version": "3.9.1",
+      "buildVersion": "3.9.1",
+      "versionDate": "2026-10-15T03:02:46Z",
+      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1\nUpstream asset: \"b-pokermon.3.9.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"ed562adbdc40936b52ad3994b076b413d1273372\". Exact dependencies are recorded in \"versions.lock.json\".",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1/b-pokermon.3.9.1.ipa",
+      "size": 125816989
     }
   ],
   "news": [

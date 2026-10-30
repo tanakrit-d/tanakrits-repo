@@ -192,7 +192,7 @@
             "developer_name": "LocalThunk (& Multiplayer contributors)",
             "subtitle": "Legacy Balatro Multiplayer",
             "localized_description": "Balatro bundled with legacy Multiplayer 0.5.5 for iOS.\n\nThe original Multiplayer mod, kept separate from Multiplayer PvP.",
-            "caption": "Update for Balatro (MP) (Legacy) available!",
+            "caption": "Update for Balatro (PvP) (Legacy) available!",
             "tint_colour": "#EF4A3C",
             "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp_legacy/news.png",
             "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp_legacy/icon.png",
