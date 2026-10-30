@@ -262,7 +262,7 @@
       "size": 121500580
     },
     {
-      "name": "Balatro (Multiplayer) (Legacy)",
+      "name": "Balatro (PvP) (Legacy)",
       "bundleIdentifier": "mod.balatro.multiplayer",
       "developerName": "LocalThunk (& Multiplayer contributors)",
       "subtitle": "Legacy Balatro Multiplayer",
@@ -293,7 +293,7 @@
       "size": 72720746
     },
     {
-      "name": "Balatro (PVP)",
+      "name": "Balatro (PvP)",
       "bundleIdentifier": "mod.balatro.multiplayer.pvp",
       "developerName": "LocalThunk (& Multiplayer contributors)",
       "subtitle": "Balatro Multiplayer PvP",
@@ -329,7 +329,7 @@
       "appID": "mod.balatro.multiplayer.pvp",
       "title": "1.0.3 - 30 Oct",
       "identifier": "mod.balatro.multiplayer.pvp-release-1.0.3",
-      "caption": "Update for Balatro (PVP) available!",
+      "caption": "Update for Balatro (PvP) available!",
       "date": "2026-10-30T13:57:39Z",
       "tintColor": "#EF4A3C",
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp/news.png",
@@ -340,7 +340,7 @@
       "appID": "mod.balatro.multiplayer",
       "title": "0.5.5 - 30 Oct",
       "identifier": "mod.balatro.multiplayer-release-0.5.5",
-      "caption": "Update for Balatro (Multiplayer) (Legacy) available!",
+      "caption": "Update for Balatro (PvP) (Legacy) available!",
       "date": "2026-10-30T13:57:30Z",
       "tintColor": "#EF4A3C",
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp_legacy/news.png",
