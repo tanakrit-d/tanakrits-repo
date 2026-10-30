@@ -28,7 +28,7 @@ class BalatroStreamsTests(unittest.TestCase):
             "html_url": "https://example.com/release/" + tag,
             "assets": [
                 {
-                    "name": f"b-multiplayer.{version}.ipa",
+                    "name": f"b-{'multiplayer-legacy' if 'multiplayer-legacy' in tag else 'multiplayer'}.{version}.ipa",
                     "browser_download_url": "https://example.com/" + tag + ".ipa",
                     "size": 123,
                 }
@@ -36,99 +36,105 @@ class BalatroStreamsTests(unittest.TestCase):
             **flags,
         }
 
-    def test_existing_download_and_bundle_id_stay_with_legacy(self):
-        existing = next(
-            a
-            for a in self.source["apps"]
-            if a["bundleIdentifier"] == self.legacy["app_id"]
-        )
-        self.assertFalse(self.legacy["updates_enabled"])
+    def test_legacy_and_pvp_select_only_their_own_stable_releases(self):
+        releases = [
+            self.release("multiplayer-0.5.5", "0.5.5"),
+            self.release("multiplayer-legacy-0.5.5", "0.5.5"),
+            self.release("multiplayer-1.0.3", "1.0.3"),
+            self.release("multiplayer-2.0.0", "2.0.0", prerelease=True),
+            self.release("multiplayer-legacy-0.5.6", "0.5.6", draft=True),
+        ]
+        for app, tag, asset in [
+            (
+                self.legacy,
+                "balatro-multiplayer-legacy-v0.5.5",
+                "b-multiplayer-legacy.0.5.5.ipa",
+            ),
+            (self.pvp, "balatro-multiplayer-pvp-v1.0.3", "b-multiplayer.1.0.3.ipa"),
+        ]:
+            selected = mirror.select_latest_release(releases, app)
+            self.assertEqual(selected["mirror_tag"], tag)
+            self.assertEqual(selected["output_name"], asset)
+            self.assertTrue(app.get("updates_enabled", True))
+            self.assertFalse(app.get("include_prereleases", False))
         self.assertEqual(self.legacy["app_id"], "mod.balatro.multiplayer")
-        self.assertIn("(Legacy)", existing["name"])
-        self.assertEqual(existing["version"], "0.5.5")
-        self.assertIn("/balatro-multiplayer-v0.5.5/", existing["downloadURL"])
-        self.assertNotEqual(self.legacy["app_id"], self.pvp["app_id"])
+        self.assertEqual(self.pvp["app_id"], "mod.balatro.multiplayer.pvp")
         self.assertNotEqual(
             self.legacy["mirror_tag_prefix"], self.pvp["mirror_tag_prefix"]
         )
-        with self.assertRaisesRegex(ValueError, "disconnected"):
-            mirror.select_release(
-                self.release("multiplayer-0.5.5", "0.5.5"), self.legacy
-            )
+        for app in (self.legacy, self.pvp):
+            with self.assertRaises(ValueError):
+                mirror.select_release(releases[0], app)
 
-    def test_pvp_accepts_experimental_1x_and_rejects_legacy_and_drafts(self):
-        old = self.release("multiplayer-0.5.5", "0.5.5")
-        new = self.release("multiplayer-1.0.1", prerelease=True)
-        draft = self.release("multiplayer-2.0.0", "2.0.0", draft=True)
-        selected = mirror.select_latest_release([old, new, draft], self.pvp)
-        self.assertEqual(selected["mirror_tag"], "balatro-multiplayer-pvp-v1.0.1")
-        self.assertEqual(selected["output_name"], "b-multiplayer.1.0.1.ipa")
-        self.assertEqual(
-            mirror.select_latest_release([old], self.pvp), {"available": "false"}
-        )
-        with self.assertRaises(ValueError):
-            mirror.select_release(old, self.pvp)
-        for app in self.config["apps"].values():
-            if app is not self.pvp and app.get("updates_enabled", True):
-                self.assertFalse(app.get("include_prereleases", False))
-
-    def test_archive_is_frozen_and_new_source_waits_for_real_release(self):
+    def test_both_entries_repopulate_independently_from_an_empty_source(self):
         config = copy.deepcopy(self.config)
         config["apps"] = {
             key: config["apps"][key]
             for key in ("balatro-multiplayer-legacy", "balatro-multiplayer")
         }
+        ids = {self.legacy["app_id"], self.pvp["app_id"]}
         fixture = copy.deepcopy(self.source)
-        legacy_before = next(
-            a for a in fixture["apps"] if a["bundleIdentifier"] == self.legacy["app_id"]
-        )
-        # Exercise migration from an older generated source, even after the
-        # committed source has been renamed. Only metadata may change.
-        legacy_before.update(
-            name="Balatro (Multiplayer)",
-            subtitle="Balatro with Multiplayer",
-            localizedDescription="Original legacy description",
-        )
-        expected_legacy = dict(
-            legacy_before,
-            name=self.legacy["app_name"],
-            subtitle=self.legacy["subtitle"],
-            localizedDescription=self.legacy["localized_description"],
-        )
-        for release_available in (False, True):
+        fixture["apps"] = [
+            a for a in fixture["apps"] if a["bundleIdentifier"] not in ids
+        ]
+        fixture["news"] = [n for n in fixture["news"] if n["appID"] not in ids]
+        legacy = self.release("balatro-multiplayer-legacy-v0.5.5", "0.5.5")
+        pvp = self.release("balatro-multiplayer-pvp-v1.0.3", "1.0.3")
+        stale = self.release("balatro-multiplayer-v9.0.0", "9.0.0")
+        for releases in ([], [legacy], [pvp], [legacy, pvp]):
             with (
-                self.subTest(release_available=release_available),
+                self.subTest(tags=[r["tag_name"] for r in releases]),
                 tempfile.TemporaryDirectory() as directory,
             ):
                 source_path = Path(directory) / "app.json"
                 source_path.write_text(json.dumps(fixture))
                 config["source"]["json_file"] = str(source_path)
-                mirrored = self.release(
-                    "balatro-multiplayer-pvp-v1.0.1", prerelease=True
-                )
-                releases = [self.release("balatro-multiplayer-v9.0.0", "9.0.0")]
-                if release_available:
-                    releases.append(mirrored)
-                update.update_source(config, releases)
+                update.update_source(config, releases + [stale])
                 result = update.load_json(source_path)
                 apps = {a["bundleIdentifier"]: a for a in result["apps"]}
-                self.assertEqual(apps[self.legacy["app_id"]], expected_legacy)
-                self.assertEqual(self.pvp["app_id"] in apps, release_available)
-                if release_available:
-                    self.assertEqual(apps[self.pvp["app_id"]]["version"], "1.0.1")
-                    self.assertEqual(
-                        apps[self.pvp["app_id"]]["downloadURL"],
-                        mirrored["assets"][0]["browser_download_url"],
-                    )
-                    self.assertTrue(
-                        any(n["appID"] == self.pvp["app_id"] for n in result["news"])
-                    )
+                for app, release in ((self.legacy, legacy), (self.pvp, pvp)):
+                    self.assertEqual(app["app_id"] in apps, release in releases)
+                    news = [n for n in result["news"] if n["appID"] == app["app_id"]]
+                    self.assertEqual(len(news), int(release in releases))
+                    if release in releases:
+                        self.assertEqual(
+                            apps[app["app_id"]]["downloadURL"],
+                            release["assets"][0]["browser_download_url"],
+                        )
+                        self.assertEqual(news[0]["url"], release["html_url"])
                 self.assertEqual(
-                    cleanup.cleanup_plan(
-                        config, releases[:1] * 5 + releases[1:], result
-                    ),
-                    [],
+                    [a for a in result["apps"] if a["bundleIdentifier"] not in ids],
+                    fixture["apps"],
                 )
+                self.assertEqual(
+                    [n for n in result["news"] if n["appID"] not in ids],
+                    fixture["news"],
+                )
+
+    def test_cleanup_retains_each_multiplayer_stream_separately(self):
+        config = copy.deepcopy(self.config)
+        config["apps"] = {"legacy": self.legacy, "pvp": self.pvp}
+        releases = [
+            self.release(app["mirror_tag_prefix"] + "1.0." + str(i), "1.0." + str(i))
+            for app in (self.legacy, self.pvp)
+            for i in range(1, 6)
+        ]
+        for release in releases:
+            release["published_at"] = (
+                "2026-10-0" + release["tag_name"][-1] + "T00:00:00Z"
+            )
+        fixture = copy.deepcopy(self.source)
+        ids = {self.legacy["app_id"], self.pvp["app_id"]}
+        fixture["apps"] = [
+            a for a in fixture["apps"] if a["bundleIdentifier"] not in ids
+        ]
+        fixture["news"] = [n for n in fixture["news"] if n["appID"] not in ids]
+        expected = {
+            app["mirror_tag_prefix"] + "1.0." + str(i)
+            for app in (self.legacy, self.pvp)
+            for i in (1, 2)
+        }
+        self.assertEqual(set(cleanup.cleanup_plan(config, releases, fixture)), expected)
 
     def test_new_entry_cannot_silently_disappear_after_first_release(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -143,7 +149,7 @@ class BalatroStreamsTests(unittest.TestCase):
                 update.update_source(config, [])
             self.assertEqual(source_path.read_bytes(), before)
 
-    def test_legacy_is_excluded_from_workflow_matrix(self):
+    def test_both_multiplayer_streams_are_in_workflow_matrix(self):
         expression = "[.apps | to_entries[] | select(.value.updates_enabled != false) | .value + {key: .key}]"
         workflow = (ROOT / ".github/workflows/create_release.yml").read_text()
         self.assertIn(expression, workflow)
@@ -151,7 +157,7 @@ class BalatroStreamsTests(unittest.TestCase):
             ["jq", "-c", expression, str(ROOT / "config.json")], text=True
         )
         keys = {app["key"] for app in json.loads(result)}
-        self.assertNotIn("balatro-multiplayer-legacy", keys)
+        self.assertIn("balatro-multiplayer-legacy", keys)
         self.assertIn("balatro-multiplayer", keys)
 
     def test_new_flags_require_booleans(self):

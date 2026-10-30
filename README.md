@@ -8,7 +8,7 @@ apps and community-maintained tweaks from their upstream GitHub releases. This i
 |      | App | Upstream |
 | :---: | --- | --- |
 | <img src="images/apollo/icon.png" alt="Apollo icon" width="64" height="64"> | **Apollo** | [Apollo-Reborn/Apollo-Reborn](https://github.com/Apollo-Reborn/Apollo-Reborn) |
-| <img src="images/balato_mp/icon.png" alt="Balatro Multiplayer icon" width="64" height="64"> | **Balatro (Multiplayer)** | [tanakrit-d/balatro-ios-mod-builder](https://github.com/tanakrit-d/balatro-ios-mod-builder) |
+| <img src="images/balato_mp/icon.png" alt="Balatro Multiplayer icon" width="64" height="64"> | **Balatro (PVP)** | [tanakrit-d/balatro-ios-mod-builder](https://github.com/tanakrit-d/balatro-ios-mod-builder) |
 | <img src="images/balato_mp_legacy/icon.png" alt="Balatro Multiplayer icon" width="64" height="64"> | **Balatro (Multiplayer) (Legacy)** | [tanakrit-d/balatro-ios-mod-builder](https://github.com/tanakrit-d/balatro-ios-mod-builder) |
 | <img src="images/balatro_pk/icon.png" alt="Balatro Pokermon icon" width="64" height="64"> | **Balatro (Pokermon)** | [tanakrit-d/balatro-ios-mod-builder](https://github.com/tanakrit-d/balatro-ios-mod-builder) |
 | <img src="images/plezy/icon.png" alt="Plezy icon" width="64" height="64"> | **Plezy** | [edde746/plezy](https://github.com/edde746/plezy) |
@@ -31,7 +31,6 @@ https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/app.
 This repository is an unofficial mirror and is not affiliated with the apps,
 services, or upstream projects listed above.
 
-The legacy Multiplayer entry is frozen at its existing downloads and excluded from
-mirroring and release cleanup. The new Multiplayer entry tracks PvP 1.x (including
-experimental releases) separately and appears in the source after its first real
-IPA is mirrored. It uses a separate bundle identifier so both apps can coexist.
+Legacy Multiplayer and Multiplayer PvP are mirrored as separate apps, each with
+its own stable upstream releases, bundle identifier, versions and news. Both can
+be installed together.
