@@ -78,10 +78,22 @@ class BalatroStreamsTests(unittest.TestCase):
             key: config["apps"][key]
             for key in ("balatro-multiplayer-legacy", "balatro-multiplayer")
         }
+        fixture = copy.deepcopy(self.source)
         legacy_before = next(
-            a
-            for a in self.source["apps"]
-            if a["bundleIdentifier"] == self.legacy["app_id"]
+            a for a in fixture["apps"] if a["bundleIdentifier"] == self.legacy["app_id"]
+        )
+        # Exercise migration from an older generated source, even after the
+        # committed source has been renamed. Only metadata may change.
+        legacy_before.update(
+            name="Balatro (Multiplayer)",
+            subtitle="Balatro with Multiplayer",
+            localizedDescription="Original legacy description",
+        )
+        expected_legacy = dict(
+            legacy_before,
+            name=self.legacy["app_name"],
+            subtitle=self.legacy["subtitle"],
+            localizedDescription=self.legacy["localized_description"],
         )
         for release_available in (False, True):
             with (
@@ -89,7 +101,7 @@ class BalatroStreamsTests(unittest.TestCase):
                 tempfile.TemporaryDirectory() as directory,
             ):
                 source_path = Path(directory) / "app.json"
-                source_path.write_text(json.dumps(self.source))
+                source_path.write_text(json.dumps(fixture))
                 config["source"]["json_file"] = str(source_path)
                 mirrored = self.release(
                     "balatro-multiplayer-pvp-v1.0.1", prerelease=True
@@ -100,7 +112,7 @@ class BalatroStreamsTests(unittest.TestCase):
                 update.update_source(config, releases)
                 result = update.load_json(source_path)
                 apps = {a["bundleIdentifier"]: a for a in result["apps"]}
-                self.assertEqual(apps[self.legacy["app_id"]], legacy_before)
+                self.assertEqual(apps[self.legacy["app_id"]], expected_legacy)
                 self.assertEqual(self.pvp["app_id"] in apps, release_available)
                 if release_available:
                     self.assertEqual(apps[self.pvp["app_id"]]["version"], "1.0.1")
