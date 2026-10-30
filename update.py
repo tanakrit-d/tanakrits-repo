@@ -158,6 +158,13 @@ def validate_config(config: dict[str, Any]) -> None:
     for key, app in config["apps"].items():
         if not isinstance(app, dict):
             raise ValueError(f"{key} must be an object")
+        for field in (
+            "updates_enabled",
+            "allow_missing_release",
+            "include_prereleases",
+        ):
+            if field in app and type(app[field]) is not bool:
+                raise ValueError(f"{key}.{field} must be a boolean")
         missing = required - app.keys()
         if missing:
             raise ValueError(
@@ -308,7 +315,9 @@ def app_releases(
 ) -> list[tuple[dict[str, Any], dict[str, Any]]]:
     result = []
     for release in releases:
-        if release.get("draft") or release.get("prerelease"):
+        if release.get("draft") or (
+            release.get("prerelease") and not app.get("include_prereleases", False)
+        ):
             continue
         if not release.get("tag_name", "").startswith(app["mirror_tag_prefix"]):
             continue
@@ -357,16 +366,9 @@ def news_entry(
     }
 
 
-def update_app(
-    existing: dict[str, Any] | None,
-    app: dict[str, Any],
-    releases: list[tuple[dict[str, Any], dict[str, Any]]],
-    limit: int,
+def app_metadata(
+    existing: dict[str, Any] | None, app: dict[str, Any]
 ) -> dict[str, Any]:
-    if not releases:
-        raise ValueError(
-            f"{app['app_name']}: no matching stable mirrored releases; source unchanged"
-        )
     result = dict(existing or {})
     result.update(
         {
@@ -379,16 +381,29 @@ def update_app(
             "tintColor": app["tint_colour"],
         }
     )
-    optional_metadata = {
+    for config_key, source_key in {
         "category": "category",
         "screenshots": "screenshots",
         "app_permissions": "appPermissions",
-    }
-    for config_key, source_key in optional_metadata.items():
+    }.items():
         if config_key in app:
             result[source_key] = app[config_key]
         else:
             result.pop(source_key, None)
+    return result
+
+
+def update_app(
+    existing: dict[str, Any] | None,
+    app: dict[str, Any],
+    releases: list[tuple[dict[str, Any], dict[str, Any]]],
+    limit: int,
+) -> dict[str, Any]:
+    if not releases:
+        raise ValueError(
+            f"{app['app_name']}: no matching stable mirrored releases; source unchanged"
+        )
+    result = app_metadata(existing, app)
 
     versions = [
         version_entry(release, asset, app) for release, asset in releases[:limit]
@@ -446,8 +461,29 @@ def update_source(config: dict[str, Any], releases: list[dict[str, Any]]) -> Non
     generated_news = []
 
     for key, app in config["apps"].items():
+        existing = existing_apps.get(app["app_id"])
+        if not app.get("updates_enabled", True):
+            if existing is None:
+                raise ValueError(
+                    f"{key}: archived app must already exist in the source"
+                )
+            generated_apps.append(app_metadata(existing, app))
+            generated_news.extend(
+                dict(item, caption=app["caption"])
+                for item in data.get("news", [])
+                if item.get("appID") == app["app_id"]
+            )
+            print(f"{key}: updates disconnected; preserving archived versions")
+            continue
         mirrored = app_releases(releases, app)
-        print(f"{key}: found {len(mirrored)} mirrored stable release(s)")
+        if (
+            not mirrored
+            and existing is None
+            and app.get("allow_missing_release", False)
+        ):
+            print(f"{key}: awaiting first mirrored release")
+            continue
+        print(f"{key}: found {len(mirrored)} matching mirrored release(s)")
         generated_apps.append(
             update_app(
                 existing_apps.get(app["app_id"]),

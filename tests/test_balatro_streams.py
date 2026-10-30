@@ -1,11 +1,13 @@
+import copy
 import json
-import re
+import subprocess
+import tempfile
 import unittest
 from pathlib import Path
 
-import update
+import cleanup
 import mirror
-
+import update
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -13,101 +15,161 @@ ROOT = Path(__file__).resolve().parents[1]
 class BalatroStreamsTests(unittest.TestCase):
     def setUp(self):
         self.config = update.load_json(ROOT / "config.json")
+        self.source = update.load_json(ROOT / "app.json")
+        self.legacy = self.config["apps"]["balatro-multiplayer-legacy"]
+        self.pvp = self.config["apps"]["balatro-multiplayer"]
 
-    def release(self, stream, version, date, **flags):
-        app = self.config["apps"][f"balatro-{stream}"]
+    def release(self, tag, version="1.0.1", **flags):
         return {
-            "tag_name": app["mirror_tag_prefix"] + version,
-            "published_at": date,
+            "tag_name": tag,
+            "published_at": "2026-10-30T00:00:00Z",
             "draft": False,
             "prerelease": False,
-            "html_url": "https://example.com/release",
+            "html_url": "https://example.com/release/" + tag,
             "assets": [
                 {
-                    "name": f"b-{stream}.{version}.ipa",
-                    "browser_download_url": f"https://example.com/{stream}/{version}.ipa",
+                    "name": f"b-multiplayer.{version}.ipa",
+                    "browser_download_url": "https://example.com/" + tag + ".ipa",
                     "size": 123,
                 }
             ],
             **flags,
         }
 
-    def test_streams_have_independent_versions_downloads_and_news(self):
-        releases = [
-            self.release("pokermon", "3.9.1", "2026-10-13T22:24:28Z"),
-            self.release("multiplayer", "0.5.5", "2026-10-13T22:24:19Z"),
-            self.release(
-                "multiplayer", "0.5.6", "2026-10-14T00:00:00Z", prerelease=True
-            ),
-            self.release("pokermon", "3.9.2", "2026-10-14T00:00:00Z", draft=True),
-        ]
-        for stream, version in (("multiplayer", "0.5.5"), ("pokermon", "3.9.1")):
-            app = self.config["apps"][f"balatro-{stream}"]
-            selected = update.app_releases(releases, app)
-            self.assertEqual(len(selected), 1)
-            generated = update.update_app(None, app, selected, 2)
-            self.assertEqual(generated["bundleIdentifier"], f"mod.balatro.{stream}")
-            self.assertEqual(generated["version"], version)
-            self.assertEqual(generated["versions"][0]["minOSVersion"], "15.0")
-            self.assertIn(f"/{stream}/", generated["downloadURL"])
-            self.assertEqual(
-                update.news_entry(*selected[0], app)["appID"], app["app_id"]
+    def test_existing_download_and_bundle_id_stay_with_legacy(self):
+        existing = next(
+            a
+            for a in self.source["apps"]
+            if a["bundleIdentifier"] == self.legacy["app_id"]
+        )
+        self.assertFalse(self.legacy["updates_enabled"])
+        self.assertEqual(self.legacy["app_id"], "mod.balatro.multiplayer")
+        self.assertIn("(Legacy)", existing["name"])
+        self.assertEqual(existing["version"], "0.5.5")
+        self.assertIn("/balatro-multiplayer-v0.5.5/", existing["downloadURL"])
+        self.assertNotEqual(self.legacy["app_id"], self.pvp["app_id"])
+        self.assertNotEqual(
+            self.legacy["mirror_tag_prefix"], self.pvp["mirror_tag_prefix"]
+        )
+        with self.assertRaisesRegex(ValueError, "disconnected"):
+            mirror.select_release(
+                self.release("multiplayer-0.5.5", "0.5.5"), self.legacy
             )
 
-    def test_upstream_matching_and_letter_suffix(self):
-        for stream in ("multiplayer", "pokermon"):
-            app = self.config["apps"][f"balatro-{stream}"]
-            # Python uses a different named-group syntax from jq's capture().
-            regex = app["version_regex"].replace("(?<version>", "(?P<version>")
-            for version in ("0.5.5", "0.5.5a"):
-                tag = f"{stream}-{version}"
-                self.assertIsNotNone(re.fullmatch(app["upstream_tag_regex"], tag))
-                self.assertEqual(re.fullmatch(regex, tag).group("version"), version)
-                release = self.release(stream, version, "2026-10-13T22:24:19Z")
-                self.assertEqual(
-                    update.version_entry(release, release["assets"][0], app)["version"],
-                    version,
-                )
-                self.assertIsNotNone(
-                    update.matching_asset(release, app["upstream_asset_regex"])
-                )
-            other = "pokermon" if stream == "multiplayer" else "multiplayer"
-            self.assertIsNone(re.fullmatch(app["upstream_tag_regex"], f"{other}-3.9.1"))
-            self.assertIsNone(
-                update.matching_asset(
-                    self.release(other, "3.9.1", ""), app["upstream_asset_regex"]
-                )
-            )
+    def test_pvp_accepts_experimental_1x_and_rejects_legacy_and_drafts(self):
+        old = self.release("multiplayer-0.5.5", "0.5.5")
+        new = self.release("multiplayer-1.0.1", prerelease=True)
+        draft = self.release("multiplayer-2.0.0", "2.0.0", draft=True)
+        selected = mirror.select_latest_release([old, new, draft], self.pvp)
+        self.assertEqual(selected["mirror_tag"], "balatro-multiplayer-pvp-v1.0.1")
+        self.assertEqual(selected["output_name"], "b-multiplayer.1.0.1.ipa")
+        self.assertEqual(
+            mirror.select_latest_release([old], self.pvp), {"available": "false"}
+        )
+        with self.assertRaises(ValueError):
+            mirror.select_release(old, self.pvp)
+        for app in self.config["apps"].values():
+            if app is not self.pvp and app.get("updates_enabled", True):
+                self.assertFalse(app.get("include_prereleases", False))
 
-    def test_initial_source_contains_both_streams(self):
-        source = json.loads((ROOT / "app.json").read_text())
-        apps = {app["bundleIdentifier"]: app for app in source["apps"]}
-        for stream in ("multiplayer", "pokermon"):
-            app = apps[f"mod.balatro.{stream}"]
-            self.assertTrue(app["versions"])
-            self.assertIn(f"b-{stream}.", app["downloadURL"])
-            self.assertEqual(app["downloadURL"], app["versions"][0]["downloadURL"])
-
-    def test_latest_upstream_release_is_selected_per_stream(self):
-        releases = []
-        for stream in ("multiplayer", "pokermon"):
-            for version, date, flags in (
-                ("0.5.4", "2026-10-12T00:00:00Z", {}),
-                ("0.5.5a", "2026-10-13T00:00:00Z", {}),
-                ("0.5.6", "2026-10-14T00:00:00Z", {"prerelease": True}),
-                ("0.5.7", "2026-10-15T00:00:00Z", {"draft": True}),
+    def test_archive_is_frozen_and_new_source_waits_for_real_release(self):
+        config = copy.deepcopy(self.config)
+        config["apps"] = {
+            key: config["apps"][key]
+            for key in ("balatro-multiplayer-legacy", "balatro-multiplayer")
+        }
+        legacy_before = next(
+            a
+            for a in self.source["apps"]
+            if a["bundleIdentifier"] == self.legacy["app_id"]
+        )
+        for release_available in (False, True):
+            with (
+                self.subTest(release_available=release_available),
+                tempfile.TemporaryDirectory() as directory,
             ):
-                release = self.release(stream, version, date, **flags)
-                release["tag_name"] = f"{stream}-{version}"
-                releases.append(release)
-        for stream in ("multiplayer", "pokermon"):
-            app = self.config["apps"][f"balatro-{stream}"]
-            selected = mirror.select_latest_release(list(reversed(releases)), app)
-            self.assertEqual(selected["tag"], f"{stream}-0.5.5a")
-            self.assertEqual(selected["mirror_tag"], f"balatro-{stream}-v0.5.5a")
-            self.assertEqual(selected["output_name"], f"b-{stream}.0.5.5a.ipa")
-            with self.assertRaisesRegex(ValueError, "No stable upstream release"):
-                mirror.select_latest_release([], app)
+                source_path = Path(directory) / "app.json"
+                source_path.write_text(json.dumps(self.source))
+                config["source"]["json_file"] = str(source_path)
+                mirrored = self.release(
+                    "balatro-multiplayer-pvp-v1.0.1", prerelease=True
+                )
+                releases = [self.release("balatro-multiplayer-v9.0.0", "9.0.0")]
+                if release_available:
+                    releases.append(mirrored)
+                update.update_source(config, releases)
+                result = update.load_json(source_path)
+                apps = {a["bundleIdentifier"]: a for a in result["apps"]}
+                self.assertEqual(apps[self.legacy["app_id"]], legacy_before)
+                self.assertEqual(self.pvp["app_id"] in apps, release_available)
+                if release_available:
+                    self.assertEqual(apps[self.pvp["app_id"]]["version"], "1.0.1")
+                    self.assertEqual(
+                        apps[self.pvp["app_id"]]["downloadURL"],
+                        mirrored["assets"][0]["browser_download_url"],
+                    )
+                    self.assertTrue(
+                        any(n["appID"] == self.pvp["app_id"] for n in result["news"])
+                    )
+                self.assertEqual(
+                    cleanup.cleanup_plan(
+                        config, releases[:1] * 5 + releases[1:], result
+                    ),
+                    [],
+                )
+
+    def test_new_entry_cannot_silently_disappear_after_first_release(self):
+        with tempfile.TemporaryDirectory() as directory:
+            source_path = Path(directory) / "app.json"
+            config = copy.deepcopy(self.config)
+            config["apps"] = {"balatro-multiplayer": self.pvp}
+            config["source"]["json_file"] = str(source_path)
+            release = self.release("balatro-multiplayer-pvp-v1.0.1")
+            update.update_source(config, [release])
+            before = source_path.read_bytes()
+            with self.assertRaisesRegex(ValueError, "no matching"):
+                update.update_source(config, [])
+            self.assertEqual(source_path.read_bytes(), before)
+
+    def test_legacy_is_excluded_from_workflow_matrix(self):
+        expression = "[.apps | to_entries[] | select(.value.updates_enabled != false) | .value + {key: .key}]"
+        workflow = (ROOT / ".github/workflows/create_release.yml").read_text()
+        self.assertIn(expression, workflow)
+        result = subprocess.check_output(
+            ["jq", "-c", expression, str(ROOT / "config.json")], text=True
+        )
+        keys = {app["key"] for app in json.loads(result)}
+        self.assertNotIn("balatro-multiplayer-legacy", keys)
+        self.assertIn("balatro-multiplayer", keys)
+
+    def test_new_flags_require_booleans(self):
+        for field in (
+            "updates_enabled",
+            "allow_missing_release",
+            "include_prereleases",
+        ):
+            config = copy.deepcopy(self.config)
+            config["apps"]["balatro-multiplayer"][field] = "false"
+            with self.assertRaisesRegex(ValueError, "boolean"):
+                update.validate_config(config)
+
+    def test_pokermon_retains_stable_selection_and_letter_suffix(self):
+        app = self.config["apps"]["balatro-pokermon"]
+        releases = []
+        for version, flags in (("3.9.1a", {}), ("3.9.2", {"prerelease": True})):
+            release = self.release("pokermon-" + version, version, **flags)
+            release["assets"][0]["name"] = "b-pokermon." + version + ".ipa"
+            releases.append(release)
+        selected = mirror.select_latest_release(releases, app)
+        self.assertEqual(selected["mirror_tag"], "balatro-pokermon-v3.9.1a")
+        self.assertEqual(selected["output_name"], "b-pokermon.3.9.1a.ipa")
+        mirrored = dict(releases[0], tag_name=selected["mirror_tag"])
+        matched = update.app_releases([mirrored], app)
+        generated = update.update_app(None, app, matched, 2)
+        self.assertEqual(generated["bundleIdentifier"], "mod.balatro.pokermon")
+        self.assertEqual(generated["version"], "3.9.1a")
+        self.assertEqual(generated["versions"][0]["minOSVersion"], "15.0")
+        self.assertEqual(update.news_entry(*matched[0], app)["appID"], app["app_id"])
 
 
 if __name__ == "__main__":

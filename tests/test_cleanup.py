@@ -18,10 +18,15 @@ class CleanupTests(unittest.TestCase):
         self.releases = []
         for app in self.config["apps"].values():
             existing = next(
-                item
-                for item in self.source["apps"]
-                if item["bundleIdentifier"] == app["app_id"]
+                (
+                    item
+                    for item in self.source["apps"]
+                    if item["bundleIdentifier"] == app["app_id"]
+                ),
+                None,
             )
+            if existing is None:
+                continue
             name = existing["downloadURL"].rsplit("/", 1)[1]
             for number in range(1, 6):
                 tag = app["mirror_tag_prefix"] + f"1.0.{number}"
@@ -47,10 +52,26 @@ class CleanupTests(unittest.TestCase):
         expected = {
             app["mirror_tag_prefix"] + f"1.0.{number}"
             for app in self.config["apps"].values()
+            if app.get("updates_enabled", True)
+            and any(
+                item["bundleIdentifier"] == app["app_id"]
+                for item in self.source["apps"]
+            )
             for number in (1, 2)
         }
         self.assertEqual(set(planned), expected)
-        self.assertEqual(len(planned), 2 * len(self.config["apps"]))
+        self.assertEqual(
+            len(planned),
+            2
+            * sum(
+                app.get("updates_enabled", True)
+                and any(
+                    item["bundleIdentifier"] == app["app_id"]
+                    for item in self.source["apps"]
+                )
+                for app in self.config["apps"].values()
+            ),
+        )
 
     def test_preserves_unrelated_draft_prerelease_and_unsupported_assets(self):
         excluded = []

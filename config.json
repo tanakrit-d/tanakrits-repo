@@ -185,14 +185,14 @@
             "runner": "ubuntu-latest",
             "preferred_upstream_asset_regex": "^YTKACE_[0-9]+\\.[0-9]+\\.[0-9]+_YouTube_[0-9]+\\.[0-9]+\\.[0-9]+\\.ipa$"
         },
-        "balatro-multiplayer": {
+        "balatro-multiplayer-legacy": {
             "repo_url": "tanakrit-d/balatro-ios-mod-builder",
             "app_id": "mod.balatro.multiplayer",
-            "app_name": "Balatro (Multiplayer)",
+            "app_name": "Balatro (Multiplayer) (Legacy)",
             "developer_name": "LocalThunk (& Multiplayer contributors)",
-            "subtitle": "Balatro with Multiplayer",
-            "localized_description": "Balatro bundled with Multiplayer for iOS.\n\nAdds online competitive play. Create or join a lobby to play against other players.",
-            "caption": "Update for Balatro (Multiplayer) available!",
+            "subtitle": "Legacy Balatro Multiplayer",
+            "localized_description": "Balatro bundled with legacy Multiplayer 0.5.5 for iOS.\n\nArchived build retained for existing installs. This entry no longer receives updates.",
+            "caption": "Balatro (Multiplayer) (Legacy)",
             "tint_colour": "#EF4A3C",
             "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp/news.png",
             "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp/icon.png",
@@ -209,7 +209,36 @@
             "app_permissions": {
                 "entitlements": [],
                 "privacy": {}
-            }
+            },
+            "updates_enabled": false
+        },
+        "balatro-multiplayer": {
+            "repo_url": "tanakrit-d/balatro-ios-mod-builder",
+            "app_id": "mod.balatro.multiplayer.pvp",
+            "app_name": "Balatro (Multiplayer)",
+            "developer_name": "LocalThunk (& Multiplayer contributors)",
+            "subtitle": "Balatro with Multiplayer",
+            "localized_description": "Balatro bundled with Multiplayer PvP and MultiplayerAPI for iOS.\n\nExperimental build for playing with friends on a community server. Mobile community-server support is still in development; official Steam authentication is not supported.",
+            "caption": "Update for Balatro (Multiplayer) available!",
+            "tint_colour": "#EF4A3C",
+            "image_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp/news.png",
+            "icon_url": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp/icon.png",
+            "category": "games",
+            "upstream_tag_regex": "^multiplayer-[1-9][0-9]*(?:\\.[0-9]+)+[a-z]*$",
+            "upstream_asset_regex": "^b-multiplayer\\.[0-9]+(?:\\.[0-9]+)+[a-z]*\\.ipa$",
+            "version_regex": "^multiplayer-(?<version>[0-9]+(?:\\.[0-9]+)+[a-z]*)$",
+            "mirror_tag_prefix": "balatro-multiplayer-pvp-v",
+            "mirror_asset_regex": "^b-multiplayer\\.[0-9]+(?:\\.[0-9]+)+[a-z]*\\.ipa$",
+            "output_name": "{asset_name}",
+            "transformation": "none",
+            "runner": "ubuntu-latest",
+            "min_os_version": "15.0",
+            "app_permissions": {
+                "entitlements": [],
+                "privacy": {}
+            },
+            "allow_missing_release": true,
+            "include_prereleases": true
         },
         "balatro-pokermon": {
             "repo_url": "tanakrit-d/balatro-ios-mod-builder",

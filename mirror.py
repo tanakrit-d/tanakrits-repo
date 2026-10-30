@@ -23,7 +23,11 @@ from update import (
 
 
 def select_release(release: dict[str, Any], app: dict[str, Any]) -> dict[str, str]:
-    if release.get("draft") or release.get("prerelease"):
+    if not app.get("updates_enabled", True):
+        raise ValueError("Updates are disconnected for this archived app")
+    if release.get("draft") or (
+        release.get("prerelease") and not app.get("include_prereleases", False)
+    ):
         raise ValueError("Upstream release must be stable and published")
     tag = release["tag_name"]
     if "upstream_tag_regex" in app and not compile_pattern(
@@ -69,6 +73,7 @@ def select_release(release: dict[str, Any], app: dict[str, Any]) -> dict[str, st
         app,
     )
     return {
+        "available": "true",
         "tag": tag,
         "version": version,
         "asset_url": asset["browser_download_url"],
@@ -87,10 +92,12 @@ def select_latest_release(
         release
         for release in releases
         if not release.get("draft")
-        and not release.get("prerelease")
+        and (not release.get("prerelease") or app.get("include_prereleases", False))
         and pattern.fullmatch(release.get("tag_name", ""))
     ]
     if not candidates:
+        if app.get("allow_missing_release", False):
+            return {"available": "false"}
         raise ValueError(f"No stable upstream release for {app['app_name']}")
     latest = max(candidates, key=lambda release: release.get("published_at", ""))
     return select_release(latest, app)

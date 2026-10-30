@@ -34,7 +34,7 @@ jobs:
         id: matrix
         run: |
           python update.py --validate-only
-          echo "matrix=$(jq -c '[.apps | to_entries[] | .value + {key: .key}]' config.json)" >> "$GITHUB_OUTPUT"
+          echo "matrix=$(jq -c '[.apps | to_entries[] | select(.value.updates_enabled != false) | .value + {key: .key}]' config.json)" >> "$GITHUB_OUTPUT"
 
   mirror:
     needs: prepare
@@ -62,7 +62,7 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Find latest stable upstream release
+      - name: Find latest matching upstream release
         id: release
         run: |
           if [[ -n "$UPSTREAM_TAG_REGEX" ]]; then
@@ -72,6 +72,7 @@ jobs:
           fi
 
       - name: Check whether release is already mirrored
+        if: steps.release.outputs.available != 'false'
         id: check
         env:
           MIRROR_TAG: ${{ steps.release.outputs.mirror_tag }}

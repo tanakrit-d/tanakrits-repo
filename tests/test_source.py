@@ -39,10 +39,15 @@ class SourceTests(unittest.TestCase):
         releases = []
         for app in self.config["apps"].values():
             existing = next(
-                item
-                for item in self.source["apps"]
-                if item["bundleIdentifier"] == app["app_id"]
+                (
+                    item
+                    for item in self.source["apps"]
+                    if item["bundleIdentifier"] == app["app_id"]
+                ),
+                None,
             )
+            if existing is None:
+                continue
             for version in existing["versions"]:
                 release = self.release(
                     [version["downloadURL"].rsplit("/", 1)[1]],
@@ -211,6 +216,7 @@ class SourceTests(unittest.TestCase):
     def test_successful_update_is_valid_and_respects_retention(self):
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "app.json"
+            path.write_text(json.dumps(self.source))
             self.config["source"]["json_file"] = str(path)
             releases = self.mirrored_releases()
             releases.append(dict(releases[0], draft=True))
@@ -218,7 +224,7 @@ class SourceTests(unittest.TestCase):
             update.update_source(self.config, releases)
             source = update.load_json(path)
             update.validate_source(source)
-            self.assertEqual(len(source["apps"]), len(self.config["apps"]))
+            self.assertEqual(len(source["apps"]), len(self.source["apps"]))
             expected_versions = {
                 app["bundleIdentifier"]: min(
                     len(app["versions"]), self.config["retention"]["versions_per_app"]

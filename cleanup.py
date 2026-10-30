@@ -30,6 +30,8 @@ def cleanup_plan(
     referenced_urls.update(item["url"] for item in source.get("news", []))
     tags = []
     for app in config["apps"].values():
+        if not app.get("updates_enabled", True):
+            continue
         for release, _ in app_releases(releases, app)[limit:]:
             urls = {release["html_url"]}
             urls.update(asset["browser_download_url"] for asset in release["assets"])
