@@ -122,19 +122,19 @@
       "versions": [
         {
           "version": "31.7",
+          "buildVersion": "31.7-0.1.16",
+          "date": "2026-10-31T16:57:40Z",
+          "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.7-0.1.16\nUpstream asset: \"tv.twitch-31.7-TwitchAdBlock-0.1.16.ipa\"\n\nUpstream Release Notes\nTwitchMods v0.1.16, for Twitch iOS 31.7\n\nNew: clear up the stream screen\nSettings has a new Declutter section with all the \"hide\" options in one place. New ones, all off by default:\n- Hide Channel Bar: removes the bar under the video and gives that space to chat. Tap the video to see the channel info, Follow and the other buttons.\n- Hide Leaderboard: removes the top gifters and cheerers strip.\n- Hide Subscribe Buttons: removes Subscribe and Gift a Sub.\n- Hide Bits Button: removes the cheering button from the chat box.\n- Hide Extensions Button: removes the button for extensions like viewer maps.\n- Hide \"+\" (Create) Button: removes the Create button from the bottom tab bar.\n\nGo Ad-Free, Stories, \"From Channels You Follow\" and the 7TV bar options have moved here too. Your existing choices carry over.\n\nNew: wide emotes keep their shape\nWide 7TV, BetterTTV and FrankerFaceZ emotes aren't squished anymore. They're a bit smaller, but not distorted, and animated ones still move. Prefer the old look? Turn off Keep Wide Emote Shape in Settings → Emotes. Emotes should also show up faster in busy chats.\n\nFixed\n- With an ad-block proxy on, the first channel on the Live page could get stuck loading and never play.\n- With Hide \"Go Ad-Free\" Button on, Twitch could crash when switching tabs, and Stream Manager and Analytics could go missing from your profile page.\n- With Hide \"From Channels You Follow\" on, the Live page only showed the first channel until you scrolled.\n\nDownloads\n- \"tv.twitch-31.7-TwitchAdBlock-0.1.16.ipa\": the full app.\n- \"tv.twitch-31.7-TwitchAdBlock-0.1.16-noplugins.ipa\": app extensions removed, so a free Apple ID only uses 1 App ID slot when sideloading.\n\nUsing the AltStore / SideStore / Feather source? You'll get this update automatically:\n\"\"\"\nhttps://raw.githubusercontent.com/gunnerkidBT/TwitchAdBlock/master/apps.json\n\"\"\"\n\nFull plain-language changelog: [\"CHANGELOG.md\"](https://github.com/gunnerkidBT/TwitchAdBlock/blob/master/CHANGELOG.md)",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.7-0.1.16/tv.twitch-31.7-TwitchAdBlock-0.1.16.ipa",
+          "size": 197825663
+        },
+        {
+          "version": "31.7",
           "buildVersion": "31.7-0.1.15",
           "date": "2026-10-25T03:03:06Z",
           "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.7-0.1.15\nUpstream asset: \"tv.twitch-31.7-TwitchAdBlock-0.1.15.ipa\"\n\nUpstream Release Notes\nTwitchMods v0.1.15, for Twitch iOS 31.7\n\nNew: see what moderators delete\nTurn on Keep Deleted Messages in Settings → Emotes. When a moderator deletes a message, or times out or bans someone, their messages stay in chat instead of disappearing, and a short note like \"🛡 ronni was timed out for 10m\" shows up so you know what happened.\n- Want the notes to stand out? Turn on Highlight Notes, right under it, to give them a highlighted background.\n- Both are off by default. It only works for things that happen while you're in chat.\n\nNew: hide the \"From channels you follow\" bar\nTurn on Hide \"From Channels You Follow\" in Settings → Home to remove the row of clips and recaps above the live channels on the Live page.\n\nFixed\n- The \"Go Ad-Free\" button on the Following tab is hidden again. Twitch 31.7 rebuilt that tab, so the old way of hiding it stopped working.\n\nEverything from v0.1.14 is still included: Twitch 31.7 support, ad-blocking, 7TV / BTTV / FFZ emotes (send them with the 7TV bar or by holding the emote button), Keep Live Feed Playing, Hide Stories and your default launch screen.\n\nDownloads\n- \"tv.twitch-31.7-TwitchAdBlock-0.1.15.ipa\": the full app.\n- \"tv.twitch-31.7-TwitchAdBlock-0.1.15-noplugins.ipa\": app extensions removed, so a free Apple ID only uses 1 App ID slot when sideloading.\n\nUsing the AltStore / SideStore / Feather source? You'll get this update automatically:\n\"\"\"\nhttps://raw.githubusercontent.com/gunnerkidBT/TwitchAdBlock/master/apps.json\n\"\"\"\n\nFull plain-language changelog: [\"CHANGELOG.md\"](https://github.com/gunnerkidBT/TwitchAdBlock/blob/master/CHANGELOG.md)",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.7-0.1.15/tv.twitch-31.7-TwitchAdBlock-0.1.15.ipa",
           "size": 197800481
-        },
-        {
-          "version": "30.7",
-          "buildVersion": "30.7-0.1.13",
-          "date": "2026-08-15T01:01:17Z",
-          "localizedDescription": "Upstream asset: \"tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa\"\n\nUpstream Release Notes\nTwitchMods v0.1.13 — for Twitch iOS 30.7\r\n\r\nNew in v0.1.13\r\n- Casting & AirPlay now work with ad-blocking on. Previously, having the ad-block proxy enabled could make casting to a Chromecast crash after a few seconds, or make AirPlay to an Apple TV show \"offline.\" The mod now automatically steps aside while you're casting/AirPlaying, so the stream plays on the TV — and your phone goes right back to blocking ads the moment you stop. (The stream *on the TV* still shows ads — the TV fetches the video itself, so that can't be blocked — but your phone stays ad-free.)\r\n\r\nEverything else (v0.1.12)\r\n- Blocks ads (live + VOD pre-rolls, feed banners, sponsor spots, the \"Go Ad-Free\" Turbo button)\r\n- Keep Live Feed Playing · 7TV/BTTV/FFZ chat emotes + Reload · settings backup/restore · Diagnostics · launch screen · hide Stories\r\n\r\nDownloads\r\n- \"tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa\" — full app.\r\n- \"tv.twitch-30.7-TwitchAdBlock-0.1.13-noplugins.ipa\" — app extensions removed so a free Apple ID only uses 1 App ID slot when sideloading.\r\n\r\nInstall with AltStore / SideStore (drag in the IPA) or TrollStore (tap +, pick the IPA).\r\n\r\nFull plain-language changelog: [\"CHANGELOG.md\"](https://github.com/gunnerkidBT/TwitchAdBlock/blob/master/CHANGELOG.md)",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v30.7-0.1.13/tv.twitch-30.7-TwitchAdBlock-0.1.13.ipa",
-          "size": 152372292
         }
       ],
       "appPermissions": {
@@ -160,11 +160,11 @@
         }
       },
       "version": "31.7",
-      "buildVersion": "31.7-0.1.15",
-      "versionDate": "2026-10-25T03:03:06Z",
-      "versionDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.7-0.1.15\nUpstream asset: \"tv.twitch-31.7-TwitchAdBlock-0.1.15.ipa\"\n\nUpstream Release Notes\nTwitchMods v0.1.15, for Twitch iOS 31.7\n\nNew: see what moderators delete\nTurn on Keep Deleted Messages in Settings → Emotes. When a moderator deletes a message, or times out or bans someone, their messages stay in chat instead of disappearing, and a short note like \"🛡 ronni was timed out for 10m\" shows up so you know what happened.\n- Want the notes to stand out? Turn on Highlight Notes, right under it, to give them a highlighted background.\n- Both are off by default. It only works for things that happen while you're in chat.\n\nNew: hide the \"From channels you follow\" bar\nTurn on Hide \"From Channels You Follow\" in Settings → Home to remove the row of clips and recaps above the live channels on the Live page.\n\nFixed\n- The \"Go Ad-Free\" button on the Following tab is hidden again. Twitch 31.7 rebuilt that tab, so the old way of hiding it stopped working.\n\nEverything from v0.1.14 is still included: Twitch 31.7 support, ad-blocking, 7TV / BTTV / FFZ emotes (send them with the 7TV bar or by holding the emote button), Keep Live Feed Playing, Hide Stories and your default launch screen.\n\nDownloads\n- \"tv.twitch-31.7-TwitchAdBlock-0.1.15.ipa\": the full app.\n- \"tv.twitch-31.7-TwitchAdBlock-0.1.15-noplugins.ipa\": app extensions removed, so a free Apple ID only uses 1 App ID slot when sideloading.\n\nUsing the AltStore / SideStore / Feather source? You'll get this update automatically:\n\"\"\"\nhttps://raw.githubusercontent.com/gunnerkidBT/TwitchAdBlock/master/apps.json\n\"\"\"\n\nFull plain-language changelog: [\"CHANGELOG.md\"](https://github.com/gunnerkidBT/TwitchAdBlock/blob/master/CHANGELOG.md)",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.7-0.1.15/tv.twitch-31.7-TwitchAdBlock-0.1.15.ipa",
-      "size": 197800481
+      "buildVersion": "31.7-0.1.16",
+      "versionDate": "2026-10-31T16:57:40Z",
+      "versionDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.7-0.1.16\nUpstream asset: \"tv.twitch-31.7-TwitchAdBlock-0.1.16.ipa\"\n\nUpstream Release Notes\nTwitchMods v0.1.16, for Twitch iOS 31.7\n\nNew: clear up the stream screen\nSettings has a new Declutter section with all the \"hide\" options in one place. New ones, all off by default:\n- Hide Channel Bar: removes the bar under the video and gives that space to chat. Tap the video to see the channel info, Follow and the other buttons.\n- Hide Leaderboard: removes the top gifters and cheerers strip.\n- Hide Subscribe Buttons: removes Subscribe and Gift a Sub.\n- Hide Bits Button: removes the cheering button from the chat box.\n- Hide Extensions Button: removes the button for extensions like viewer maps.\n- Hide \"+\" (Create) Button: removes the Create button from the bottom tab bar.\n\nGo Ad-Free, Stories, \"From Channels You Follow\" and the 7TV bar options have moved here too. Your existing choices carry over.\n\nNew: wide emotes keep their shape\nWide 7TV, BetterTTV and FrankerFaceZ emotes aren't squished anymore. They're a bit smaller, but not distorted, and animated ones still move. Prefer the old look? Turn off Keep Wide Emote Shape in Settings → Emotes. Emotes should also show up faster in busy chats.\n\nFixed\n- With an ad-block proxy on, the first channel on the Live page could get stuck loading and never play.\n- With Hide \"Go Ad-Free\" Button on, Twitch could crash when switching tabs, and Stream Manager and Analytics could go missing from your profile page.\n- With Hide \"From Channels You Follow\" on, the Live page only showed the first channel until you scrolled.\n\nDownloads\n- \"tv.twitch-31.7-TwitchAdBlock-0.1.16.ipa\": the full app.\n- \"tv.twitch-31.7-TwitchAdBlock-0.1.16-noplugins.ipa\": app extensions removed, so a free Apple ID only uses 1 App ID slot when sideloading.\n\nUsing the AltStore / SideStore / Feather source? You'll get this update automatically:\n\"\"\"\nhttps://raw.githubusercontent.com/gunnerkidBT/TwitchAdBlock/master/apps.json\n\"\"\"\n\nFull plain-language changelog: [\"CHANGELOG.md\"](https://github.com/gunnerkidBT/TwitchAdBlock/blob/master/CHANGELOG.md)",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.7-0.1.16/tv.twitch-31.7-TwitchAdBlock-0.1.16.ipa",
+      "size": 197825663
     },
     {
       "name": "YouTube",
@@ -248,18 +248,18 @@
           "version": "0.5.5",
           "buildVersion": "0.5.5",
           "date": "2026-10-30T13:57:30Z",
-          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-legacy-0.5.5\nUpstream asset: \"b-multiplayer-legacy.0.5.5.ipa\"\n\nUpstream Release Notes\nBuild commit: \"ed562adbdc40936b52ad3994b076b413d1273372\". Exact dependencies are recorded in \"versions.lock.json\".\n\nBalatro (PvP) (Legacy). Multiplayer 0.5.5 with its pinned Steamodded dependency and dedicated Legacy icon. Retains the original bundle identifier for existing installs. This stream does not track new mod releases.",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-legacy-v0.5.5/b-multiplayer-legacy.0.5.5.ipa",
-          "size": 72720747,
+          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-legacy-0.5.5\r\nUpstream asset: \"b-multiplayer-legacy.0.5.5.ipa\"\r\n\r\nUpstream Release Notes\r\nBuild commit: \"ed562adbdc40936b52ad3994b076b413d1273372\". Exact dependencies are recorded in \"versions.lock.json\".\r\n\r\nBalatro (PvP) (Legacy). Multiplayer 0.5.5 with its pinned Steamodded dependency and dedicated Legacy icon. Retains the original bundle identifier for existing installs. This stream does not track new mod releases.",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-legacy-v0.5.5/b-multiplayer-legacy.0.5.5.1.ipa",
+          "size": 72710464,
           "minOSVersion": "15.0"
         }
       ],
       "version": "0.5.5",
       "buildVersion": "0.5.5",
       "versionDate": "2026-10-30T13:57:30Z",
-      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-legacy-0.5.5\nUpstream asset: \"b-multiplayer-legacy.0.5.5.ipa\"\n\nUpstream Release Notes\nBuild commit: \"ed562adbdc40936b52ad3994b076b413d1273372\". Exact dependencies are recorded in \"versions.lock.json\".\n\nBalatro (PvP) (Legacy). Multiplayer 0.5.5 with its pinned Steamodded dependency and dedicated Legacy icon. Retains the original bundle identifier for existing installs. This stream does not track new mod releases.",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-legacy-v0.5.5/b-multiplayer-legacy.0.5.5.ipa",
-      "size": 72720747
+      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-legacy-0.5.5\r\nUpstream asset: \"b-multiplayer-legacy.0.5.5.ipa\"\r\n\r\nUpstream Release Notes\r\nBuild commit: \"ed562adbdc40936b52ad3994b076b413d1273372\". Exact dependencies are recorded in \"versions.lock.json\".\r\n\r\nBalatro (PvP) (Legacy). Multiplayer 0.5.5 with its pinned Steamodded dependency and dedicated Legacy icon. Retains the original bundle identifier for existing installs. This stream does not track new mod releases.",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-legacy-v0.5.5/b-multiplayer-legacy.0.5.5.1.ipa",
+      "size": 72710464
     },
     {
       "name": "Balatro (PvP)",
@@ -325,6 +325,17 @@
     }
   ],
   "news": [
+    {
+      "appID": "tv.twitch",
+      "title": "31.7 - 31 Oct",
+      "identifier": "tv.twitch-release-31.7-0.1.16",
+      "caption": "Update for TwitchAdBlock available!",
+      "date": "2026-10-31T16:57:40Z",
+      "tintColor": "#9146FF",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v31.7-0.1.16"
+    },
     {
       "appID": "mod.balatro.multiplayer.pvp",
       "title": "1.0.3 - 30 Oct",
@@ -434,17 +445,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/youtube/news.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/ytkace-v1.1.3"
-    },
-    {
-      "appID": "tv.twitch",
-      "title": "30.7 - 15 Aug",
-      "identifier": "tv.twitch-release-30.7-0.1.13",
-      "caption": "Update for TwitchAdBlock available!",
-      "date": "2026-08-15T01:01:17Z",
-      "tintColor": "#9146FF",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v30.7-0.1.13"
     }
   ]
 }
