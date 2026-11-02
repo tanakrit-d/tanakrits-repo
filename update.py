@@ -179,6 +179,7 @@ def validate_config(config: dict[str, Any]) -> None:
             "preferred_upstream_asset_regex",
             "upstream_tag_regex",
             "display_version_regex",
+            "build_version_regex",
         ):
             if field in app:
                 require_string(app[field], f"{key}.{field}")
@@ -190,6 +191,8 @@ def validate_config(config: dict[str, Any]) -> None:
                     raise ValueError(
                         f"{key}.{field} must contain a named version group"
                     )
+                if field == "build_version_regex" and "build" not in regex.groupindex:
+                    raise ValueError(f"{key}.{field} must contain a named build group")
         if app["transformation"] not in ("none", "apollo_bundle_versions"):
             raise ValueError(f"{key}: unknown transformation {app['transformation']}")
         if app["transformation"] == "apollo_bundle_versions" and not app[
@@ -298,6 +301,19 @@ def display_version(
     )
 
 
+def app_build_version(
+    release: dict[str, Any], asset: dict[str, Any], app: dict[str, Any]
+) -> str:
+    # Older packages used their mod version as CFBundleVersion. New mobile
+    # packages encode a separate numeric iOS build in the immutable filename.
+    pattern = app.get("build_version_regex")
+    if pattern:
+        match = compile_pattern(pattern).fullmatch(asset["name"])
+        if match:
+            return match.group("build")
+    return version_from_tag(release["tag_name"], app["mirror_tag_prefix"])
+
+
 def matching_asset(release: dict[str, Any], pattern: str) -> dict[str, Any] | None:
     regex = compile_pattern(pattern)
     return next(
@@ -333,7 +349,7 @@ def version_entry(
     release: dict[str, Any], asset: dict[str, Any], app: dict[str, Any]
 ) -> dict[str, Any]:
     version = display_version(release, asset, app)
-    build_version = version_from_tag(release["tag_name"], app["mirror_tag_prefix"])
+    build_version = app_build_version(release, asset, app)
     result = {
         "version": version,
         "buildVersion": build_version,

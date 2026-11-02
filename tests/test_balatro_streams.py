@@ -66,6 +66,34 @@ class BalatroStreamsTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 mirror.select_release(releases[0], app)
 
+    def test_mobile_revision_keeps_mod_version_and_ios_build_separate(self):
+        for key, stream, version in (
+            ("balatro-multiplayer", "multiplayer", "1.0.3"),
+            ("balatro-multiplayer-legacy", "multiplayer-legacy", "0.5.5"),
+            ("balatro-pokermon", "pokermon", "3.9.1"),
+        ):
+            app = self.config["apps"][key]
+            upstream = self.release(
+                f"{stream}-{version}-1000.32.1", f"{version}-1000.32.1"
+            )
+            upstream["assets"][0]["name"] = f"b-{stream}.{version}-1000.32.1.ipa"
+            selected = mirror.select_release(upstream, app)
+            self.assertEqual(
+                selected["mirror_tag"],
+                app["mirror_tag_prefix"] + version + "-1000.32.1",
+            )
+            mirrored = copy.deepcopy(upstream)
+            mirrored["tag_name"] = selected["mirror_tag"]
+            entry = update.version_entry(mirrored, mirrored["assets"][0], app)
+            self.assertEqual(entry["version"], version)
+            self.assertEqual(entry["buildVersion"], "1000.32.1")
+            old = self.release(app["mirror_tag_prefix"] + version, version)
+            old["assets"][0]["name"] = f"b-{stream}.{version}.ipa"
+            self.assertEqual(
+                update.version_entry(old, old["assets"][0], app)["buildVersion"],
+                version,
+            )
+
     def test_both_entries_repopulate_independently_from_an_empty_source(self):
         config = copy.deepcopy(self.config)
         config["apps"] = {
