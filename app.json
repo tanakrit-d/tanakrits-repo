@@ -245,20 +245,20 @@
       },
       "versions": [
         {
-          "version": "0.5.5.1",
+          "version": "0.5.5",
           "buildVersion": "0.5.5",
           "date": "2026-10-30T13:57:30Z",
           "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-legacy-0.5.5\r\nUpstream asset: \"b-multiplayer-legacy.0.5.5.ipa\"\r\n\r\nUpstream Release Notes\r\nBuild commit: \"ed562adbdc40936b52ad3994b076b413d1273372\". Exact dependencies are recorded in \"versions.lock.json\".\r\n\r\nBalatro (PvP) (Legacy). Multiplayer 0.5.5 with its pinned Steamodded dependency and dedicated Legacy icon. Retains the original bundle identifier for existing installs. This stream does not track new mod releases.",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-legacy-v0.5.5/b-multiplayer-legacy.0.5.5.1.ipa",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-legacy-v0.5.5/b-multiplayer-legacy.0.5.5.ipa",
           "size": 72710464,
           "minOSVersion": "15.0"
         }
       ],
-      "version": "0.5.5.1",
+      "version": "0.5.5",
       "buildVersion": "0.5.5",
       "versionDate": "2026-10-30T13:57:30Z",
       "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-legacy-0.5.5\r\nUpstream asset: \"b-multiplayer-legacy.0.5.5.ipa\"\r\n\r\nUpstream Release Notes\r\nBuild commit: \"ed562adbdc40936b52ad3994b076b413d1273372\". Exact dependencies are recorded in \"versions.lock.json\".\r\n\r\nBalatro (PvP) (Legacy). Multiplayer 0.5.5 with its pinned Steamodded dependency and dedicated Legacy icon. Retains the original bundle identifier for existing installs. This stream does not track new mod releases.",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-legacy-v0.5.5/b-multiplayer-legacy.0.5.5.1.ipa",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-legacy-v0.5.5/b-multiplayer-legacy.0.5.5.ipa",
       "size": 72710464
     },
     {
@@ -380,7 +380,7 @@
     },
     {
       "appID": "mod.balatro.multiplayer",
-      "title": "0.5.5.1 - 30 Oct",
+      "title": "0.5.5 - 30 Oct",
       "identifier": "mod.balatro.multiplayer-release-0.5.5",
       "caption": "Update for Balatro (PvP) (Legacy) available!",
       "date": "2026-10-30T13:57:30Z",
