@@ -308,32 +308,43 @@
       "versions": [
         {
           "version": "3.9.1",
+          "buildVersion": "1000.34.1",
+          "date": "2026-11-04T11:03:00Z",
+          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1-1000.34.1\nUpstream asset: \"b-pokermon.3.9.1-1000.34.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"313f0fc4f93952317cfd47e47a2c776509e51183\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"34.1\". iOS build: \"1000.34.1\".",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1-1000.34.1/b-pokermon.3.9.1-1000.34.1.ipa",
+          "size": 125802322,
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.9.1",
           "buildVersion": "1000.32.1",
           "date": "2026-11-02T21:29:30Z",
           "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1-1000.32.1\nUpstream asset: \"b-pokermon.3.9.1-1000.32.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"313f0fc4f93952317cfd47e47a2c776509e51183\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"32.1\". iOS build: \"1000.32.1\".",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1-1000.32.1/b-pokermon.3.9.1-1000.32.1.ipa",
           "size": 125804384,
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.9.1",
-          "buildVersion": "3.9.1",
-          "date": "2026-10-15T03:02:46Z",
-          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1\nUpstream asset: \"b-pokermon.3.9.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"ed562adbdc40936b52ad3994b076b413d1273372\". Exact dependencies are recorded in \"versions.lock.json\".",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1/b-pokermon.3.9.1.ipa",
-          "size": 125816989,
-          "minOSVersion": "15.0"
         }
       ],
       "version": "3.9.1",
-      "buildVersion": "1000.32.1",
-      "versionDate": "2026-11-02T21:29:30Z",
-      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1-1000.32.1\nUpstream asset: \"b-pokermon.3.9.1-1000.32.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"313f0fc4f93952317cfd47e47a2c776509e51183\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"32.1\". iOS build: \"1000.32.1\".",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1-1000.32.1/b-pokermon.3.9.1-1000.32.1.ipa",
-      "size": 125804384
+      "buildVersion": "1000.34.1",
+      "versionDate": "2026-11-04T11:03:00Z",
+      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1-1000.34.1\nUpstream asset: \"b-pokermon.3.9.1-1000.34.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"313f0fc4f93952317cfd47e47a2c776509e51183\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"34.1\". iOS build: \"1000.34.1\".",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1-1000.34.1/b-pokermon.3.9.1-1000.34.1.ipa",
+      "size": 125802322
     }
   ],
   "news": [
+    {
+      "appID": "mod.balatro.pokermon",
+      "title": "3.9.1 - 04 Nov",
+      "identifier": "mod.balatro.pokermon-release-3.9.1-1000.34.1",
+      "caption": "Update for Balatro (Pokermon) available!",
+      "date": "2026-11-04T11:03:00Z",
+      "tintColor": "#EF4A3C",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balatro_pk/news.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/balatro-pokermon-v3.9.1-1000.34.1"
+    },
     {
       "appID": "com.google.ios.youtube",
       "title": "21.44.4 - 04 Nov",
@@ -454,17 +465,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/plezy/news.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.24.0"
-    },
-    {
-      "appID": "mod.balatro.pokermon",
-      "title": "3.9.1 - 15 Oct",
-      "identifier": "mod.balatro.pokermon-release-3.9.1",
-      "caption": "Update for Balatro (Pokermon) available!",
-      "date": "2026-10-15T03:02:46Z",
-      "tintColor": "#EF4A3C",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balatro_pk/news.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/balatro-pokermon-v3.9.1"
     }
   ]
 }
