@@ -1,4 +1,4 @@
-"""Keep the latest configured mirrored releases per app; preview by default."""
+"""Remove old mirrored releases and their tags; preview by default."""
 
 from __future__ import annotations
 
@@ -47,7 +47,16 @@ def cleanup_plan(
 def delete_releases(repository: str, tags: list[str]) -> None:
     for tag in tags:
         subprocess.run(
-            ["gh", "release", "delete", tag, "--repo", repository, "--yes"],
+            [
+                "gh",
+                "release",
+                "delete",
+                tag,
+                "--repo",
+                repository,
+                "--yes",
+                "--cleanup-tag",
+            ],
             check=True,
         )
 
@@ -56,14 +65,19 @@ def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--config", default="config.json")
     parser.add_argument("--repository", required=True)
-    parser.add_argument("--apply", action="store_true", help="Delete planned releases")
+    parser.add_argument(
+        "--apply", action="store_true", help="Delete planned releases and their tags"
+    )
     args = parser.parse_args()
     config = load_json(Path(args.config))
     validate_config(config)
     source = load_json(Path(config["source"]["json_file"]))
     validate_source(source)
     tags = cleanup_plan(config, github_releases(args.repository), source)
-    print(f"{'Deleting' if args.apply else 'Would delete'} {len(tags)} release(s)")
+    print(
+        f"{'Deleting' if args.apply else 'Would delete'} {len(tags)} release(s) "
+        "and their tag(s)"
+    )
     for tag in tags:
         print(tag)
     if args.apply:

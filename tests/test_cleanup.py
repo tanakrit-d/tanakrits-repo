@@ -133,6 +133,7 @@ class CleanupTests(unittest.TestCase):
                     "--repo",
                     "owner/repo",
                     "--yes",
+                    "--cleanup-tag",
                 ],
                 check=True,
             )
