@@ -277,29 +277,29 @@
       "versions": [
         {
           "version": "1.0.5",
+          "buildVersion": "1000.41.1",
+          "date": "2026-11-10T06:20:17Z",
+          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-1.0.5-1000.41.1\nUpstream asset: \"b-multiplayer.1.0.5-1000.41.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"2271a4b79d80f00204c3228d2097159e10c774e4\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"41.1\". iOS build: \"1000.41.1\".\n\nBalatro (PvP). Includes MultiplayerPvP, MultiplayerAPI, Steamodded, Lovely and statically linked iOS OpenSSL. Uses verified BalatroMultiplayerMobile release assets with Steam-free login for custom Community servers; configure mod-configs/multiplayer/MultiplayerAPI/config.lua before building to bundle your server defaults.\n\nBalatro-Multiplayer/BalatroMultiplayerAPI: mod \"1.0.5\", upstream commit \"958607d55c93375f859f2993423950af42ec85d3\", official release \"v1.0.5\".\n\nBalatro-Multiplayer/BalatroMultiplayerPvP: mod \"1.0.5\", upstream commit \"a5aac88ed508848f061a3d3e552b6f8920fb0a33\", official release \"v1.0.5\".",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-pvp-v1.0.5-1000.41.1/b-multiplayer.1.0.5-1000.41.1.ipa",
+          "size": 73481901,
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "1.0.5",
           "buildVersion": "1000.40.1",
           "date": "2026-11-09T22:00:32Z",
           "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-1.0.5-1000.40.1\nUpstream asset: \"b-multiplayer.1.0.5-1000.40.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"088e9e56416d7690b226047fc617fab7616000b0\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"40.1\". iOS build: \"1000.40.1\".\n\nBalatro (PvP). Includes MultiplayerPvP, MultiplayerAPI, Steamodded, Lovely and statically linked iOS OpenSSL. Uses the forks’ mobile branches with Steam-free login for custom Community servers; configure mod-configs/multiplayer/MultiplayerAPI/config.lua before building to bundle your server defaults.\n\ntanakrit-d/BalatroMultiplayerAPI: mod \"1.0.5\", mobile commit \"297389bba79b135567c6e0ebd9b984affb108a56\", official release \"v1.0.5\".\n\ntanakrit-d/BalatroMultiplayerPvP: mod \"1.0.5\", mobile commit \"88976150d069db4acfaf5d3d278e763c76338c59\", official release \"v1.0.5\".",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-pvp-v1.0.5-1000.40.1/b-multiplayer.1.0.5-1000.40.1.ipa",
           "size": 73406822,
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "1.0.5",
-          "buildVersion": "1000.35.1",
-          "date": "2026-11-05T16:31:01Z",
-          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-1.0.5-1000.35.1\nUpstream asset: \"b-multiplayer.1.0.5-1000.35.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"313f0fc4f93952317cfd47e47a2c776509e51183\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"35.1\". iOS build: \"1000.35.1\".\n\nBalatro (PvP). Includes MultiplayerPvP, MultiplayerAPI, Steamodded, Lovely and statically linked iOS OpenSSL. Uses the forks’ mobile branches with Steam-free login for custom Community servers; configure mod-configs/multiplayer/MultiplayerAPI/config.lua before building to bundle your server defaults.\n\ntanakrit-d/BalatroMultiplayerAPI: mod \"1.0.5\", mobile commit \"297389bba79b135567c6e0ebd9b984affb108a56\", official release \"v1.0.5\".\n\ntanakrit-d/BalatroMultiplayerPvP: mod \"1.0.5\", mobile commit \"88976150d069db4acfaf5d3d278e763c76338c59\", official release \"v1.0.5\".",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-pvp-v1.0.5-1000.35.1/b-multiplayer.1.0.5-1000.35.1.ipa",
-          "size": 73406475,
-          "minOSVersion": "15.0"
         }
       ],
       "version": "1.0.5",
-      "buildVersion": "1000.40.1",
-      "versionDate": "2026-11-09T22:00:32Z",
-      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-1.0.5-1000.40.1\nUpstream asset: \"b-multiplayer.1.0.5-1000.40.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"088e9e56416d7690b226047fc617fab7616000b0\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"40.1\". iOS build: \"1000.40.1\".\n\nBalatro (PvP). Includes MultiplayerPvP, MultiplayerAPI, Steamodded, Lovely and statically linked iOS OpenSSL. Uses the forks’ mobile branches with Steam-free login for custom Community servers; configure mod-configs/multiplayer/MultiplayerAPI/config.lua before building to bundle your server defaults.\n\ntanakrit-d/BalatroMultiplayerAPI: mod \"1.0.5\", mobile commit \"297389bba79b135567c6e0ebd9b984affb108a56\", official release \"v1.0.5\".\n\ntanakrit-d/BalatroMultiplayerPvP: mod \"1.0.5\", mobile commit \"88976150d069db4acfaf5d3d278e763c76338c59\", official release \"v1.0.5\".",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-pvp-v1.0.5-1000.40.1/b-multiplayer.1.0.5-1000.40.1.ipa",
-      "size": 73406822
+      "buildVersion": "1000.41.1",
+      "versionDate": "2026-11-10T06:20:17Z",
+      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/multiplayer-1.0.5-1000.41.1\nUpstream asset: \"b-multiplayer.1.0.5-1000.41.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"2271a4b79d80f00204c3228d2097159e10c774e4\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"41.1\". iOS build: \"1000.41.1\".\n\nBalatro (PvP). Includes MultiplayerPvP, MultiplayerAPI, Steamodded, Lovely and statically linked iOS OpenSSL. Uses verified BalatroMultiplayerMobile release assets with Steam-free login for custom Community servers; configure mod-configs/multiplayer/MultiplayerAPI/config.lua before building to bundle your server defaults.\n\nBalatro-Multiplayer/BalatroMultiplayerAPI: mod \"1.0.5\", upstream commit \"958607d55c93375f859f2993423950af42ec85d3\", official release \"v1.0.5\".\n\nBalatro-Multiplayer/BalatroMultiplayerPvP: mod \"1.0.5\", upstream commit \"a5aac88ed508848f061a3d3e552b6f8920fb0a33\", official release \"v1.0.5\".",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-multiplayer-pvp-v1.0.5-1000.41.1/b-multiplayer.1.0.5-1000.41.1.ipa",
+      "size": 73481901
     },
     {
       "name": "Balatro (Pokermon)",
@@ -317,32 +317,54 @@
       "versions": [
         {
           "version": "3.9.1",
+          "buildVersion": "1000.41.1",
+          "date": "2026-11-10T06:20:21Z",
+          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1-1000.41.1\nUpstream asset: \"b-pokermon.3.9.1-1000.41.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"2271a4b79d80f00204c3228d2097159e10c774e4\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"41.1\". iOS build: \"1000.41.1\".",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1-1000.41.1/b-pokermon.3.9.1-1000.41.1.ipa",
+          "size": 125802318,
+          "minOSVersion": "15.0"
+        },
+        {
+          "version": "3.9.1",
           "buildVersion": "1000.40.1",
           "date": "2026-11-09T22:00:42Z",
           "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1-1000.40.1\nUpstream asset: \"b-pokermon.3.9.1-1000.40.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"088e9e56416d7690b226047fc617fab7616000b0\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"40.1\". iOS build: \"1000.40.1\".",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1-1000.40.1/b-pokermon.3.9.1-1000.40.1.ipa",
           "size": 125801954,
           "minOSVersion": "15.0"
-        },
-        {
-          "version": "3.9.1",
-          "buildVersion": "1000.35.1",
-          "date": "2026-11-05T16:31:06Z",
-          "localizedDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1-1000.35.1\nUpstream asset: \"b-pokermon.3.9.1-1000.35.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"313f0fc4f93952317cfd47e47a2c776509e51183\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"35.1\". iOS build: \"1000.35.1\".",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1-1000.35.1/b-pokermon.3.9.1-1000.35.1.ipa",
-          "size": 125801608,
-          "minOSVersion": "15.0"
         }
       ],
       "version": "3.9.1",
-      "buildVersion": "1000.40.1",
-      "versionDate": "2026-11-09T22:00:42Z",
-      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1-1000.40.1\nUpstream asset: \"b-pokermon.3.9.1-1000.40.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"088e9e56416d7690b226047fc617fab7616000b0\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"40.1\". iOS build: \"1000.40.1\".",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1-1000.40.1/b-pokermon.3.9.1-1000.40.1.ipa",
-      "size": 125801954
+      "buildVersion": "1000.41.1",
+      "versionDate": "2026-11-10T06:20:21Z",
+      "versionDescription": "Upstream release: https://github.com/tanakrit-d/balatro-ios-mod-builder/releases/tag/pokermon-3.9.1-1000.41.1\nUpstream asset: \"b-pokermon.3.9.1-1000.41.1.ipa\"\n\nUpstream Release Notes\nBuild commit: \"2271a4b79d80f00204c3228d2097159e10c774e4\". Exact dependencies are recorded in \"versions.lock.json\".\n\nMobile package revision: \"41.1\". iOS build: \"1000.41.1\".",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/balatro-pokermon-v3.9.1-1000.41.1/b-pokermon.3.9.1-1000.41.1.ipa",
+      "size": 125802318
     }
   ],
   "news": [
+    {
+      "appID": "mod.balatro.pokermon",
+      "title": "3.9.1 - 10 Nov",
+      "identifier": "mod.balatro.pokermon-release-3.9.1-1000.41.1",
+      "caption": "Update for Balatro (Pokermon) available!",
+      "date": "2026-11-10T06:20:21Z",
+      "tintColor": "#EF4A3C",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balatro_pk/news.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/balatro-pokermon-v3.9.1-1000.41.1"
+    },
+    {
+      "appID": "mod.balatro.multiplayer.pvp",
+      "title": "1.0.5 - 10 Nov",
+      "identifier": "mod.balatro.multiplayer.pvp-release-1.0.5-1000.41.1",
+      "caption": "Update for Balatro (PvP) available!",
+      "date": "2026-11-10T06:20:17Z",
+      "tintColor": "#EF4A3C",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp/news.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/balatro-multiplayer-pvp-v1.0.5-1000.41.1"
+    },
     {
       "appID": "mod.balatro.pokermon",
       "title": "3.9.1 - 09 Nov",
@@ -386,28 +408,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v31.9-0.1.18"
-    },
-    {
-      "appID": "mod.balatro.pokermon",
-      "title": "3.9.1 - 05 Nov",
-      "identifier": "mod.balatro.pokermon-release-3.9.1-1000.35.1",
-      "caption": "Update for Balatro (Pokermon) available!",
-      "date": "2026-11-05T16:31:06Z",
-      "tintColor": "#EF4A3C",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balatro_pk/news.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/balatro-pokermon-v3.9.1-1000.35.1"
-    },
-    {
-      "appID": "mod.balatro.multiplayer.pvp",
-      "title": "1.0.5 - 05 Nov",
-      "identifier": "mod.balatro.multiplayer.pvp-release-1.0.5-1000.35.1",
-      "caption": "Update for Balatro (PvP) available!",
-      "date": "2026-11-05T16:31:01Z",
-      "tintColor": "#EF4A3C",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/balato_mp/news.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/balatro-multiplayer-pvp-v1.0.5-1000.35.1"
     },
     {
       "appID": "com.google.ios.youtube",
