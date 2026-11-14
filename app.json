@@ -122,19 +122,19 @@
       "versions": [
         {
           "version": "31.9",
+          "buildVersion": "31.9-0.1.20",
+          "date": "2026-11-14T17:44:18Z",
+          "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.9-0.1.20\nUpstream asset: \"tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa\"\n\nUpstream Release Notes\nFixed ad blocking (for real this time). Twitch changed how they serve ads on their backend. The previous fix didn't fully cover it — this one does. Ad blocking should now work reliably again.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa\" | Main IPA (AltStore / SideStore / TrollStore) |\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.20-no-plugins.ipa\" | IPA without app extensions (saves 2 sideload slots) |\n| \"com.level3tjg.twitchadblock_0.1.20_iphoneos-arm.deb\" | Rootful jailbreak (iphoneos-arm) |\n| \"com.level3tjg.twitchadblock_0.1.20_iphoneos-arm64.deb\" | Rootless jailbreak (iphoneos-arm64) |\n\nAltStore / SideStore / Feather source\nAdd this URL to get automatic update notifications:\n\"\"\"\nhttps://raw.githubusercontent.com/gunnerkidBT/TwitchAdBlock/master/apps.json\n\"\"\"",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.9-0.1.20/tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa",
+          "size": 196557264
+        },
+        {
+          "version": "31.9",
           "buildVersion": "31.9-0.1.19",
           "date": "2026-11-13T05:30:35Z",
           "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.9-0.1.19\nUpstream asset: \"tv.twitch-31.9-TwitchAdBlock-0.1.19.ipa\"\n\nUpstream Release Notes\nFixed ad blocking. Ads were getting through even with the proxy on. Fixed the issue — ads should be blocked again.",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.9-0.1.19/tv.twitch-31.9-TwitchAdBlock-0.1.19.ipa",
           "size": 196556351
-        },
-        {
-          "version": "31.9",
-          "buildVersion": "31.9-0.1.18",
-          "date": "2026-11-08T17:43:03Z",
-          "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.9-0.1.18\nUpstream asset: \"tv.twitch-31.9-TwitchAdBlock-0.1.18.ipa\"\n\nUpstream Release Notes\nTwitchMods 0.1.18 for Twitch 31.9\n\nAuto-claim bonus channel points. When you watch a stream long enough, a bonus points chest appears in chat. Now the mod claims it for you automatically — no tapping needed. Turn it on in Settings → Chat → Auto-Claim Bonus Points. It's off by default.\n\nWorks with Twitch 31.9. Verified that all features still work on the latest Twitch update.\n\nFixed: setting your launch screen to \"Following\" made streams unclickable until you switched tabs and came back. It also showed the wrong theme (dark mode) until you moved away. Both are fixed.",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.9-0.1.18/tv.twitch-31.9-TwitchAdBlock-0.1.18.ipa",
-          "size": 199752793
         }
       ],
       "appPermissions": {
@@ -160,11 +160,11 @@
         }
       },
       "version": "31.9",
-      "buildVersion": "31.9-0.1.19",
-      "versionDate": "2026-11-13T05:30:35Z",
-      "versionDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.9-0.1.19\nUpstream asset: \"tv.twitch-31.9-TwitchAdBlock-0.1.19.ipa\"\n\nUpstream Release Notes\nFixed ad blocking. Ads were getting through even with the proxy on. Fixed the issue — ads should be blocked again.",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.9-0.1.19/tv.twitch-31.9-TwitchAdBlock-0.1.19.ipa",
-      "size": 196556351
+      "buildVersion": "31.9-0.1.20",
+      "versionDate": "2026-11-14T17:44:18Z",
+      "versionDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.9-0.1.20\nUpstream asset: \"tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa\"\n\nUpstream Release Notes\nFixed ad blocking (for real this time). Twitch changed how they serve ads on their backend. The previous fix didn't fully cover it — this one does. Ad blocking should now work reliably again.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa\" | Main IPA (AltStore / SideStore / TrollStore) |\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.20-no-plugins.ipa\" | IPA without app extensions (saves 2 sideload slots) |\n| \"com.level3tjg.twitchadblock_0.1.20_iphoneos-arm.deb\" | Rootful jailbreak (iphoneos-arm) |\n| \"com.level3tjg.twitchadblock_0.1.20_iphoneos-arm64.deb\" | Rootless jailbreak (iphoneos-arm64) |\n\nAltStore / SideStore / Feather source\nAdd this URL to get automatic update notifications:\n\"\"\"\nhttps://raw.githubusercontent.com/gunnerkidBT/TwitchAdBlock/master/apps.json\n\"\"\"",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.9-0.1.20/tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa",
+      "size": 196557264
     },
     {
       "name": "YouTube",
@@ -353,6 +353,17 @@
   ],
   "news": [
     {
+      "appID": "tv.twitch",
+      "title": "31.9 - 14 Nov",
+      "identifier": "tv.twitch-release-31.9-0.1.20",
+      "caption": "Update for TwitchAdBlock available!",
+      "date": "2026-11-14T17:44:18Z",
+      "tintColor": "#9146FF",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v31.9-0.1.20"
+    },
+    {
       "appID": "com.christianselig.Apollo",
       "title": "4.1.0 - 14 Nov",
       "identifier": "com.christianselig.Apollo-release-4.1.0",
@@ -450,17 +461,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/plezy/news.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.26.0"
-    },
-    {
-      "appID": "tv.twitch",
-      "title": "31.9 - 08 Nov",
-      "identifier": "tv.twitch-release-31.9-0.1.18",
-      "caption": "Update for TwitchAdBlock available!",
-      "date": "2026-11-08T17:43:03Z",
-      "tintColor": "#9146FF",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v31.9-0.1.18"
     },
     {
       "appID": "com.google.ios.youtube",
