@@ -122,19 +122,19 @@
       "versions": [
         {
           "version": "31.9",
+          "buildVersion": "31.9-0.1.21",
+          "date": "2026-11-16T05:15:25Z",
+          "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.9-0.1.21\nUpstream asset: \"tv.twitch-31.9-TwitchAdBlock-0.1.21.ipa\"\n\nUpstream Release Notes\nWhat's New\n\nHide community highlights. New master toggle in Settings → Declutter that lets you hide distracting overlays above chat — pinned messages, hype trains, predictions, polls, sub goals, and Twitch Drops notifications. Each one has its own sub-toggle so you can pick exactly what to hide.\n\nSkip proxy for specific channels. Some channels don't run ads at all. You can now list channels that should skip the ad-block proxy entirely in Settings → Proxy → Skip Proxy for Channels. Subscribed channels already skip it automatically.\n\nHide clip button. New toggle to remove the clip button from the video player controls.\n\nFixed 7TV emotes from other channels showing in chat. Emotes from a channel you previously visited no longer leak into other channels' chats.\n\nFixed a video playback error with proxied streams. Some streams could show \"an error has occurred trying to play this content\" when using the proxy. Fixed.\n\nFixed Home launch screen on Twitch 31.9. The \"Home → Following\", \"Home → Live\", and \"Home → Clips\" options now work again on the latest Twitch version.\n\nFixed settings import. Importing an old settings file no longer causes playback errors — stale settings are properly cleared first.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.21.ipa\" | Sideload IPA (AltStore / SideStore / TrollStore) |\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.21-no-plugins.ipa\" | Sideload IPA without app extensions (fewer app ID slots) |\n| \"com.level3tjg.twitchadblock_0.1.21_iphoneos-arm.deb\" | Jailbreak .deb (rootful) |\n| \"com.level3tjg.twitchadblock_0.1.21_iphoneos-arm64.deb\" | Jailbreak .deb (rootless) |",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.9-0.1.21/tv.twitch-31.9-TwitchAdBlock-0.1.21.ipa",
+          "size": 196569728
+        },
+        {
+          "version": "31.9",
           "buildVersion": "31.9-0.1.20",
           "date": "2026-11-14T17:44:18Z",
           "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.9-0.1.20\nUpstream asset: \"tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa\"\n\nUpstream Release Notes\nFixed ad blocking (for real this time). Twitch changed how they serve ads on their backend. The previous fix didn't fully cover it — this one does. Ad blocking should now work reliably again.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa\" | Main IPA (AltStore / SideStore / TrollStore) |\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.20-no-plugins.ipa\" | IPA without app extensions (saves 2 sideload slots) |\n| \"com.level3tjg.twitchadblock_0.1.20_iphoneos-arm.deb\" | Rootful jailbreak (iphoneos-arm) |\n| \"com.level3tjg.twitchadblock_0.1.20_iphoneos-arm64.deb\" | Rootless jailbreak (iphoneos-arm64) |\n\nAltStore / SideStore / Feather source\nAdd this URL to get automatic update notifications:\n\"\"\"\nhttps://raw.githubusercontent.com/gunnerkidBT/TwitchAdBlock/master/apps.json\n\"\"\"",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.9-0.1.20/tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa",
           "size": 196557264
-        },
-        {
-          "version": "31.9",
-          "buildVersion": "31.9-0.1.19",
-          "date": "2026-11-13T05:30:35Z",
-          "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.9-0.1.19\nUpstream asset: \"tv.twitch-31.9-TwitchAdBlock-0.1.19.ipa\"\n\nUpstream Release Notes\nFixed ad blocking. Ads were getting through even with the proxy on. Fixed the issue — ads should be blocked again.",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.9-0.1.19/tv.twitch-31.9-TwitchAdBlock-0.1.19.ipa",
-          "size": 196556351
         }
       ],
       "appPermissions": {
@@ -160,11 +160,11 @@
         }
       },
       "version": "31.9",
-      "buildVersion": "31.9-0.1.20",
-      "versionDate": "2026-11-14T17:44:18Z",
-      "versionDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.9-0.1.20\nUpstream asset: \"tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa\"\n\nUpstream Release Notes\nFixed ad blocking (for real this time). Twitch changed how they serve ads on their backend. The previous fix didn't fully cover it — this one does. Ad blocking should now work reliably again.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa\" | Main IPA (AltStore / SideStore / TrollStore) |\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.20-no-plugins.ipa\" | IPA without app extensions (saves 2 sideload slots) |\n| \"com.level3tjg.twitchadblock_0.1.20_iphoneos-arm.deb\" | Rootful jailbreak (iphoneos-arm) |\n| \"com.level3tjg.twitchadblock_0.1.20_iphoneos-arm64.deb\" | Rootless jailbreak (iphoneos-arm64) |\n\nAltStore / SideStore / Feather source\nAdd this URL to get automatic update notifications:\n\"\"\"\nhttps://raw.githubusercontent.com/gunnerkidBT/TwitchAdBlock/master/apps.json\n\"\"\"",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.9-0.1.20/tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa",
-      "size": 196557264
+      "buildVersion": "31.9-0.1.21",
+      "versionDate": "2026-11-16T05:15:25Z",
+      "versionDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.9-0.1.21\nUpstream asset: \"tv.twitch-31.9-TwitchAdBlock-0.1.21.ipa\"\n\nUpstream Release Notes\nWhat's New\n\nHide community highlights. New master toggle in Settings → Declutter that lets you hide distracting overlays above chat — pinned messages, hype trains, predictions, polls, sub goals, and Twitch Drops notifications. Each one has its own sub-toggle so you can pick exactly what to hide.\n\nSkip proxy for specific channels. Some channels don't run ads at all. You can now list channels that should skip the ad-block proxy entirely in Settings → Proxy → Skip Proxy for Channels. Subscribed channels already skip it automatically.\n\nHide clip button. New toggle to remove the clip button from the video player controls.\n\nFixed 7TV emotes from other channels showing in chat. Emotes from a channel you previously visited no longer leak into other channels' chats.\n\nFixed a video playback error with proxied streams. Some streams could show \"an error has occurred trying to play this content\" when using the proxy. Fixed.\n\nFixed Home launch screen on Twitch 31.9. The \"Home → Following\", \"Home → Live\", and \"Home → Clips\" options now work again on the latest Twitch version.\n\nFixed settings import. Importing an old settings file no longer causes playback errors — stale settings are properly cleared first.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.21.ipa\" | Sideload IPA (AltStore / SideStore / TrollStore) |\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.21-no-plugins.ipa\" | Sideload IPA without app extensions (fewer app ID slots) |\n| \"com.level3tjg.twitchadblock_0.1.21_iphoneos-arm.deb\" | Jailbreak .deb (rootful) |\n| \"com.level3tjg.twitchadblock_0.1.21_iphoneos-arm64.deb\" | Jailbreak .deb (rootless) |",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.9-0.1.21/tv.twitch-31.9-TwitchAdBlock-0.1.21.ipa",
+      "size": 196569728
     },
     {
       "name": "YouTube",
@@ -177,28 +177,28 @@
       "category": "entertainment",
       "versions": [
         {
+          "version": "21.46.3",
+          "buildVersion": "1.1.8",
+          "date": "2026-11-16T05:15:27Z",
+          "localizedDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.1.8\nUpstream asset: \"YTKACE_1.1.8_YouTube_21.46.3.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\nThe FlareStore certificate giveaway is still going in the YTKACE Telegram channel: https://t.me/ytkace\n\nWhat's new:\n• Updated to YouTube 21.46.3\n• Added Return YouTube Dislike for videos, Shorts and the description panel\n• YTKACE and YouTube buttons can now be mixed in the top row and the fullscreen bar\n• Added a left button column, and every player button can now be edited in the layout editor\n• Added fullscreen bar button toggles\n• Added a compact Quality Button and quality settings for AirPlay and Low Power Mode\n• Added an option to bypass the Premium device streaming limit\n• Added Shorts feed filters for live streams and posts\n• Shorts auto-scroll now waits while you read comments\n• Reworked Swipe to Seek and hold speed\n• PiP now uses native iOS PiP\n\nFixed:\n• Crash when the fullscreen buttons rebuild\n• PiP not starting again after a Short or after the first time\n• PiP starting when leaving the app with the video paused\n• Player download button with HLS\n• Captions turning back on after turning them off\n• Shorts missing on channels opened from a Short\n• Tab bar taps when the Shorts tab is hidden\n• Glass tab bar hidden behind incognito and the sleep timer strip\n• Controls hiding while using buttons, hold speed seeking, backup restore and title overlap\n\nYouTube 21.46.3 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.1.8_YouTube_21.46.3.ipa\" for iOS 17 and newer\n• \"YTKACE_1.1.8_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.1.8/YTKACE_1.1.8_YouTube_21.46.3.ipa",
+          "size": 141821255
+        },
+        {
           "version": "21.45.4",
           "buildVersion": "1.1.7",
           "date": "2026-11-11T05:04:31Z",
           "localizedDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.1.7\nUpstream asset: \"YTKACE_1.1.7_YouTube_21.45.4.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\n1,000 stars 🎉\nThanks for 1k stars! To celebrate, FlareStore is sponsoring a giveaway of 5 certificates in the new YTKACE Telegram channel: https://t.me/ytkace\n\nWhat's new:\n• Updated to YouTube 21.45.4\n• Button Layout: drag the player buttons into YouTube's top row, the row under it, or next to the fullscreen button\n• Added a Quality Button that shows the current quality\n• Added Auto Fullscreen and Exit Fullscreen at End\n• Added Swipe to Seek\n• Added Previous/Next Skip\n• Added Keep Playing, which stops the \"Continue watching?\" pause\n• Added a Playlist tab\n• Added a default video quality and audio language for downloads\n• Added Remove Live Videos from Home\n• Added an Auto-Scroll Delay for Shorts\n• Added a minimum segment length to SponsorBlock\n• Added iPhone Duo layouts\n\nFixed:\n• Videos missing from Home on some accounts\n• Lock screen scrubbing and skip not working for downloads\n• Tabs not switching when Home is hidden\n• Live streams counted as finished in the queue\n• Auto-scroll skipping Shorts before they end\n• Show Status Bar in Fullscreen not working\n• Invisible back button with OLED in light mode\n• HLS Streams not falling back when a video fails\n• Tab icons and labels on vertical tab bars\n\nYouTube 21.45.4 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.1.7_YouTube_21.45.4.ipa\" for iOS 17 and newer\n• \"YTKACE_1.1.7_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.1.7/YTKACE_1.1.7_YouTube_21.45.4.ipa",
           "size": 140303052
-        },
-        {
-          "version": "21.44.4",
-          "buildVersion": "1.1.5",
-          "date": "2026-11-04T05:13:10Z",
-          "localizedDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.1.5\nUpstream asset: \"YTKACE_1.1.5_YouTube_21.44.4.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\nWhat's new:\n• Updated to YouTube 21.44.4\n• Normal Home Layout now brings back the old Home with topic chips\n• Added Turn Off Haptics\n• Added Open Links Directly\n• Added Remove Autoplay Prompt\n• Added Remove More Videos\n• Added an option to remove Listen with YouTube Music from the ⋯ menu\n• Added a rotate button to the downloads player\n• Captions can now be turned on in Always Off mode\n\nFixed:\n• Tab settings ignored on YouTube's glass tab bar\n• Glass tab bar with icon-only tabs\n• Startup tab when Home is hidden\n• Tab labels and icons on YouTube's icon-only tab bar\n• Subscriptions tab missing from the bottom bar, and its icon\n• Remove Channel Watermark not working\n• Remove End Screen not working\n• Keep Progress Bar Visible not working\n\nYouTube 21.44.4 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.1.5_YouTube_21.44.4.ipa\" for iOS 17 and newer\n• \"YTKACE_1.1.5_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.1.5/YTKACE_1.1.5_YouTube_21.44.4.ipa",
-          "size": 139496330
         }
       ],
-      "version": "21.45.4",
-      "buildVersion": "1.1.7",
-      "versionDate": "2026-11-11T05:04:31Z",
-      "versionDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.1.7\nUpstream asset: \"YTKACE_1.1.7_YouTube_21.45.4.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\n1,000 stars 🎉\nThanks for 1k stars! To celebrate, FlareStore is sponsoring a giveaway of 5 certificates in the new YTKACE Telegram channel: https://t.me/ytkace\n\nWhat's new:\n• Updated to YouTube 21.45.4\n• Button Layout: drag the player buttons into YouTube's top row, the row under it, or next to the fullscreen button\n• Added a Quality Button that shows the current quality\n• Added Auto Fullscreen and Exit Fullscreen at End\n• Added Swipe to Seek\n• Added Previous/Next Skip\n• Added Keep Playing, which stops the \"Continue watching?\" pause\n• Added a Playlist tab\n• Added a default video quality and audio language for downloads\n• Added Remove Live Videos from Home\n• Added an Auto-Scroll Delay for Shorts\n• Added a minimum segment length to SponsorBlock\n• Added iPhone Duo layouts\n\nFixed:\n• Videos missing from Home on some accounts\n• Lock screen scrubbing and skip not working for downloads\n• Tabs not switching when Home is hidden\n• Live streams counted as finished in the queue\n• Auto-scroll skipping Shorts before they end\n• Show Status Bar in Fullscreen not working\n• Invisible back button with OLED in light mode\n• HLS Streams not falling back when a video fails\n• Tab icons and labels on vertical tab bars\n\nYouTube 21.45.4 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.1.7_YouTube_21.45.4.ipa\" for iOS 17 and newer\n• \"YTKACE_1.1.7_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.1.7/YTKACE_1.1.7_YouTube_21.45.4.ipa",
-      "size": 140303052,
+      "version": "21.46.3",
+      "buildVersion": "1.1.8",
+      "versionDate": "2026-11-16T05:15:27Z",
+      "versionDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.1.8\nUpstream asset: \"YTKACE_1.1.8_YouTube_21.46.3.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\nThe FlareStore certificate giveaway is still going in the YTKACE Telegram channel: https://t.me/ytkace\n\nWhat's new:\n• Updated to YouTube 21.46.3\n• Added Return YouTube Dislike for videos, Shorts and the description panel\n• YTKACE and YouTube buttons can now be mixed in the top row and the fullscreen bar\n• Added a left button column, and every player button can now be edited in the layout editor\n• Added fullscreen bar button toggles\n• Added a compact Quality Button and quality settings for AirPlay and Low Power Mode\n• Added an option to bypass the Premium device streaming limit\n• Added Shorts feed filters for live streams and posts\n• Shorts auto-scroll now waits while you read comments\n• Reworked Swipe to Seek and hold speed\n• PiP now uses native iOS PiP\n\nFixed:\n• Crash when the fullscreen buttons rebuild\n• PiP not starting again after a Short or after the first time\n• PiP starting when leaving the app with the video paused\n• Player download button with HLS\n• Captions turning back on after turning them off\n• Shorts missing on channels opened from a Short\n• Tab bar taps when the Shorts tab is hidden\n• Glass tab bar hidden behind incognito and the sleep timer strip\n• Controls hiding while using buttons, hold speed seeking, backup restore and title overlap\n\nYouTube 21.46.3 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.1.8_YouTube_21.46.3.ipa\" for iOS 17 and newer\n• \"YTKACE_1.1.8_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.1.8/YTKACE_1.1.8_YouTube_21.46.3.ipa",
+      "size": 141821255,
       "appPermissions": {
         "entitlements": [
           "application-identifier",
@@ -353,6 +353,28 @@
   ],
   "news": [
     {
+      "appID": "com.google.ios.youtube",
+      "title": "21.46.3 - 16 Nov",
+      "identifier": "com.google.ios.youtube-release-1.1.8",
+      "caption": "Update for YouTube available!",
+      "date": "2026-11-16T05:15:27Z",
+      "tintColor": "#FF0000",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/youtube/news.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/ytkace-v1.1.8"
+    },
+    {
+      "appID": "tv.twitch",
+      "title": "31.9 - 16 Nov",
+      "identifier": "tv.twitch-release-31.9-0.1.21",
+      "caption": "Update for TwitchAdBlock available!",
+      "date": "2026-11-16T05:15:25Z",
+      "tintColor": "#9146FF",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v31.9-0.1.21"
+    },
+    {
       "appID": "tv.twitch",
       "title": "31.9 - 14 Nov",
       "identifier": "tv.twitch-release-31.9-0.1.20",
@@ -373,17 +395,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/apollo/news.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/apollo-reborn-glass-v4.1.0"
-    },
-    {
-      "appID": "tv.twitch",
-      "title": "31.9 - 13 Nov",
-      "identifier": "tv.twitch-release-31.9-0.1.19",
-      "caption": "Update for TwitchAdBlock available!",
-      "date": "2026-11-13T05:30:35Z",
-      "tintColor": "#9146FF",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v31.9-0.1.19"
     },
     {
       "appID": "com.google.ios.youtube",
@@ -461,17 +472,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/plezy/news.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/plezy-v2.26.0"
-    },
-    {
-      "appID": "com.google.ios.youtube",
-      "title": "21.44.4 - 04 Nov",
-      "identifier": "com.google.ios.youtube-release-1.1.5",
-      "caption": "Update for YouTube available!",
-      "date": "2026-11-04T05:13:10Z",
-      "tintColor": "#FF0000",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/youtube/news.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/ytkace-v1.1.5"
     },
     {
       "appID": "mod.balatro.multiplayer",
