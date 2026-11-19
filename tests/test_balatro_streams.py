@@ -1,9 +1,9 @@
 import copy
 import json
-import subprocess
 import tempfile
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 import cleanup
 import mirror
@@ -178,13 +178,27 @@ class BalatroStreamsTests(unittest.TestCase):
             self.assertEqual(source_path.read_bytes(), before)
 
     def test_both_multiplayer_streams_are_in_workflow_matrix(self):
-        expression = "[.apps | to_entries[] | select(.value.updates_enabled != false) | .value + {key: .key}]"
         workflow = (ROOT / ".github/workflows/create_release.yml").read_text()
-        self.assertIn(expression, workflow)
-        result = subprocess.check_output(
-            ["jq", "-c", expression, str(ROOT / "config.json")], text=True
-        )
-        keys = {app["key"] for app in json.loads(result)}
+        self.assertIn("python mirror.py plan", workflow)
+        config = {
+            "apps": {
+                "balatro-multiplayer-legacy": self.legacy,
+                "balatro-multiplayer": self.pvp,
+            }
+        }
+        releases = [
+            [
+                self.release("multiplayer-legacy-0.5.5", "0.5.5"),
+                self.release("multiplayer-1.0.3", "1.0.3"),
+            ]
+        ]
+        with (
+            patch("mirror.subprocess.run") as run,
+            patch("mirror.check_release", return_value={"should_mirror": "true"}),
+        ):
+            run.return_value.stdout = json.dumps(releases)
+            matrix = mirror.plan_mirrors(config, "owner/repo")
+        keys = {app["key"] for app in matrix}
         self.assertIn("balatro-multiplayer-legacy", keys)
         self.assertIn("balatro-multiplayer", keys)
 

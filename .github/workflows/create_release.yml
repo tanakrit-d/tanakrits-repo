@@ -19,8 +19,11 @@ env:
 jobs:
   prepare:
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
+      has_work: ${{ steps.matrix.outputs.has_work }}
     steps:
       - name: Check out repository
         uses: actions/checkout@v7
@@ -30,14 +33,15 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Validate config and create app matrix
+      - name: Validate config and find apps needing mirroring
         id: matrix
         run: |
           python update.py --validate-only
-          echo "matrix=$(jq -c '[.apps | to_entries[] | select(.value.updates_enabled != false) | .value + {key: .key}]' config.json)" >> "$GITHUB_OUTPUT"
+          python mirror.py plan
 
   mirror:
     needs: prepare
+    if: needs.prepare.outputs.has_work == 'true'
     strategy:
       fail-fast: false
       matrix:

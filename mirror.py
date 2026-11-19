@@ -135,10 +135,58 @@ def write_outputs(values: dict[str, str]) -> None:
             output.write(f"{key}<<{delimiter}\n{value}\n{delimiter}\n")
 
 
+def plan_mirrors(config: dict[str, Any], repository: str) -> list[dict[str, Any]]:
+    """Allocate build runners only for missing or incomplete mirrors."""
+    pending = []
+    for key, app in config["apps"].items():
+        if not app.get("updates_enabled", True):
+            continue
+        endpoint = f"repos/{app['repo_url']}/releases"
+        if app.get("upstream_tag_regex"):
+            response = subprocess.run(
+                ["gh", "api", "--paginate", "--slurp", endpoint + "?per_page=100"],
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+            releases = [
+                release for page in json.loads(response.stdout) for release in page
+            ]
+            selected = select_latest_release(releases, app)
+        else:
+            response = subprocess.run(
+                ["gh", "api", endpoint + "/latest"],
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+            selected = select_release(json.loads(response.stdout), app)
+        if selected["available"] == "false":
+            print(f"{key}: no matching upstream release")
+            continue
+        checked = check_release(
+            repository, selected["mirror_tag"], selected["output_name"]
+        )
+        if checked["should_mirror"] == "true":
+            pending.append({**app, "key": key})
+            print(f"{key}: mirror needed")
+        else:
+            print(f"{key}: already mirrored")
+    return pending
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("command", choices=("select", "check"))
+    parser.add_argument("command", choices=("select", "check", "plan"))
     args = parser.parse_args()
+    if args.command == "plan":
+        config = load_json(Path("config.json"))
+        validate_config(config)
+        pending = plan_mirrors(config, os.environ["GITHUB_REPOSITORY"])
+        write_outputs(
+            {"matrix": json.dumps(pending), "has_work": str(bool(pending)).lower()}
+        )
+        return
     if args.command == "select":
         config = load_json(Path("config.json"))
         validate_config(config)
