@@ -121,20 +121,20 @@
       "category": "entertainment",
       "versions": [
         {
+          "version": "32.1",
+          "buildVersion": "32.1-0.1.22",
+          "date": "2026-11-20T19:42:00Z",
+          "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v32.1-0.1.22\nUpstream asset: \"tv.twitch-32.1-TwitchAdBlock-0.1.22.ipa\"\n\nUpstream Release Notes\nWhat's New\n\nWorks with Twitch 32.1. Updated to run on the latest Twitch app.\n\nBlocked the \"update Twitch\" nag. Twitch 32.x added a new update prompt that could pop up and interrupt you. It's now automatically dismissed.\n\nFixed Home launch screen on Twitch 32.x. The \"Home → Following\", \"Home → Live\", and \"Home → Clips\" launch screen options now work correctly on Twitch 32 and newer.\n\nFixed \"Go Ad-Free\" button hiding on Twitch 32.x. The declutter toggle to hide the Go Ad-Free button works again on the latest Twitch version.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.22.ipa\" | Sideload IPA (AltStore / SideStore / TrollStore) |\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.22-no-plugins.ipa\" | Sideload IPA without app extensions (fewer app ID slots) |\n| \"com.level3tjg.twitchadblock_0.1.22_iphoneos-arm.deb\" | Jailbreak .deb (rootful) |\n| \"com.level3tjg.twitchadblock_0.1.22_iphoneos-arm64.deb\" | Jailbreak .deb (rootless) |",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v32.1-0.1.22/tv.twitch-32.1-TwitchAdBlock-0.1.22.ipa",
+          "size": 197446639
+        },
+        {
           "version": "31.9",
           "buildVersion": "31.9-0.1.21",
           "date": "2026-11-16T05:15:25Z",
           "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.9-0.1.21\nUpstream asset: \"tv.twitch-31.9-TwitchAdBlock-0.1.21.ipa\"\n\nUpstream Release Notes\nWhat's New\n\nHide community highlights. New master toggle in Settings → Declutter that lets you hide distracting overlays above chat — pinned messages, hype trains, predictions, polls, sub goals, and Twitch Drops notifications. Each one has its own sub-toggle so you can pick exactly what to hide.\n\nSkip proxy for specific channels. Some channels don't run ads at all. You can now list channels that should skip the ad-block proxy entirely in Settings → Proxy → Skip Proxy for Channels. Subscribed channels already skip it automatically.\n\nHide clip button. New toggle to remove the clip button from the video player controls.\n\nFixed 7TV emotes from other channels showing in chat. Emotes from a channel you previously visited no longer leak into other channels' chats.\n\nFixed a video playback error with proxied streams. Some streams could show \"an error has occurred trying to play this content\" when using the proxy. Fixed.\n\nFixed Home launch screen on Twitch 31.9. The \"Home → Following\", \"Home → Live\", and \"Home → Clips\" options now work again on the latest Twitch version.\n\nFixed settings import. Importing an old settings file no longer causes playback errors — stale settings are properly cleared first.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.21.ipa\" | Sideload IPA (AltStore / SideStore / TrollStore) |\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.21-no-plugins.ipa\" | Sideload IPA without app extensions (fewer app ID slots) |\n| \"com.level3tjg.twitchadblock_0.1.21_iphoneos-arm.deb\" | Jailbreak .deb (rootful) |\n| \"com.level3tjg.twitchadblock_0.1.21_iphoneos-arm64.deb\" | Jailbreak .deb (rootless) |",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.9-0.1.21/tv.twitch-31.9-TwitchAdBlock-0.1.21.ipa",
           "size": 196569728
-        },
-        {
-          "version": "31.9",
-          "buildVersion": "31.9-0.1.20",
-          "date": "2026-11-14T17:44:18Z",
-          "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.9-0.1.20\nUpstream asset: \"tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa\"\n\nUpstream Release Notes\nFixed ad blocking (for real this time). Twitch changed how they serve ads on their backend. The previous fix didn't fully cover it — this one does. Ad blocking should now work reliably again.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa\" | Main IPA (AltStore / SideStore / TrollStore) |\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.20-no-plugins.ipa\" | IPA without app extensions (saves 2 sideload slots) |\n| \"com.level3tjg.twitchadblock_0.1.20_iphoneos-arm.deb\" | Rootful jailbreak (iphoneos-arm) |\n| \"com.level3tjg.twitchadblock_0.1.20_iphoneos-arm64.deb\" | Rootless jailbreak (iphoneos-arm64) |\n\nAltStore / SideStore / Feather source\nAdd this URL to get automatic update notifications:\n\"\"\"\nhttps://raw.githubusercontent.com/gunnerkidBT/TwitchAdBlock/master/apps.json\n\"\"\"",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.9-0.1.20/tv.twitch-31.9-TwitchAdBlock-0.1.20.ipa",
-          "size": 196557264
         }
       ],
       "appPermissions": {
@@ -159,12 +159,12 @@
           "NSUserTrackingUsageDescription": "Your iOS advertising ID and device data will be used to support creators and provide a personal ad experience."
         }
       },
-      "version": "31.9",
-      "buildVersion": "31.9-0.1.21",
-      "versionDate": "2026-11-16T05:15:25Z",
-      "versionDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v31.9-0.1.21\nUpstream asset: \"tv.twitch-31.9-TwitchAdBlock-0.1.21.ipa\"\n\nUpstream Release Notes\nWhat's New\n\nHide community highlights. New master toggle in Settings → Declutter that lets you hide distracting overlays above chat — pinned messages, hype trains, predictions, polls, sub goals, and Twitch Drops notifications. Each one has its own sub-toggle so you can pick exactly what to hide.\n\nSkip proxy for specific channels. Some channels don't run ads at all. You can now list channels that should skip the ad-block proxy entirely in Settings → Proxy → Skip Proxy for Channels. Subscribed channels already skip it automatically.\n\nHide clip button. New toggle to remove the clip button from the video player controls.\n\nFixed 7TV emotes from other channels showing in chat. Emotes from a channel you previously visited no longer leak into other channels' chats.\n\nFixed a video playback error with proxied streams. Some streams could show \"an error has occurred trying to play this content\" when using the proxy. Fixed.\n\nFixed Home launch screen on Twitch 31.9. The \"Home → Following\", \"Home → Live\", and \"Home → Clips\" options now work again on the latest Twitch version.\n\nFixed settings import. Importing an old settings file no longer causes playback errors — stale settings are properly cleared first.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.21.ipa\" | Sideload IPA (AltStore / SideStore / TrollStore) |\n| \"tv.twitch-31.9-TwitchAdBlock-0.1.21-no-plugins.ipa\" | Sideload IPA without app extensions (fewer app ID slots) |\n| \"com.level3tjg.twitchadblock_0.1.21_iphoneos-arm.deb\" | Jailbreak .deb (rootful) |\n| \"com.level3tjg.twitchadblock_0.1.21_iphoneos-arm64.deb\" | Jailbreak .deb (rootless) |",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v31.9-0.1.21/tv.twitch-31.9-TwitchAdBlock-0.1.21.ipa",
-      "size": 196569728
+      "version": "32.1",
+      "buildVersion": "32.1-0.1.22",
+      "versionDate": "2026-11-20T19:42:00Z",
+      "versionDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v32.1-0.1.22\nUpstream asset: \"tv.twitch-32.1-TwitchAdBlock-0.1.22.ipa\"\n\nUpstream Release Notes\nWhat's New\n\nWorks with Twitch 32.1. Updated to run on the latest Twitch app.\n\nBlocked the \"update Twitch\" nag. Twitch 32.x added a new update prompt that could pop up and interrupt you. It's now automatically dismissed.\n\nFixed Home launch screen on Twitch 32.x. The \"Home → Following\", \"Home → Live\", and \"Home → Clips\" launch screen options now work correctly on Twitch 32 and newer.\n\nFixed \"Go Ad-Free\" button hiding on Twitch 32.x. The declutter toggle to hide the Go Ad-Free button works again on the latest Twitch version.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.22.ipa\" | Sideload IPA (AltStore / SideStore / TrollStore) |\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.22-no-plugins.ipa\" | Sideload IPA without app extensions (fewer app ID slots) |\n| \"com.level3tjg.twitchadblock_0.1.22_iphoneos-arm.deb\" | Jailbreak .deb (rootful) |\n| \"com.level3tjg.twitchadblock_0.1.22_iphoneos-arm64.deb\" | Jailbreak .deb (rootless) |",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v32.1-0.1.22/tv.twitch-32.1-TwitchAdBlock-0.1.22.ipa",
+      "size": 197446639
     },
     {
       "name": "YouTube",
@@ -353,6 +353,17 @@
   ],
   "news": [
     {
+      "appID": "tv.twitch",
+      "title": "32.1 - 20 Nov",
+      "identifier": "tv.twitch-release-32.1-0.1.22",
+      "caption": "Update for TwitchAdBlock available!",
+      "date": "2026-11-20T19:42:00Z",
+      "tintColor": "#9146FF",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v32.1-0.1.22"
+    },
+    {
       "appID": "mod.balatro.multiplayer.pvp",
       "title": "1.0.6 - 19 Nov",
       "identifier": "mod.balatro.multiplayer.pvp-release-1.0.6-1000.57.1",
@@ -384,17 +395,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v31.9-0.1.21"
-    },
-    {
-      "appID": "tv.twitch",
-      "title": "31.9 - 14 Nov",
-      "identifier": "tv.twitch-release-31.9-0.1.20",
-      "caption": "Update for TwitchAdBlock available!",
-      "date": "2026-11-14T17:44:18Z",
-      "tintColor": "#9146FF",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v31.9-0.1.20"
     },
     {
       "appID": "com.christianselig.Apollo",
