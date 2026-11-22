@@ -122,19 +122,19 @@
       "versions": [
         {
           "version": "32.1",
+          "buildVersion": "32.1-0.1.24",
+          "date": "2026-11-22T19:10:14Z",
+          "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v32.1-0.1.24\nUpstream asset: \"tv.twitch-32.1-TwitchAdBlock-0.1.24.ipa\"\n\nUpstream Release Notes\nWhat's New\r\n\r\nWide emotes at full size. With Keep Wide Emote Shape on (Settings → Emotes, on by default), wide 7TV/BTTV/FFZ emotes now show at the same height as normal emotes, and the chat line makes room for them so nothing overlaps.\r\n\r\nMuch faster emotes. Third-party emotes now show up almost instantly, even in busy chats. Each channel's emote list is remembered between launches, emote images load from a smaller format, and each image is only prepared once.\r\n\r\nFixed emotes showing as plain text. If two channels used the same name for different emotes, the second channel's emote could show as text. Each channel now gets its own emotes, and a channel's emote wins over a global one with the same name, like the 7TV extension.\r\n\r\nYour own emotes show up. When you send a message with a 7TV, BTTV or FFZ emote, it now shows as the emote in your own chat right away instead of as text (wide ones at full size too), and the chat box previews it while you type.\r\n\r\n7TV/BTTV/FFZ emotes in Twitch's emote picker. Twitch's own emote picker now lists the channel's and global 7TV, BTTV and FFZ emotes in two extra sections, below your Twitch emotes.\r\n\r\nChat Text Size. New option in Settings → Chat to make chat messages bigger: Default, Large, or Extra Large. Only chat messages change size; the rest of the app stays the same.\r\n\r\nBigger Emote Size steps. Large and Extra Large are now noticeably bigger than Default.\r\n\r\nDownloads\r\n\r\n| File | Description |\r\n|------|-------------|\r\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.24.ipa\" | Sideload IPA (AltStore / SideStore / Feather) |\r\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.24-no-plugins.ipa\" | Sideload IPA without app extensions (TrollStore) |\r\n| \"com.level3tjg.twitchadblock_0.1.24_iphoneos-arm.deb\" | Rootful deb (unc0ver / checkra1n) |\r\n| \"com.level3tjg.twitchadblock_0.1.24_iphoneos-arm64.deb\" | Rootless deb (Dopamine / palera1n) |",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v32.1-0.1.24/tv.twitch-32.1-TwitchAdBlock-0.1.24.ipa",
+          "size": 197485443
+        },
+        {
+          "version": "32.1",
           "buildVersion": "32.1-0.1.23",
           "date": "2026-11-21T18:48:24Z",
           "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v32.1-0.1.23\nUpstream asset: \"tv.twitch-32.1-TwitchAdBlock-0.1.23.ipa\"\n\nUpstream Release Notes\nWhat's New\n\nEmote Size setting. New option in Settings → Chat to make emotes bigger. Choose between Default, Large, and Extra Large.\n\nImproved proxy reliability. Switched to a more reliable proxy server so ad-blocking stays working. If you'd like to help keep the proxy server running, there's a new \"Support the Developer\" tip button at the bottom of Settings.\n\nFixed Emote Size cell appearance. The Emote Size selector now matches the rest of the settings in both light and dark mode.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.23.ipa\" | Sideload IPA (AltStore / SideStore / Feather) |\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.23-no-plugins.ipa\" | Sideload IPA without app extensions (TrollStore) |\n| \"com.level3tjg.twitchadblock_0.1.23_iphoneos-arm.deb\" | Rootful deb (unc0ver / checkra1n) |\n| \"com.level3tjg.twitchadblock_0.1.23_iphoneos-arm64.deb\" | Rootless deb (Dopamine / palera1n) |",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v32.1-0.1.23/tv.twitch-32.1-TwitchAdBlock-0.1.23.ipa",
           "size": 197450367
-        },
-        {
-          "version": "32.1",
-          "buildVersion": "32.1-0.1.22",
-          "date": "2026-11-20T19:42:00Z",
-          "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v32.1-0.1.22\nUpstream asset: \"tv.twitch-32.1-TwitchAdBlock-0.1.22.ipa\"\n\nUpstream Release Notes\nWhat's New\n\nWorks with Twitch 32.1. Updated to run on the latest Twitch app.\n\nBlocked the \"update Twitch\" nag. Twitch 32.x added a new update prompt that could pop up and interrupt you. It's now automatically dismissed.\n\nFixed Home launch screen on Twitch 32.x. The \"Home → Following\", \"Home → Live\", and \"Home → Clips\" launch screen options now work correctly on Twitch 32 and newer.\n\nFixed \"Go Ad-Free\" button hiding on Twitch 32.x. The declutter toggle to hide the Go Ad-Free button works again on the latest Twitch version.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.22.ipa\" | Sideload IPA (AltStore / SideStore / TrollStore) |\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.22-no-plugins.ipa\" | Sideload IPA without app extensions (fewer app ID slots) |\n| \"com.level3tjg.twitchadblock_0.1.22_iphoneos-arm.deb\" | Jailbreak .deb (rootful) |\n| \"com.level3tjg.twitchadblock_0.1.22_iphoneos-arm64.deb\" | Jailbreak .deb (rootless) |",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v32.1-0.1.22/tv.twitch-32.1-TwitchAdBlock-0.1.22.ipa",
-          "size": 197446639
         }
       ],
       "appPermissions": {
@@ -160,11 +160,11 @@
         }
       },
       "version": "32.1",
-      "buildVersion": "32.1-0.1.23",
-      "versionDate": "2026-11-21T18:48:24Z",
-      "versionDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v32.1-0.1.23\nUpstream asset: \"tv.twitch-32.1-TwitchAdBlock-0.1.23.ipa\"\n\nUpstream Release Notes\nWhat's New\n\nEmote Size setting. New option in Settings → Chat to make emotes bigger. Choose between Default, Large, and Extra Large.\n\nImproved proxy reliability. Switched to a more reliable proxy server so ad-blocking stays working. If you'd like to help keep the proxy server running, there's a new \"Support the Developer\" tip button at the bottom of Settings.\n\nFixed Emote Size cell appearance. The Emote Size selector now matches the rest of the settings in both light and dark mode.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.23.ipa\" | Sideload IPA (AltStore / SideStore / Feather) |\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.23-no-plugins.ipa\" | Sideload IPA without app extensions (TrollStore) |\n| \"com.level3tjg.twitchadblock_0.1.23_iphoneos-arm.deb\" | Rootful deb (unc0ver / checkra1n) |\n| \"com.level3tjg.twitchadblock_0.1.23_iphoneos-arm64.deb\" | Rootless deb (Dopamine / palera1n) |",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v32.1-0.1.23/tv.twitch-32.1-TwitchAdBlock-0.1.23.ipa",
-      "size": 197450367
+      "buildVersion": "32.1-0.1.24",
+      "versionDate": "2026-11-22T19:10:14Z",
+      "versionDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v32.1-0.1.24\nUpstream asset: \"tv.twitch-32.1-TwitchAdBlock-0.1.24.ipa\"\n\nUpstream Release Notes\nWhat's New\r\n\r\nWide emotes at full size. With Keep Wide Emote Shape on (Settings → Emotes, on by default), wide 7TV/BTTV/FFZ emotes now show at the same height as normal emotes, and the chat line makes room for them so nothing overlaps.\r\n\r\nMuch faster emotes. Third-party emotes now show up almost instantly, even in busy chats. Each channel's emote list is remembered between launches, emote images load from a smaller format, and each image is only prepared once.\r\n\r\nFixed emotes showing as plain text. If two channels used the same name for different emotes, the second channel's emote could show as text. Each channel now gets its own emotes, and a channel's emote wins over a global one with the same name, like the 7TV extension.\r\n\r\nYour own emotes show up. When you send a message with a 7TV, BTTV or FFZ emote, it now shows as the emote in your own chat right away instead of as text (wide ones at full size too), and the chat box previews it while you type.\r\n\r\n7TV/BTTV/FFZ emotes in Twitch's emote picker. Twitch's own emote picker now lists the channel's and global 7TV, BTTV and FFZ emotes in two extra sections, below your Twitch emotes.\r\n\r\nChat Text Size. New option in Settings → Chat to make chat messages bigger: Default, Large, or Extra Large. Only chat messages change size; the rest of the app stays the same.\r\n\r\nBigger Emote Size steps. Large and Extra Large are now noticeably bigger than Default.\r\n\r\nDownloads\r\n\r\n| File | Description |\r\n|------|-------------|\r\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.24.ipa\" | Sideload IPA (AltStore / SideStore / Feather) |\r\n| \"tv.twitch-32.1-TwitchAdBlock-0.1.24-no-plugins.ipa\" | Sideload IPA without app extensions (TrollStore) |\r\n| \"com.level3tjg.twitchadblock_0.1.24_iphoneos-arm.deb\" | Rootful deb (unc0ver / checkra1n) |\r\n| \"com.level3tjg.twitchadblock_0.1.24_iphoneos-arm64.deb\" | Rootless deb (Dopamine / palera1n) |",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v32.1-0.1.24/tv.twitch-32.1-TwitchAdBlock-0.1.24.ipa",
+      "size": 197485443
     },
     {
       "name": "YouTube",
@@ -354,6 +354,17 @@
   "news": [
     {
       "appID": "tv.twitch",
+      "title": "32.1 - 22 Nov",
+      "identifier": "tv.twitch-release-32.1-0.1.24",
+      "caption": "Update for TwitchAdBlock available!",
+      "date": "2026-11-22T19:10:14Z",
+      "tintColor": "#9146FF",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v32.1-0.1.24"
+    },
+    {
+      "appID": "tv.twitch",
       "title": "32.1 - 21 Nov",
       "identifier": "tv.twitch-release-32.1-0.1.23",
       "caption": "Update for TwitchAdBlock available!",
@@ -362,17 +373,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v32.1-0.1.23"
-    },
-    {
-      "appID": "tv.twitch",
-      "title": "32.1 - 20 Nov",
-      "identifier": "tv.twitch-release-32.1-0.1.22",
-      "caption": "Update for TwitchAdBlock available!",
-      "date": "2026-11-20T19:42:00Z",
-      "tintColor": "#9146FF",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v32.1-0.1.22"
     },
     {
       "appID": "mod.balatro.multiplayer.pvp",
