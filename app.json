@@ -177,28 +177,28 @@
       "category": "entertainment",
       "versions": [
         {
+          "version": "21.47.6",
+          "buildVersion": "1.1.9",
+          "date": "2026-11-23T06:13:56Z",
+          "localizedDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.1.9\nUpstream asset: \"YTKACE_1.1.9_YouTube_21.47.6.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\nWhat's new:\n• Updated to YouTube 21.47.6\n• Action bar editor: reorder buttons and move ⋯ items into the bar\n• Added Remove AI Summaries\n• Added Avoid Notch Cutoff\n• Added an option to disable PiP from the miniplayer\n• Added a fullscreen orientation option, and vertical videos stay in portrait\n• Added the Open in YTKACE Safari extension\n• Remove Products now also hides product rows and cards in feeds, search and the iPad sidebar\n• Backups moved to their own page with last backup and size details\n• Swipe to Seek shows the preview frame and a bigger scrubber\n\nFixed:\n• Launch hang and crash with Remove Filter Chips on the new Home tabs layout\n• Products panel opening on its own\n• PiP falling back for free accounts outside the US\n• Dislike count on iPhone when Dislike is in the ⋯ menu\n• Hold speed pill in right-to-left languages and at 2x\n• Blank search with Shorts hidden\n• Messages button showing on some tabs\n• HLS playback fix not fully applying on newer YouTube versions\n\nYouTube 21.47.6 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.1.9_YouTube_21.47.6.ipa\" for iOS 17 and newer\n• \"YTKACE_1.1.9_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.1.9/YTKACE_1.1.9_YouTube_21.47.6.ipa",
+          "size": 143414110
+        },
+        {
           "version": "21.46.3",
           "buildVersion": "1.1.8",
           "date": "2026-11-16T05:15:27Z",
           "localizedDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.1.8\nUpstream asset: \"YTKACE_1.1.8_YouTube_21.46.3.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\nThe FlareStore certificate giveaway is still going in the YTKACE Telegram channel: https://t.me/ytkace\n\nWhat's new:\n• Updated to YouTube 21.46.3\n• Added Return YouTube Dislike for videos, Shorts and the description panel\n• YTKACE and YouTube buttons can now be mixed in the top row and the fullscreen bar\n• Added a left button column, and every player button can now be edited in the layout editor\n• Added fullscreen bar button toggles\n• Added a compact Quality Button and quality settings for AirPlay and Low Power Mode\n• Added an option to bypass the Premium device streaming limit\n• Added Shorts feed filters for live streams and posts\n• Shorts auto-scroll now waits while you read comments\n• Reworked Swipe to Seek and hold speed\n• PiP now uses native iOS PiP\n\nFixed:\n• Crash when the fullscreen buttons rebuild\n• PiP not starting again after a Short or after the first time\n• PiP starting when leaving the app with the video paused\n• Player download button with HLS\n• Captions turning back on after turning them off\n• Shorts missing on channels opened from a Short\n• Tab bar taps when the Shorts tab is hidden\n• Glass tab bar hidden behind incognito and the sleep timer strip\n• Controls hiding while using buttons, hold speed seeking, backup restore and title overlap\n\nYouTube 21.46.3 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.1.8_YouTube_21.46.3.ipa\" for iOS 17 and newer\n• \"YTKACE_1.1.8_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.1.8/YTKACE_1.1.8_YouTube_21.46.3.ipa",
           "size": 141821255
-        },
-        {
-          "version": "21.45.4",
-          "buildVersion": "1.1.7",
-          "date": "2026-11-11T05:04:31Z",
-          "localizedDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.1.7\nUpstream asset: \"YTKACE_1.1.7_YouTube_21.45.4.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\n1,000 stars 🎉\nThanks for 1k stars! To celebrate, FlareStore is sponsoring a giveaway of 5 certificates in the new YTKACE Telegram channel: https://t.me/ytkace\n\nWhat's new:\n• Updated to YouTube 21.45.4\n• Button Layout: drag the player buttons into YouTube's top row, the row under it, or next to the fullscreen button\n• Added a Quality Button that shows the current quality\n• Added Auto Fullscreen and Exit Fullscreen at End\n• Added Swipe to Seek\n• Added Previous/Next Skip\n• Added Keep Playing, which stops the \"Continue watching?\" pause\n• Added a Playlist tab\n• Added a default video quality and audio language for downloads\n• Added Remove Live Videos from Home\n• Added an Auto-Scroll Delay for Shorts\n• Added a minimum segment length to SponsorBlock\n• Added iPhone Duo layouts\n\nFixed:\n• Videos missing from Home on some accounts\n• Lock screen scrubbing and skip not working for downloads\n• Tabs not switching when Home is hidden\n• Live streams counted as finished in the queue\n• Auto-scroll skipping Shorts before they end\n• Show Status Bar in Fullscreen not working\n• Invisible back button with OLED in light mode\n• HLS Streams not falling back when a video fails\n• Tab icons and labels on vertical tab bars\n\nYouTube 21.45.4 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.1.7_YouTube_21.45.4.ipa\" for iOS 17 and newer\n• \"YTKACE_1.1.7_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.1.7/YTKACE_1.1.7_YouTube_21.45.4.ipa",
-          "size": 140303052
         }
       ],
-      "version": "21.46.3",
-      "buildVersion": "1.1.8",
-      "versionDate": "2026-11-16T05:15:27Z",
-      "versionDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.1.8\nUpstream asset: \"YTKACE_1.1.8_YouTube_21.46.3.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\nThe FlareStore certificate giveaway is still going in the YTKACE Telegram channel: https://t.me/ytkace\n\nWhat's new:\n• Updated to YouTube 21.46.3\n• Added Return YouTube Dislike for videos, Shorts and the description panel\n• YTKACE and YouTube buttons can now be mixed in the top row and the fullscreen bar\n• Added a left button column, and every player button can now be edited in the layout editor\n• Added fullscreen bar button toggles\n• Added a compact Quality Button and quality settings for AirPlay and Low Power Mode\n• Added an option to bypass the Premium device streaming limit\n• Added Shorts feed filters for live streams and posts\n• Shorts auto-scroll now waits while you read comments\n• Reworked Swipe to Seek and hold speed\n• PiP now uses native iOS PiP\n\nFixed:\n• Crash when the fullscreen buttons rebuild\n• PiP not starting again after a Short or after the first time\n• PiP starting when leaving the app with the video paused\n• Player download button with HLS\n• Captions turning back on after turning them off\n• Shorts missing on channels opened from a Short\n• Tab bar taps when the Shorts tab is hidden\n• Glass tab bar hidden behind incognito and the sleep timer strip\n• Controls hiding while using buttons, hold speed seeking, backup restore and title overlap\n\nYouTube 21.46.3 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.1.8_YouTube_21.46.3.ipa\" for iOS 17 and newer\n• \"YTKACE_1.1.8_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.1.8/YTKACE_1.1.8_YouTube_21.46.3.ipa",
-      "size": 141821255,
+      "version": "21.47.6",
+      "buildVersion": "1.1.9",
+      "versionDate": "2026-11-23T06:13:56Z",
+      "versionDescription": "Upstream release: https://github.com/itzzace/ytkace/releases/tag/v1.1.9\nUpstream asset: \"YTKACE_1.1.9_YouTube_21.47.6.ipa\"\n\nUpstream Release Notes\nby @itzzace0\n\nWhat's new:\n• Updated to YouTube 21.47.6\n• Action bar editor: reorder buttons and move ⋯ items into the bar\n• Added Remove AI Summaries\n• Added Avoid Notch Cutoff\n• Added an option to disable PiP from the miniplayer\n• Added a fullscreen orientation option, and vertical videos stay in portrait\n• Added the Open in YTKACE Safari extension\n• Remove Products now also hides product rows and cards in feeds, search and the iPad sidebar\n• Backups moved to their own page with last backup and size details\n• Swipe to Seek shows the preview frame and a bigger scrubber\n\nFixed:\n• Launch hang and crash with Remove Filter Chips on the new Home tabs layout\n• Products panel opening on its own\n• PiP falling back for free accounts outside the US\n• Dislike count on iPhone when Dislike is in the ⋯ menu\n• Hold speed pill in right-to-left languages and at 2x\n• Blank search with Shorts hidden\n• Messages button showing on some tabs\n• HLS playback fix not fully applying on newer YouTube versions\n\nYouTube 21.47.6 requires iOS 17, so there are two IPAs:\n• \"YTKACE_1.1.9_YouTube_21.47.6.ipa\" for iOS 17 and newer\n• \"YTKACE_1.1.9_YouTube_iOS16_21.33.6.ipa\" for iOS 16",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/ytkace-v1.1.9/YTKACE_1.1.9_YouTube_21.47.6.ipa",
+      "size": 143414110,
       "appPermissions": {
         "entitlements": [
           "application-identifier",
@@ -353,6 +353,17 @@
   ],
   "news": [
     {
+      "appID": "com.google.ios.youtube",
+      "title": "21.47.6 - 23 Nov",
+      "identifier": "com.google.ios.youtube-release-1.1.9",
+      "caption": "Update for YouTube available!",
+      "date": "2026-11-23T06:13:56Z",
+      "tintColor": "#FF0000",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/youtube/news.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/ytkace-v1.1.9"
+    },
+    {
       "appID": "tv.twitch",
       "title": "32.1 - 22 Nov",
       "identifier": "tv.twitch-release-32.1-0.1.24",
@@ -406,17 +417,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/apollo/news.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/apollo-reborn-glass-v4.1.0"
-    },
-    {
-      "appID": "com.google.ios.youtube",
-      "title": "21.45.4 - 11 Nov",
-      "identifier": "com.google.ios.youtube-release-1.1.7",
-      "caption": "Update for YouTube available!",
-      "date": "2026-11-11T05:04:31Z",
-      "tintColor": "#FF0000",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/youtube/news.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/ytkace-v1.1.7"
     },
     {
       "appID": "mod.balatro.pokermon",
