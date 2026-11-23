@@ -196,8 +196,10 @@ class BalatroStreamsTests(unittest.TestCase):
             patch("mirror.subprocess.run") as run,
             patch("mirror.check_release", return_value={"should_mirror": "true"}),
         ):
+            run.return_value.returncode = 0
             run.return_value.stdout = json.dumps(releases)
             matrix = mirror.plan_mirrors(config, "owner/repo")
+        run.assert_called_once()
         keys = {app["key"] for app in matrix}
         self.assertIn("balatro-multiplayer-legacy", keys)
         self.assertIn("balatro-multiplayer", keys)

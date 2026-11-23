@@ -108,6 +108,9 @@ class MirrorPlanTests(unittest.TestCase):
 
     @patch("mirror.subprocess.run")
     def test_upstream_failure_stops_planning(self, run):
-        run.side_effect = subprocess.CalledProcessError(1, "gh")
-        with self.assertRaises(subprocess.CalledProcessError):
+        run.return_value = self.response({}, 1, "gh: Server error (HTTP 503)")
+        with self.assertRaisesRegex(
+            RuntimeError, r"repos/example/upstream/releases/latest: .*HTTP 503"
+        ):
             self.plan()
+        run.assert_called_once()

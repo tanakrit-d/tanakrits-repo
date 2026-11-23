@@ -33,11 +33,12 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Validate config and find apps needing mirroring
+      - name: Validate configuration and source
+        run: python update.py --validate-only
+
+      - name: Find apps needing mirroring
         id: matrix
-        run: |
-          python update.py --validate-only
-          python mirror.py plan
+        run: python mirror.py plan
 
   mirror:
     needs: prepare

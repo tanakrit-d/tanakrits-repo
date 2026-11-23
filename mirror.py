@@ -135,32 +135,41 @@ def write_outputs(values: dict[str, str]) -> None:
             output.write(f"{key}<<{delimiter}\n{value}\n{delimiter}\n")
 
 
+def fetch_upstream_releases(endpoint: str, *, paginate: bool) -> Any:
+    command = ["gh", "api"]
+    if paginate:
+        command.extend(["--paginate", "--slurp"])
+    response = subprocess.run(
+        [*command, endpoint], capture_output=True, text=True, encoding="utf-8"
+    )
+    if response.returncode:
+        raise RuntimeError(
+            f"Could not fetch upstream releases from {endpoint}: "
+            f"{response.stderr.strip() or f'gh exited with {response.returncode}'}"
+        )
+    return json.loads(response.stdout)
+
+
 def plan_mirrors(config: dict[str, Any], repository: str) -> list[dict[str, Any]]:
     """Allocate build runners only for missing or incomplete mirrors."""
     pending = []
+    upstream_streams: dict[str, list[dict[str, Any]]] = {}
     for key, app in config["apps"].items():
         if not app.get("updates_enabled", True):
             continue
         endpoint = f"repos/{app['repo_url']}/releases"
         if app.get("upstream_tag_regex"):
-            response = subprocess.run(
-                ["gh", "api", "--paginate", "--slurp", endpoint + "?per_page=100"],
-                capture_output=True,
-                text=True,
-                check=True,
-            )
-            releases = [
-                release for page in json.loads(response.stdout) for release in page
-            ]
-            selected = select_latest_release(releases, app)
+            if endpoint not in upstream_streams:
+                pages = fetch_upstream_releases(
+                    endpoint + "?per_page=100", paginate=True
+                )
+                upstream_streams[endpoint] = [
+                    release for page in pages for release in page
+                ]
+            selected = select_latest_release(upstream_streams[endpoint], app)
         else:
-            response = subprocess.run(
-                ["gh", "api", endpoint + "/latest"],
-                capture_output=True,
-                text=True,
-                check=True,
-            )
-            selected = select_release(json.loads(response.stdout), app)
+            release = fetch_upstream_releases(endpoint + "/latest", paginate=False)
+            selected = select_release(release, app)
         if selected["available"] == "false":
             print(f"{key}: no matching upstream release")
             continue
