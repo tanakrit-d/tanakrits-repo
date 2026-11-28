@@ -122,19 +122,19 @@
       "versions": [
         {
           "version": "32.2",
+          "buildVersion": "32.2-0.1.27",
+          "date": "2026-11-28T19:39:10Z",
+          "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v32.2-0.1.27\nUpstream asset: \"tv.twitch-32.2-TwitchAdBlock-0.1.27.ipa\"\n\nUpstream Release Notes\nWhat's New\n\nStream Rewind (experimental). Rewind a live stream without leaving it. Drag the bar on the player to go back, double-tap the left or right of the video to skip, and tap Jump to Live to catch up again. Chat keeps going live the whole time. It works on channels that save their past broadcasts. This is an unreleased feature Twitch is still building, so it's off by default: turn it on in Settings → Home & Playback → Stream Rewind.\n\nNicer pickers in settings. Launch Screen and Default Proxy now open a proper iOS menu right where you tap, with an icon for each choice and a checkmark on the current one, and each row shows what's picked (\"Home · Live\", \"Automatic\"). Launch Screen is grouped into Home and Browse. Default Proxy shows each country's current speed, or Offline, under its name, and the server status now sits under the row's title.\n\nTidier Custom Proxy list. Each of your proxies now shows its server (without the password) and its current speed or Offline. Tap one for Edit, Move Up, Move Down or Delete. Add Proxy opens a box to type the address in, and tells you if it doesn't look right.\n\nOne look for all settings. Every setting now has the same layout: its name, a short line under it saying what it does, and on the right a switch, the current choice, or an arrow. Emote Size and Chat Text Size are now menus like Launch Screen, and Skip Proxy for Channels shows your list under its name instead of cutting it off.\n\nDeleted message notes read like Twitch's. With Keep Deleted Messages on, the note under a removed message now uses Twitch's own wording, like \"name's message was deleted by a moderator\", \"name has been timed out for 600 seconds.\" or \"name is now banned from this channel.\", as a plain grey line like Twitch's own notices. The Highlight Notes option is gone.\n\nWide emotes always keep their shape. The Keep Wide Emote Shape setting is gone. Wide 7TV, BTTV and FFZ emotes now always show at full size in their real shape, for everyone.\n\nDiagnostics removed. The Diagnostics screen under Tools is gone; Tools now has just Export Settings and Import Settings.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-32.2-TwitchAdBlock-0.1.27.ipa\" | Sideload IPA (AltStore / SideStore / Feather) |\n| \"tv.twitch-32.2-TwitchAdBlock-0.1.27-no-plugins.ipa\" | Sideload IPA without app extensions (TrollStore) |\n| \"com.level3tjg.twitchadblock_0.1.27_iphoneos-arm.deb\" | Rootful deb (unc0ver / checkra1n) |\n| \"com.level3tjg.twitchadblock_0.1.27_iphoneos-arm64.deb\" | Rootless deb (Dopamine / palera1n) |",
+          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v32.2-0.1.27/tv.twitch-32.2-TwitchAdBlock-0.1.27.ipa",
+          "size": 196634045
+        },
+        {
+          "version": "32.2",
           "buildVersion": "32.2-0.1.26",
           "date": "2026-11-27T20:47:41Z",
           "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v32.2-0.1.26\nUpstream asset: \"tv.twitch-32.2-TwitchAdBlock-0.1.26.ipa\"\n\nUpstream Release Notes\nWhat's New\r\n\r\nBlock Tracking. A new switch under Ad Blocking, on by default, stops Twitch's usage tracking, crash reports and ad measurement from being sent. Nothing in the app changes; it just sends less about you.\r\n\r\nFull quality on Automatic. One of the built-in servers is in a country where Twitch limits streams to 720p. Automatic now only uses it as a backup when the others are down, so you get 1080p (and higher) without changing anything. It's marked \"backup, up to 720p\" in the server list, and you can still pick it yourself.\r\n\r\nServers update without an app update. The server list now updates by itself in the background. If a server goes down, slows down or starts showing ads, it can be swapped out or a new one added within minutes, and you get it the next time you open the app, with nothing to install. If the list can't be downloaded, the app keeps using the one it already has.\r\n\r\nFixed \"Try Ad-Free\" on your profile. Twitch 32.2 rebuilt the profile page, so Hide \"Go Ad-Free\" Button no longer removed its \"Try Ad-Free\" button, and the old way of hiding it could upset the layout of the page. It's now removed cleanly, with no leftover gap.\r\n\r\nFixed missing category buttons on the Live page. With Hide \"From Channels You Follow\" on, the buttons above the streams (All, League of Legends and so on) didn't show until you scrolled or switched tabs. They now show as soon as the page opens.\r\n\r\nDownloads\r\n\r\n| File | Description |\r\n|------|-------------|\r\n| \"tv.twitch-32.2-TwitchAdBlock-0.1.26.ipa\" | Sideload IPA (AltStore / SideStore / Feather) |\r\n| \"tv.twitch-32.2-TwitchAdBlock-0.1.26-no-plugins.ipa\" | Sideload IPA without app extensions (TrollStore) |\r\n| \"com.level3tjg.twitchadblock_0.1.26_iphoneos-arm.deb\" | Rootful deb (unc0ver / checkra1n) |\r\n| \"com.level3tjg.twitchadblock_0.1.26_iphoneos-arm64.deb\" | Rootless deb (Dopamine / palera1n) |",
           "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v32.2-0.1.26/tv.twitch-32.2-TwitchAdBlock-0.1.26.ipa",
           "size": 196610097
-        },
-        {
-          "version": "32.2",
-          "buildVersion": "32.2-0.1.25",
-          "date": "2026-11-24T22:00:22Z",
-          "localizedDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v32.2-0.1.25\nUpstream asset: \"tv.twitch-32.2-TwitchAdBlock-0.1.25.ipa\"\n\nUpstream Release Notes\nWhat's New\r\n\r\nUpdated for Twitch 32.2.\r\n\r\nFixed the chat box disappearing. While typing a longer message, the chat box could go blank above the keyboard for a moment, mostly when your channel points button was showing your points total. It now stays visible.\r\n\r\nFixed channels wrongly blocked for your region. Some channels showed \"Due to your age and/or region, you cannot access this content\" (for example ones labelled Gambling) or said they were restricted in your country, even though they work for you normally. Content restrictions are now based on your own location, so these channels open just like they would on regular Twitch.\r\n\r\nMore reliable when a server has problems. With more than one server set up, TwitchMods checks them in the background, spreads streams across the ones that work, and switches to another automatically if one goes down. The status in settings now shows how many are online.\r\n\r\nChoose your server. Tap \"Default proxy\" in settings to pick a country yourself, with each one's current speed shown, or leave it on Automatic (recommended). If the country you picked goes down, TwitchMods switches to another one until it's back.\r\n\r\nTidier Declutter settings. The long Declutter list is now split into three groups (Stream, Chat, and Feeds & Tabs), so it's easier to find what you're after. Your settings stay exactly as they were.\r\n\r\nFewer restarts. Hiding Subscribe, Extensions, Clip, Bits and the \"+\" tab now happens the moment you flip the switch, and so does showing them again. Hiding the channel bar and leaderboard also happens right away (showing those two again still waits until you next open a stream). When a change you make has to wait like that, an orange \"Applies the next time you open a stream\" note shows under it until it has taken effect.\r\n\r\nSettings fix. The proxy status and \"Skip Proxy for Channels\" rows no longer get cut off at larger text sizes.\r\n\r\nDownloads\r\n\r\n| File | Description |\r\n|------|-------------|\r\n| \"tv.twitch-32.2-TwitchAdBlock-0.1.25.ipa\" | Sideload IPA (AltStore / SideStore / Feather) |\r\n| \"tv.twitch-32.2-TwitchAdBlock-0.1.25-no-plugins.ipa\" | Sideload IPA without app extensions (TrollStore) |\r\n| \"com.level3tjg.twitchadblock_0.1.25_iphoneos-arm.deb\" | Rootful deb (unc0ver / checkra1n) |\r\n| \"com.level3tjg.twitchadblock_0.1.25_iphoneos-arm64.deb\" | Rootless deb (Dopamine / palera1n) |",
-          "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v32.2-0.1.25/tv.twitch-32.2-TwitchAdBlock-0.1.25.ipa",
-          "size": 196594777
         }
       ],
       "appPermissions": {
@@ -160,11 +160,11 @@
         }
       },
       "version": "32.2",
-      "buildVersion": "32.2-0.1.26",
-      "versionDate": "2026-11-27T20:47:41Z",
-      "versionDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v32.2-0.1.26\nUpstream asset: \"tv.twitch-32.2-TwitchAdBlock-0.1.26.ipa\"\n\nUpstream Release Notes\nWhat's New\r\n\r\nBlock Tracking. A new switch under Ad Blocking, on by default, stops Twitch's usage tracking, crash reports and ad measurement from being sent. Nothing in the app changes; it just sends less about you.\r\n\r\nFull quality on Automatic. One of the built-in servers is in a country where Twitch limits streams to 720p. Automatic now only uses it as a backup when the others are down, so you get 1080p (and higher) without changing anything. It's marked \"backup, up to 720p\" in the server list, and you can still pick it yourself.\r\n\r\nServers update without an app update. The server list now updates by itself in the background. If a server goes down, slows down or starts showing ads, it can be swapped out or a new one added within minutes, and you get it the next time you open the app, with nothing to install. If the list can't be downloaded, the app keeps using the one it already has.\r\n\r\nFixed \"Try Ad-Free\" on your profile. Twitch 32.2 rebuilt the profile page, so Hide \"Go Ad-Free\" Button no longer removed its \"Try Ad-Free\" button, and the old way of hiding it could upset the layout of the page. It's now removed cleanly, with no leftover gap.\r\n\r\nFixed missing category buttons on the Live page. With Hide \"From Channels You Follow\" on, the buttons above the streams (All, League of Legends and so on) didn't show until you scrolled or switched tabs. They now show as soon as the page opens.\r\n\r\nDownloads\r\n\r\n| File | Description |\r\n|------|-------------|\r\n| \"tv.twitch-32.2-TwitchAdBlock-0.1.26.ipa\" | Sideload IPA (AltStore / SideStore / Feather) |\r\n| \"tv.twitch-32.2-TwitchAdBlock-0.1.26-no-plugins.ipa\" | Sideload IPA without app extensions (TrollStore) |\r\n| \"com.level3tjg.twitchadblock_0.1.26_iphoneos-arm.deb\" | Rootful deb (unc0ver / checkra1n) |\r\n| \"com.level3tjg.twitchadblock_0.1.26_iphoneos-arm64.deb\" | Rootless deb (Dopamine / palera1n) |",
-      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v32.2-0.1.26/tv.twitch-32.2-TwitchAdBlock-0.1.26.ipa",
-      "size": 196610097
+      "buildVersion": "32.2-0.1.27",
+      "versionDate": "2026-11-28T19:39:10Z",
+      "versionDescription": "Upstream release: https://github.com/gunnerkidBT/TwitchAdBlock/releases/tag/v32.2-0.1.27\nUpstream asset: \"tv.twitch-32.2-TwitchAdBlock-0.1.27.ipa\"\n\nUpstream Release Notes\nWhat's New\n\nStream Rewind (experimental). Rewind a live stream without leaving it. Drag the bar on the player to go back, double-tap the left or right of the video to skip, and tap Jump to Live to catch up again. Chat keeps going live the whole time. It works on channels that save their past broadcasts. This is an unreleased feature Twitch is still building, so it's off by default: turn it on in Settings → Home & Playback → Stream Rewind.\n\nNicer pickers in settings. Launch Screen and Default Proxy now open a proper iOS menu right where you tap, with an icon for each choice and a checkmark on the current one, and each row shows what's picked (\"Home · Live\", \"Automatic\"). Launch Screen is grouped into Home and Browse. Default Proxy shows each country's current speed, or Offline, under its name, and the server status now sits under the row's title.\n\nTidier Custom Proxy list. Each of your proxies now shows its server (without the password) and its current speed or Offline. Tap one for Edit, Move Up, Move Down or Delete. Add Proxy opens a box to type the address in, and tells you if it doesn't look right.\n\nOne look for all settings. Every setting now has the same layout: its name, a short line under it saying what it does, and on the right a switch, the current choice, or an arrow. Emote Size and Chat Text Size are now menus like Launch Screen, and Skip Proxy for Channels shows your list under its name instead of cutting it off.\n\nDeleted message notes read like Twitch's. With Keep Deleted Messages on, the note under a removed message now uses Twitch's own wording, like \"name's message was deleted by a moderator\", \"name has been timed out for 600 seconds.\" or \"name is now banned from this channel.\", as a plain grey line like Twitch's own notices. The Highlight Notes option is gone.\n\nWide emotes always keep their shape. The Keep Wide Emote Shape setting is gone. Wide 7TV, BTTV and FFZ emotes now always show at full size in their real shape, for everyone.\n\nDiagnostics removed. The Diagnostics screen under Tools is gone; Tools now has just Export Settings and Import Settings.\n\nDownloads\n\n| File | Description |\n|------|-------------|\n| \"tv.twitch-32.2-TwitchAdBlock-0.1.27.ipa\" | Sideload IPA (AltStore / SideStore / Feather) |\n| \"tv.twitch-32.2-TwitchAdBlock-0.1.27-no-plugins.ipa\" | Sideload IPA without app extensions (TrollStore) |\n| \"com.level3tjg.twitchadblock_0.1.27_iphoneos-arm.deb\" | Rootful deb (unc0ver / checkra1n) |\n| \"com.level3tjg.twitchadblock_0.1.27_iphoneos-arm64.deb\" | Rootless deb (Dopamine / palera1n) |",
+      "downloadURL": "https://github.com/tanakrit-d/tanakrits-repo/releases/download/twitch-adblock-v32.2-0.1.27/tv.twitch-32.2-TwitchAdBlock-0.1.27.ipa",
+      "size": 196634045
     },
     {
       "name": "YouTube",
@@ -354,6 +354,17 @@
   "news": [
     {
       "appID": "tv.twitch",
+      "title": "32.2 - 28 Nov",
+      "identifier": "tv.twitch-release-32.2-0.1.27",
+      "caption": "Update for TwitchAdBlock available!",
+      "date": "2026-11-28T19:39:10Z",
+      "tintColor": "#9146FF",
+      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
+      "notify": true,
+      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v32.2-0.1.27"
+    },
+    {
+      "appID": "tv.twitch",
       "title": "32.2 - 27 Nov",
       "identifier": "tv.twitch-release-32.2-0.1.26",
       "caption": "Update for TwitchAdBlock available!",
@@ -362,17 +373,6 @@
       "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
       "notify": true,
       "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v32.2-0.1.26"
-    },
-    {
-      "appID": "tv.twitch",
-      "title": "32.2 - 24 Nov",
-      "identifier": "tv.twitch-release-32.2-0.1.25",
-      "caption": "Update for TwitchAdBlock available!",
-      "date": "2026-11-24T22:00:22Z",
-      "tintColor": "#9146FF",
-      "imageURL": "https://raw.githubusercontent.com/tanakrit-d/tanakrits-repo/refs/heads/main/images/twitch/news.png",
-      "notify": true,
-      "url": "https://github.com/tanakrit-d/tanakrits-repo/releases/tag/twitch-adblock-v32.2-0.1.25"
     },
     {
       "appID": "mod.balatro.multiplayer.pvp",
